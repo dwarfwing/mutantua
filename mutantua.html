@@ -1,0 +1,2544 @@
+
+<button name="act_k-network-call" hidden="" type="action">
+</button>
+<input name="attr_sheet_version" value="0" type="hidden" title="@{sheet_version}"/>
+<input name="attr_version" value="0" type="hidden" title="@{version}"/>
+<main id="main">
+  <div class="logo"></div><!-- sectionName:mutantua -->
+  <input name="attr_mutantua_tab" value="nav-tabs-mutantua--pc" type="hidden" title="@{mutantua_tab}"/>
+  <div class="tabs tabs--mutantua flex-box tiny-gap">
+    <nav class="tabs__header tabs--mutantua__header">
+      <ul class="tabs__nav-list">
+        <li class="tabs__nav-item">
+          <button class="tabs__button tabs--mutantua__button tabs--mutantua__button--pc  tab-button" title="PC" data-i18n-title="pc-caps" name="act_nav-tabs-mutantua--pc" data-container-button="mutantua" data-button="pc" type="action" data-container-tab="mutantua" data-tab="pc">Person_4
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div class="tabs__body tabs--mutantua__body">
+      <article class="tabs__container tabs--mutantua__container tabs--mutantua__container--pc" data-container-tab="mutantua" data-tab="pc">
+  <div class="section-attributes"> 
+    <div class="box  box-attributes"> 
+      <div class="box-header field-count-0"> 
+        <h1 data-i18n="attributes"> grundegenskaper
+        </h1>
+      </div>
+      <div class="label-input column-styrka input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="strength" attr="strength" name="styrka" type="label" title="">styrka
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-strength" type="number" name="attr_strength" title="@{strength}"/></span>
+      </div>
+      <div class="label-input column-fysik input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="constitution" attr="constitution" name="fysik" type="label" title="">fysik
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-constitution" type="number" name="attr_constitution" title="@{constitution}"/></span>
+      </div>
+      <div class="label-input column-storlek input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="size" attr="size" name="storlek" type="label" title="">storlek
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-size" type="number" name="attr_size" title="@{size}"/></span>
+      </div>
+      <div class="label-input column-smidighet input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="agility" attr="agility" name="smidighet" type="label" title="">smidighet
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-agility" type="number" name="attr_agility" title="@{agility}"/></span>
+      </div>
+      <div class="label-input column-intelligens input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="intelligence" attr="intelligence" name="intelligens" type="label" title="">intelligens
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-intelligence" type="number" name="attr_intelligence" title="@{intelligence}"/></span>
+      </div>
+      <div class="label-input column-vilja input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="willpower" attr="willpower" name="vilja" type="label" title="">vilja
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-willpower" type="number" name="attr_willpower" title="@{willpower}"/></span>
+      </div>
+      <div class="label-input column-personlighet input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="personality" attr="personality" name="personlighet" type="label" title="">personlighet
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-personality" type="number" name="attr_personality" title="@{personality}"/></span>
+      </div>
+    </div>
+    <div class="box"> 
+      <div class="label-input column-skadebonus input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="damagebonus" attr="damagebonus" name="skadebonus" type="label" title="">skadebonus
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-skadebonus" type="text" name="attr_damagebonus" title="@{damagebonus}"/></span>
+      </div>
+      <div class="label-input column-initiativbonus input-count-1">
+        <button class="roller" name="roll_initiativebonus" value="@{initiativebonus_action}" type="roll"><span data-i18n="initiativebonus"> initiativbonus</span>
+        </button>
+        <button name="act_initiativebonus-action" hidden="" type="action">
+        </button>
+        <input name="attr_initiativebonus_action" type="hidden" title="@{initiativebonus_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-initiativbonus" type="number" name="attr_initiativebonus" title="@{initiativebonus}"/></span>
+      </div>
+      <div class="label-input column-bärförmåga input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="carrycap" attr="carrycap" name="bärförmåga" type="label" title="">bärförmåga
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-bärförmåga" type="number" name="attr_carrycap" title="@{carrycap}"/></span>
+      </div>
+      <div class="label-input column-reaktionsvärde input-count-1">
+        <button class="roller" name="roll_influencelevel" value="@{influencelevel_action}" type="roll"><span data-i18n="influencelevel"> reaktionsvärde</span>
+        </button>
+        <button name="act_influencelevel-action" hidden="" type="action">
+        </button>
+        <input name="attr_influencelevel_action" type="hidden" title="@{influencelevel_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-reaktionsvärde" type="number" name="attr_influencelevel" title="@{influencelevel}"/></span>
+      </div>
+    </div>
+  </div>
+  <div class="section-info"> 
+    <div class="box box-info"> 
+      <div class="label-input column-character_name wide-text-input input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="character-name" attr="character_name" name="namn" type="label" title="">namn
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-character_name" type="text" name="attr_character_name" title="@{character_name}"/></span>
+      </div>
+      <div class="label-input column-class wide-text-input input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="class" attr="class" name="klass" type="label" title="">klass
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-class" type="text" name="attr_class" title="@{class}"/></span>
+      </div>
+      <div class="label-input column-prev_profession wide-text-input input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="prev-profession" attr="prev_profession" name="tidigare yrke" type="label" title="">tidigare yrke
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-prev_profession" type="text" name="attr_prev_profession" title="@{prev_profession}"/></span>
+      </div>
+      <div class="label-input column-origin wide-text-input input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="origin" attr="origin" name="hemort" type="label" title="">hemort
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-origin" type="text" name="attr_origin" title="@{origin}"/></span>
+      </div>
+      <div class="label-input column-age w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="age" attr="age" name="ålder" type="label" title="">ålder
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-age" type="number" name="attr_age" title="@{age}"/></span>
+      </div>
+      <div class="label-input column-gender w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="gender" attr="gender" name="kön" type="label" title="">kön
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-gender" type="text" name="attr_gender" title="@{gender}"/></span>
+      </div>
+      <div class="label-input column-height w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="height" attr="height" name="längd" type="label" title="">längd
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-height" type="text" name="attr_height" title="@{height}"/></span>
+      </div>
+      <div class="label-input column-weight w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="weight" attr="weight" name="vikt" type="label" title="">vikt
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-weight" type="text" name="attr_weight" title="@{weight}"/></span>
+      </div>
+      <div class="label-input column-appearance wide-text-input input-count-1"><span class="input-span input-0">
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_appearance" title="@{appearance}"></span>
+            <textarea class="label-input-input input-appearance adaptive--text__textarea" type="textarea" name="attr_appearance" placeholder="Utseende" title="@{appearance}"></textarea>
+          </div></span>
+      </div>
+    </div>
+    <div class="box topless boc-tertiary"> 
+      <div class="label-input column-reputation w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="reputation" attr="reputation" name="rykte" type="label" title="">rykte
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-reputation" type="number" name="attr_reputation" data-i18n-title="current-value" title="Nuvarande värdet"/></span>
+      </div>
+      <div class="label-input column-mov_combat w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="mov-combat" attr="mov_combat" name="ff - strid" type="label" title="">ff - strid
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-mov_combat" type="number" name="attr_mov_combat" data-i18n-title="current-value" title="Nuvarande värdet"/></span>
+      </div>
+      <div class="label-input column-status w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="status" attr="status" name="status" type="label" title="">status
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-status" type="number" name="attr_status" data-i18n-title="current-value" title="Nuvarande värdet"/></span>
+      </div>
+      <div class="label-input column-mov_run w50pc input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="mov-run" attr="mov_run" name="ff - springa" type="label" title="">ff - springa
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-mov_run" type="number" name="attr_mov_run" data-i18n-title="current-value" title="Nuvarande värdet"/></span>
+      </div>
+      <div class="label-input column-mov_sprint  input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="mov-sprint" attr="mov_sprint" name="ff - sprint" type="label" title="">ff - sprint
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-mov_sprint" type="number" name="attr_mov_sprint" data-i18n-title="current-value" title="Nuvarande värdet"/></span>
+      </div>
+      <div class="label-input column-hitpoints w60-40pc currMax input-count-2">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="hitpoints" attr="hitpoints" name="kroppspoäng" type="label" title="">kroppspoäng
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-hitpoints" type="number" name="attr_hitpoints" data-i18n-title="current-value" title="Nuvarande värdet"/></span><span class="input-span input-1">
+          <input class="label-input-input input-hitpoints-max" type="number" name="attr_hitpoints_max" data-i18n-title="max-value" title="Max-värdet"/></span>
+      </div>
+      <div class="label-input column-traumathreshold  input-count-1">
+        <label class="label-input-label right-align comma label-input__text" data-i18n="traumathreshold" attr="traumathreshold" name="traumatröskel" type="label" title="">traumatröskel
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-traumathreshold" type="number" name="attr_traumathreshold" data-i18n-title="current-value" title="Nuvarande värdet"/></span>
+      </div>
+    </div>
+  </div>
+  <div class="section-skill"> 
+    <div class="box  box-skills"> 
+      <div class="box-header field-count-2"> 
+        <h1 data-i18n="basic-skills"> naturliga färdigheter
+        </h1>
+        <h2 class="header-field" data-i18n="skill-level">FV
+        </h2>
+        <h2 class="header-field" data-i18n="modification-abbr">Mod.
+        </h2>
+      </div>
+      <!--each attribute in ['akrobatics','bows','first aid','rifles','perception','throwing','bartering','melee','pistol','sneak/hide']-->
+      <div class="label-input column-akrobatik input-count-2">
+        <button class="roller" name="roll_acrobatics" value="@{acrobatics_action}" type="roll"><span data-i18n="acrobatics"> akrobatik</span>
+        </button>
+        <button name="act_acrobatics-action" hidden="" type="action">
+        </button>
+        <input name="attr_acrobatics_action" type="hidden" title="@{acrobatics_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-akrobatik" type="number" name="attr_acrobatics" title="@{acrobatics}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-akrobatik" type="number" name="attr_acrobatics_mod" title="@{acrobatics_mod}"/></span>
+      </div>
+      <div class="label-input column-båge input-count-2">
+        <button class="roller" name="roll_bows" value="@{bows_action}" type="roll"><span data-i18n="bows"> båge</span>
+        </button>
+        <button name="act_bows-action" hidden="" type="action">
+        </button>
+        <input name="attr_bows_action" type="hidden" title="@{bows_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-båge" type="number" name="attr_bows" title="@{bows}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-båge" type="number" name="attr_bows_mod" title="@{bows_mod}"/></span>
+      </div>
+      <div class="label-input column-första hjälpen input-count-2">
+        <button class="roller" name="roll_first_aid" value="@{first_aid_action}" type="roll"><span data-i18n="first-aid"> första hjälpen</span>
+        </button>
+        <button name="act_first-aid-action" hidden="" type="action">
+        </button>
+        <input name="attr_first_aid_action" type="hidden" title="@{first_aid_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-första hjälpen" type="number" name="attr_first_aid" title="@{first_aid}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-första hjälpen" type="number" name="attr_first_aid_mod" title="@{first_aid_mod}"/></span>
+      </div>
+      <div class="label-input column-gevär input-count-2">
+        <button class="roller" name="roll_rifles" value="@{rifles_action}" type="roll"><span data-i18n="rifles"> gevär</span>
+        </button>
+        <button name="act_rifles-action" hidden="" type="action">
+        </button>
+        <input name="attr_rifles_action" type="hidden" title="@{rifles_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-gevär" type="number" name="attr_rifles" title="@{rifles}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-gevär" type="number" name="attr_rifles_mod" title="@{rifles_mod}"/></span>
+      </div>
+      <div class="label-input column-iakttagelseförmåga input-count-2">
+        <button class="roller" name="roll_perception" value="@{perception_action}" type="roll"><span data-i18n="perception"> iakttagelseförmåga</span>
+        </button>
+        <button name="act_perception-action" hidden="" type="action">
+        </button>
+        <input name="attr_perception_action" type="hidden" title="@{perception_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-iakttagelseförmåga" type="number" name="attr_perception" title="@{perception}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-iakttagelseförmåga" type="number" name="attr_perception_mod" title="@{perception_mod}"/></span>
+      </div>
+      <div class="label-input column-kasta input-count-2">
+        <button class="roller" name="roll_throwing" value="@{throwing_action}" type="roll"><span data-i18n="throwing"> kasta</span>
+        </button>
+        <button name="act_throwing-action" hidden="" type="action">
+        </button>
+        <input name="attr_throwing_action" type="hidden" title="@{throwing_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-kasta" type="number" name="attr_throwing" title="@{throwing}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-kasta" type="number" name="attr_throwing_mod" title="@{throwing_mod}"/></span>
+      </div>
+      <div class="label-input column-köpslå input-count-2">
+        <button class="roller" name="roll_bartering" value="@{bartering_action}" type="roll"><span data-i18n="bartering"> köpslå</span>
+        </button>
+        <button name="act_bartering-action" hidden="" type="action">
+        </button>
+        <input name="attr_bartering_action" type="hidden" title="@{bartering_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-köpslå" type="number" name="attr_bartering" title="@{bartering}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-köpslå" type="number" name="attr_bartering_mod" title="@{bartering_mod}"/></span>
+      </div>
+      <div class="label-input column-närstrid input-count-2">
+        <button class="roller" name="roll_melee" value="@{melee_action}" type="roll"><span data-i18n="melee"> närstrid</span>
+        </button>
+        <button name="act_melee-action" hidden="" type="action">
+        </button>
+        <input name="attr_melee_action" type="hidden" title="@{melee_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-närstrid" type="number" name="attr_melee" title="@{melee}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-närstrid" type="number" name="attr_melee_mod" title="@{melee_mod}"/></span>
+      </div>
+      <div class="label-input column-pistol input-count-2">
+        <button class="roller" name="roll_pistols" value="@{pistols_action}" type="roll"><span data-i18n="pistols"> pistol</span>
+        </button>
+        <button name="act_pistols-action" hidden="" type="action">
+        </button>
+        <input name="attr_pistols_action" type="hidden" title="@{pistols_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-pistol" type="number" name="attr_pistols" title="@{pistols}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-pistol" type="number" name="attr_pistols_mod" title="@{pistols_mod}"/></span>
+      </div>
+      <div class="label-input column-smyga - gömma sig input-count-2">
+        <button class="roller" name="roll_sneak_hide" value="@{sneak_hide_action}" type="roll"><span data-i18n="sneak-hide"> smyga / gömma sig</span>
+        </button>
+        <button name="act_sneak-hide-action" hidden="" type="action">
+        </button>
+        <input name="attr_sneak_hide_action" type="hidden" title="@{sneak_hide_action}"/><span class="input-span input-0">
+          <input class="label-input-input input-smyga - gömma sig" type="number" name="attr_sneak_hide" title="@{sneak_hide}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-smyga - gömma sig" type="number" name="attr_sneak_hide_mod" title="@{sneak_hide_mod}"/></span>
+      </div>
+    </div>
+  </div>
+  <div class="section-trainedskills">
+    <div class="box coverall box-trainedskills"> 
+      <div class="box-header field-count-2"> 
+        <h1 data-i18n="trained-skills"> tränade färdigheter
+        </h1>
+        <h2 class="header-field" data-i18n="skill-level">FV
+        </h2>
+        <h2 class="header-field" data-i18n="modification-abbr">Mod.
+        </h2>
+      </div>
+      <input class="hidden" name="attr_education" type="number" value="0" title="@{education}"/>
+      <input class="hidden" name="attr_education_mod" type="number" value="0" title="@{education_mod}"/>
+      <input class="hidden" name="attr_boats" type="number" value="0" title="@{boats}"/>
+      <input class="hidden" name="attr_boats_mod" type="number" value="0" title="@{boats_mod}"/>
+      <input class="hidden" name="attr_energy_weapons" type="number" value="0" title="@{energy_weapons}"/>
+      <input class="hidden" name="attr_energy_weapons_mod" type="number" value="0" title="@{energy_weapons_mod}"/>
+      <input class="hidden" name="attr_dexterity" type="number" value="0" title="@{dexterity}"/>
+      <input class="hidden" name="attr_dexterity_mod" type="number" value="0" title="@{dexterity_mod}"/>
+      <input class="hidden" name="attr_vehicles" type="number" value="0" title="@{vehicles}"/>
+      <input class="hidden" name="attr_vehicles_mod" type="number" value="0" title="@{vehicles_mod}"/>
+      <input class="hidden" name="attr_traps" type="number" value="0" title="@{traps}"/>
+      <input class="hidden" name="attr_traps_mod" type="number" value="0" title="@{traps_mod}"/>
+      <input class="hidden" name="attr_lockpicking" type="number" value="0" title="@{lockpicking}"/>
+      <input class="hidden" name="attr_lockpicking_mod" type="number" value="0" title="@{lockpicking_mod}"/>
+      <input class="hidden" name="attr_nature_science" type="number" value="0" title="@{nature_science}"/>
+      <input class="hidden" name="attr_nature_science_mod" type="number" value="0" title="@{nature_science_mod}"/>
+      <input class="hidden" name="attr_medicine" type="number" value="0" title="@{medicine}"/>
+      <input class="hidden" name="attr_medicine_mod" type="number" value="0" title="@{medicine_mod}"/>
+      <input class="hidden" name="attr_repairs" type="number" value="0" title="@{repairs}"/>
+      <input class="hidden" name="attr_repairs_mod" type="number" value="0" title="@{repairs_mod}"/>
+      <input class="hidden" name="attr_riding" type="number" value="0" title="@{riding}"/>
+      <input class="hidden" name="attr_riding_mod" type="number" value="0" title="@{riding_mod}"/>
+      <input class="hidden" name="attr_gambling" type="number" value="0" title="@{gambling}"/>
+      <input class="hidden" name="attr_gambling_mod" type="number" value="0" title="@{gambling_mod}"/>
+      <input class="hidden" name="attr_explosives" type="number" value="0" title="@{explosives}"/>
+      <input class="hidden" name="attr_explosives_mod" type="number" value="0" title="@{explosives_mod}"/>
+      <input class="hidden" name="attr_martial_arts" type="number" value="0" title="@{martial_arts}"/>
+      <input class="hidden" name="attr_martial_arts_mod" type="number" value="0" title="@{martial_arts_mod}"/>
+      <input class="hidden" name="attr_technology" type="number" value="0" title="@{technology}"/>
+      <input class="hidden" name="attr_technology_mod" type="number" value="0" title="@{technology_mod}"/>
+      <input class="hidden" name="attr_heavy_weapons" type="number" value="0" title="@{heavy_weapons}"/>
+      <input class="hidden" name="attr_heavy_weapons_mod" type="number" value="0" title="@{heavy_weapons_mod}"/>
+      <input class="hidden" name="attr_underworld" type="number" value="0" title="@{underworld}"/>
+      <input class="hidden" name="attr_underworld_mod" type="number" value="0" title="@{underworld_mod}"/>
+      <input class="hidden" name="attr_evade" type="number" value="0" title="@{evade}"/>
+      <input class="hidden" name="attr_evade_mod" type="number" value="0" title="@{evade_mod}"/>
+      <input class="hidden" name="attr_carts" type="number" value="0" title="@{carts}"/>
+      <input class="hidden" name="attr_carts_mod" type="number" value="0" title="@{carts_mod}"/>
+      <input class="hidden" name="attr_survival" type="number" value="0" title="@{survival}"/>
+      <input class="hidden" name="attr_survival_mod" type="number" value="0" title="@{survival_mod}"/>
+      <input class="hidden" name="attr_know_the_zone" type="number" value="0" title="@{know_the_zone}"/>
+      <input class="hidden" name="attr_know_the_zone_mod" type="number" value="0" title="@{know_the_zone_mod}"/>
+      <fieldset class="repeating_trainedskills">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_trainedskills_$X_collapse}"/>
+        <div class="collapsed">
+          <div class="label-input input-count-2">
+            <label class="select-input"> 
+              <button name="act_roll" type="action"><span name="attr_skill_name" title="@{repeating_trainedskills_$X_skill_name}"></span>
+              </button>
+            </label><span class="input-span input-0" name="attr_skill" type="number" title="@{repeating_trainedskills_$X_skill}"></span><span class="input-span" name="attr_skill_mod" type="number" title="@{repeating_trainedskills_$X_skill_mod}"></span>
+          </div>
+        </div>
+        <div class="expanded">
+          <div class="label-input input-count-2"> 
+            <label class="select-input">                       
+              <select name="attr_name" title="@{repeating_trainedskills_$X_name}">
+                <option data-i18n="select-choice" selected="selected" disabled="disabled" hidden="hidden">
+               --- Välj ---
+                </option>
+                <option value="education" data-i18n="education">
+                </option>
+                <option value="boats" data-i18n="boats">
+                </option>
+                <option value="energy_weapons" data-i18n="energy-weapons">
+                </option>
+                <option value="dexterity" data-i18n="dexterity">
+                </option>
+                <option value="vehicles" data-i18n="vehicles">
+                </option>
+                <option value="traps" data-i18n="traps">
+                </option>
+                <option value="lockpicking" data-i18n="lockpicking">
+                </option>
+                <option value="nature_science" data-i18n="nature-science">
+                </option>
+                <option value="medicine" data-i18n="medicine">
+                </option>
+                <option value="repairs" data-i18n="repairs">
+                </option>
+                <option value="riding" data-i18n="riding">
+                </option>
+                <option value="gambling" data-i18n="gambling">
+                </option>
+                <option value="explosives" data-i18n="explosives">
+                </option>
+                <option value="martial_arts" data-i18n="martial-arts">
+                </option>
+                <option value="technology" data-i18n="technology">
+                </option>
+                <option value="heavy_weapons" data-i18n="heavy-weapons">
+                </option>
+                <option value="underworld" data-i18n="underworld">
+                </option>
+                <option value="evade" data-i18n="evade">
+                </option>
+                <option value="carts" data-i18n="carts">
+                </option>
+                <option value="survival" data-i18n="survival">
+                </option>
+                <option value="know_the_zone" data-i18n="know-the_zone">
+                </option>
+              </select>
+            </label><span class="input-span input-0">
+              <input class="label-input-input" type="number" name="attr_skill" title="@{repeating_trainedskills_$X_skill}"/></span><span class="input-span">
+              <input class="label-input-input" type="number" name="attr_skill_mod" title="@{repeating_trainedskills_$X_skill_mod}"/></span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="section-experience">
+    <div class="box"> 
+      <div class="label-input column-experience input-count-1">
+        <label class="label-input-label label-input__text" data-i18n="experience" name="erfarenhet" attr="experience" type="label" title="">erfarenhet
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-experience" type="number" name="attr_experience" title="@{experience}"/></span>
+      </div>
+    </div>
+  </div>
+  <div class="section-encumbrance">
+    <div class="box"> 
+      <div class="label-input column-encumbrance w60-40pc currMax inout-count-2 input-count-2">
+        <label class="label-input-label label-input__text" data-i18n="encumbrance" name="bärförmåga" attr="encumbrance" type="label" title="">Bärförmåga
+        </label><span class="input-span input-0">
+          <input class="label-input-input input-encumbrance" type="number" name="attr_encumbrance" title="@{encumbrance}"/></span><span class="input-span input-1">
+          <input class="label-input-input input-encumbrance+max" type="number" name="attr_encumbrance_max" title="@{encumbrance|max}"/></span>
+      </div>
+    </div>
+  </div>
+  <div class="section-weapons">
+    <div class="box coverall box-weapons"> 
+      <div class="box-header field-count-10"> 
+        <h1 data-i18n="weapons"> Vapen
+        </h1>
+        <h2 class="header-field" data-i18n="skill">Färdighet
+        </h2>
+        <h2 class="header-field" data-i18n="grip">Fattn
+        </h2>
+        <h2 class="header-field" data-i18n="init">Init
+        </h2>
+        <h2 class="header-field" data-i18n="damage">Skada
+        </h2>
+        <h2 class="header-field" data-i18n="penetration">Pen
+        </h2>
+        <h2 class="header-field" data-i18n="range">Räckvidd
+        </h2>
+        <h2 class="header-field" data-i18n="durability">Tål
+        </h2>
+        <h2 class="header-field" data-i18n="reliability">Pål/Max
+        </h2>
+        <h2 class="header-field" data-i18n="weight">Vikt
+        </h2>
+        <h2 class="header-field" data-i18n="ammo">Ammo/Max
+        </h2>
+      </div>
+      <fieldset class="repeating_weapons">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_weapons_$X_collapse}"/>
+        <div class="collapsed">
+          <div class="label-input">
+            <button name="act_attack-roll" type="action"><span name="attr_name" title="@{repeating_weapons_$X_name}"></span>
+            </button><span class="text-span" name="attr_skill_name" title="@{repeating_weapons_$X_skill_name}"></span><span class="input-span" name="attr_grip" title="@{repeating_weapons_$X_grip}"></span><span class="input-span" name="attr_init" title="@{repeating_weapons_$X_init}"></span>
+            <button name="act_damage-roll" type="action"><span class="text-span" name="attr_damage" title="@{repeating_weapons_$X_damage}"></span>
+            </button><span class="input-span" name="attr_pen" title="@{repeating_weapons_$X_pen}"></span><span class="input-span" name="attr_range" title="@{repeating_weapons_$X_range}"></span><span class="input-span" name="attr_durability" title="@{repeating_weapons_$X_durability}"></span><span class="text-span" name="attr_reliability" title="@{repeating_weapons_$X_reliability}"></span><span class="input-span" name="attr_weight" title="@{repeating_weapons_$X_weight}"></span><span class="input-span" name="attr_ammo" title="@{repeating_weapons_$X_ammo}"></span>
+          </div>
+        </div>
+        <div class="expanded">
+          <div class="label-input input-count-2"> 
+            <label class="text-input"> 
+              <input class="caps-input" name="attr_name" type="text" title="@{repeating_weapons_$X_name}"/>
+            </label><span class="select"> 
+              <select name="attr_skill" title="@{repeating_weapons_$X_skill}">
+                <option data-i18n="select-choice" selected="selected" disabled="disabled" hidden="hidden">
+               --- Välj ---
+                </option>
+                <option data-i18n="bows-short" value="bows">Båge
+                </option>
+                <option data-i18n="energy-weapons-short" value="energy_weapons">Energi*
+                </option>
+                <option data-i18n="rifles-short" value="rifles">Gevär
+                </option>
+                <option data-i18n="throwing-short" value="throwing">Kasta
+                </option>
+                <option data-i18n="melee-short" value="melee">Närstrid
+                </option>
+                <option data-i18n="explosives-short" value="explosives">Spräng*
+                </option>
+                <option data-i18n="martial-arts-short" value="martial_arts">Stridsk.*
+                </option>
+                <option data-i18n="heavy-weapons-short" value="heavy_weapons">Tungt*
+                </option>
+                <option data-i18n="pistol-short" value="pistol">Pistol
+                </option>
+              </select></span><span class="text-input">
+              <input class="label-input" type="text" name="attr_grip" title="@{repeating_weapons_$X_grip}"/></span><span class="input-span">
+              <input class="label-input" type="number" name="attr_init" title="@{repeating_weapons_$X_init}"/></span><span class="text-input">
+              <input class="label-input" type="text" name="attr_damage" title="@{repeating_weapons_$X_damage}"/></span><span class="input-span">
+              <input class="label-input" type="number" name="attr_pen" title="@{repeating_weapons_$X_pen}"/></span><span class="text-input">
+              <input class="label-input" type="text" name="attr_range" title="@{repeating_weapons_$X_range}"/></span><span class="input-span">
+              <input class="label-input" type="number" name="attr_durability" title="@{repeating_weapons_$X_durability}"/></span><span class="input-span">
+              <input class="label-input currMax" type="number" name="attr_reliability" title="@{repeating_weapons_$X_reliability}"/></span><span class="input-span">
+              <input class="label-input" type="number" name="attr_weight" title="@{repeating_weapons_$X_weight}"/></span><span class="input-span">
+              <input class="label-input currMax" type="number" name="attr_ammo" title="@{repeating_weapons_$X_ammo}"/></span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="gear-col">
+    <div class="section-armor"> 
+      <div class="box coverall box-armor"> 
+        <div class="box-header field-count-3"> 
+          <h1 data-i18n="armor"> rustning
+          </h1>
+          <h2 class="header-field" data-i18n="absorption">ABS
+          </h2>
+          <h2 class="header-field" data-i18n="limit">BEG
+          </h2>
+          <h2 class="header-field" data-i18n="weight">VIKT
+          </h2>
+        </div>
+        <fieldset class="repeating_armor">
+          <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_armor_$X_collapse}"/>
+          <div class="collapsed">
+            <div class="label-input input-count-3 checkboxed">
+              <input name="attr_equipped" value="1" checked="checked" title="Rustningen buren på kroppen" data-i18n-title="equipped-armor-desc" type="checkbox"/>
+              <label class="select-input"> <span name="attr_name" title="@{repeating_armor_$X_name}"></span>
+              </label><span class="input-span input-0" name="attr_absorption" type="number" title="@{repeating_armor_$X_absorption}"></span><span class="input-span" name="attr_limit" type="number" title="@{repeating_armor_$X_limit}"></span><span class="input-span input-last" name="attr_weight" type="number" title="@{repeating_armor_$X_weight}"></span>
+            </div>
+          </div>
+          <div class="expanded">
+            <div class="label-input input-count-3 checkboxed"> 
+              <input name="attr_equipped" value="1" checked="checked" type="checkbox" title="@{repeating_armor_$X_equipped}"/>
+              <label class="text-input">                    
+                <input class="label-input-text" type="text" name="attr_name" title="@{repeating_armor_$X_name}"/>
+              </label><span class="input-span input-0">
+                <input class="label-input-input" type="number" name="attr_absorption" title="@{repeating_armor_$X_absorption}"/></span><span class="input-span">
+                <input class="label-input-input" type="number" name="attr_limit" title="@{repeating_armor_$X_limit}"/></span><span class="input-span input-last">
+                <input class="label-input-input" type="number" name="attr_weight" title="@{repeating_armor_$X_weight}"/></span>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <p></p>
+    <div class="section-money">
+      <div class="box  box-money"> 
+        <div class="box-header field-count-2"> 
+          <h1 data-i18n="money"> pengar
+          </h1>
+          <h2 class="header-field" data-i18n="carried">buret
+          </h2>
+          <h2 class="header-field" data-i18n="storage">förvar
+          </h2>
+        </div>
+        <!--each attribute in ['akrobatics','bows','first aid','rifles','perception','throwing','bartering','melee','pistol','sneak/hide']-->
+        <div class="label-input column-kronkredit input-count-2">
+          <label class="label-input-label label-input__text" data-i18n="crowncredits" name="kronkredit" attr="crowncredits" type="label" title="">kronkredit
+          </label><span class="input-span input-0">
+            <input class="label-input-input input-kronkredit" type="number" name="attr_crowncredits" title="@{crowncredits}"/></span><span class="input-span input-1">
+            <input class="label-input-input input-kronkredit" type="number" name="attr_crowncredits_mod" title="@{crowncredits_mod}"/></span>
+        </div>
+        <div class="label-input column-kredit input-count-2">
+          <label class="label-input-label label-input__text" data-i18n="credits" name="kredit" attr="credits" type="label" title="">kredit
+          </label><span class="input-span input-0">
+            <input class="label-input-input input-kredit" type="number" name="attr_credits" title="@{credits}"/></span><span class="input-span input-1">
+            <input class="label-input-input input-kredit" type="number" name="attr_credits_mod" title="@{credits_mod}"/></span>
+        </div>
+        <div class="label-input column-jycke input-count-2">
+          <label class="label-input-label label-input__text" data-i18n="cents" name="jycke" attr="cents" type="label" title="">jycke
+          </label><span class="input-span input-0">
+            <input class="label-input-input input-jycke" type="number" name="attr_cents" title="@{cents}"/></span><span class="input-span input-1">
+            <input class="label-input-input input-jycke" type="number" name="attr_cents_mod" title="@{cents_mod}"/></span>
+        </div>
+      </div>
+    </div>
+    <p></p>
+    <div class="section-gear">
+      <div class="box coverall topless box-armor"> 
+        <div class="box-header field-count-2"> 
+          <h1 data-i18n="gear"> utrustning
+          </h1>
+          <h2 class="header-field" data-i18n="amount">antal
+          </h2>
+          <h2 class="header-field" data-i18n="weight">vikt
+          </h2>
+        </div>
+        <fieldset class="repeating_gear">
+          <div class="expanded">
+            <div class="label-input input-count-2 checkboxed"> 
+              <input name="attr_equipped" value="1" checked="checked" type="checkbox" title="@{repeating_gear_$X_equipped}"/>
+              <label class="text-input">                    
+                <input class="label-input-text" type="text" name="attr_name" title="@{repeating_gear_$X_name}"/>
+              </label><span class="input-span input-0">
+                <input class="label-input-input" type="number" name="attr_amount" title="@{repeating_gear_$X_amount}"/></span><span class="input-span input-last">
+                <input class="label-input-input" type="number" name="attr_weight" title="@{repeating_gear_$X_weight}"/></span>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div class="section-abilities"> 
+    <div class="box box-ability box-abilities"> 
+      <div class="box-header field-count-0"> 
+        <h1 data-i18n="abilities"> förmågor
+        </h1>
+      </div>
+      <fieldset class="repeating_abilities">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_abilities_$X_collapse}"/>
+        <div class="collapsed">
+          <div class="label-title"><span name="attr_name" title="@{repeating_abilities_$X_name}"></span>
+          </div>
+        </div>
+        <div class="expanded">
+          <div class="label-input column-name wide-text-input input-count-1">
+            <label class="label-input-label right-align comma label-input__text" data-i18n="name" attr="name" name="namn" type="label" title="">namn
+            </label><span class="input-span input-0">
+              <input class="label-input-input input-name" type="text" name="attr_name" title="@{repeating_abilities_$X_name}"/></span>
+          </div>
+          <div class="label-input column-activation wide-text-input input-count-1">
+            <label class="label-input-label right-align comma label-input__text" data-i18n="activation" attr="activation" name="aktivering" type="label" title="">aktivering
+            </label><span class="input-span input-0">
+              <input class="label-input-input input-activation" type="text" name="attr_activation" title="@{repeating_abilities_$X_activation}"/></span>
+          </div>
+          <div class="label-input column-range w50pc input-count-1">
+            <label class="label-input-label right-align comma label-input__text" data-i18n="range" attr="range" name="räckvidd" type="label" title="">räckvidd
+            </label><span class="input-span input-0">
+              <input class="label-input-input input-range" type="text" name="attr_range" title="@{repeating_abilities_$X_range}"/></span>
+          </div>
+          <div class="label-input column-duration w50pc input-count-1">
+            <label class="label-input-label right-align comma label-input__text" data-i18n="duration" attr="duration" name="varaktighet" type="label" title="">varaktighet
+            </label><span class="input-span input-0">
+              <input class="label-input-input input-duration" type="text" name="attr_duration" title="@{repeating_abilities_$X_duration}"/></span>
+          </div>
+          <div class="label-input column-effect wide-text-input input-count-1">
+            <label class="label-input-label right-align comma label-input__text" data-i18n="effect" attr="effect" name="effekt" type="label" title="">effekt
+            </label><span class="input-span input-0">
+              <input class="label-input-input input-effect" type="text" name="attr_effect" title="@{repeating_abilities_$X_effect}"/></span>
+          </div>
+          <div class="label-input column-ability-description wide-text-input input-count-1"><span class="input-span input-0">
+              <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_ability_description" title="@{repeating_abilities_$X_ability_description}"></span>
+                <textarea class="label-input-input input-ability-description adaptive--text__textarea" type="textarea" name="attr_ability_description" placeholder="Beskrivning" title="@{repeating_abilities_$X_ability_description}"></textarea>
+              </div></span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+      </article>
+    </div>
+  </div>
+</main>
+<rolltemplate class="sheet-rolltemplate-mutantua">
+  <div class="sheet-template">
+    <div class="sheet-container">
+      <div class="sheet-header"> 
+        <h2>{{roll-name}}</h2>
+      </div>
+      <div class="sheet-roll-title"> {{#character_name}}{{#character_id}}
+        <h4 class="character_name sheet-header-title">[{{character_name}}](http://journal.roll20.net/character/{{character_id}})</h4>{{/character_id}}{{^character_id}}
+        <h4 class="character_name sheet-header-title">{{character_name}}</h4>{{/character_id}}{{/character_name}}
+      </div>
+      <div class="sheet-roll-result"> {{#roll1}}
+        <div class="sheet-roll-total">
+          <label data-i18n="result">Resultat </label><span>{{roll1}}</span>
+        </div>{{/roll1}}{{#target}}
+        <div class="sheet-roll-target">
+          <label data-i18n="target">FV</label><span>{{target}}</span>
+        </div>{{/target}}{{#damage}}{{#rollTotal() computed::calcdamage 0}}
+        <div class="sheet-roll-damage">
+          <label data-i18n="damage">Skada</label><span>{{damage}}</span>
+        </div>{{/rollTotal() computed::calcdamage 0}}{{#rollTotal() computed::calcdamage 1}}
+        <div class="sheet-roll-damage">
+          <label data-i18n="damage">Skada</label><span>{{computed::calcdamage}} ({{damage}})</span>
+        </div>{{/rollTotal() computed::calcdamage 1}}{{/damage}}
+      </div>
+    </div>
+  </div>
+</rolltemplate>
+<!--+template-mutantua-->
+<script type="text/worker">//# sourceURL=mutantua.js
+  
+  const k = (function(){
+  const kFuncs = {};
+  
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"act_k-network-call":{"name":"k-network-call","type":"action","triggeredFuncs":["kReceive"],"affects":[],"addFuncs":[],"listener":"clicked:k-network-call","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_sheet_version":{"name":"sheet_version","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:sheet_version","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_version":{"name":"version","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:version","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_mutantua_tab":{"name":"mutantua_tab","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:mutantua_tab","listenerFunc":"accessSheet","defaultValue":"nav-tabs-mutantua--pc","calculation":"","initialFunc":"","formula":""},"act_nav-tabs-mutantua--pc":{"name":"nav-tabs-mutantua--pc","type":"action","triggeredFuncs":["kSwitchTab"],"affects":[],"addFuncs":[],"listener":"clicked:nav-tabs-mutantua--pc","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_strength":{"name":"strength","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:strength","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_constitution":{"name":"constitution","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:constitution","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_size":{"name":"size","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:size","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_agility":{"name":"agility","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:agility","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_intelligence":{"name":"intelligence","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:intelligence","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_willpower":{"name":"willpower","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:willpower","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_personality":{"name":"personality","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:personality","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_damagebonus":{"name":"damagebonus","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:damagebonus","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"act_initiativebonus-action":{"name":"initiativebonus-action","type":"action","triggeredFuncs":["rollInit"],"affects":[],"addFuncs":[],"listener":"clicked:initiativebonus-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_initiativebonus_action":{"name":"initiativebonus_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:initiativebonus_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_initiativebonus":{"name":"initiativebonus","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:initiativebonus","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_carrycap":{"name":"carrycap","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:carrycap","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_influencelevel-action":{"name":"influencelevel-action","type":"action","triggeredFuncs":["rollDice"],"affects":[],"addFuncs":[],"listener":"clicked:influencelevel-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_influencelevel_action":{"name":"influencelevel_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:influencelevel_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_influencelevel":{"name":"influencelevel","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:influencelevel","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_class":{"name":"class","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:class","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_prev_profession":{"name":"prev_profession","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:prev_profession","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_origin":{"name":"origin","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:origin","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_age":{"name":"age","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:age","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_gender":{"name":"gender","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:gender","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_height":{"name":"height","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:height","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_weight":{"name":"weight","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:weight","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_appearance":{"name":"appearance","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:appearance","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_nuvarande värdet":{"name":"nuvarande värdet","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:nuvarande värdet","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_max-värdet":{"name":"max-värdet","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:max-värdet","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_acrobatics-action":{"name":"acrobatics-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:acrobatics-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_acrobatics_action":{"name":"acrobatics_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:acrobatics_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_acrobatics":{"name":"acrobatics","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:acrobatics","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_acrobatics_mod":{"name":"acrobatics_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:acrobatics_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_bows-action":{"name":"bows-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:bows-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_bows_action":{"name":"bows_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:bows_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_bows":{"name":"bows","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:bows","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_bows_mod":{"name":"bows_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:bows_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_first-aid-action":{"name":"first-aid-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:first-aid-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_first_aid_action":{"name":"first_aid_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:first_aid_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_first_aid":{"name":"first_aid","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:first_aid","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_first_aid_mod":{"name":"first_aid_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:first_aid_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_rifles-action":{"name":"rifles-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:rifles-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_rifles_action":{"name":"rifles_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:rifles_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_rifles":{"name":"rifles","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:rifles","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_rifles_mod":{"name":"rifles_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:rifles_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_perception-action":{"name":"perception-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:perception-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_perception_action":{"name":"perception_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:perception_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_perception":{"name":"perception","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:perception","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_perception_mod":{"name":"perception_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:perception_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_throwing-action":{"name":"throwing-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:throwing-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_throwing_action":{"name":"throwing_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:throwing_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_throwing":{"name":"throwing","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:throwing","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_throwing_mod":{"name":"throwing_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:throwing_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_bartering-action":{"name":"bartering-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:bartering-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_bartering_action":{"name":"bartering_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:bartering_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_bartering":{"name":"bartering","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:bartering","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_bartering_mod":{"name":"bartering_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:bartering_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_melee-action":{"name":"melee-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:melee-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_melee_action":{"name":"melee_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:melee_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_melee":{"name":"melee","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:melee","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_melee_mod":{"name":"melee_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:melee_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_pistols-action":{"name":"pistols-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:pistols-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_pistols_action":{"name":"pistols_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:pistols_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_pistols":{"name":"pistols","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:pistols","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_pistols_mod":{"name":"pistols_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:pistols_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_sneak-hide-action":{"name":"sneak-hide-action","type":"action","triggeredFuncs":["rollSkill"],"affects":[],"addFuncs":[],"listener":"clicked:sneak-hide-action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_sneak_hide_action":{"name":"sneak_hide_action","type":"hidden","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:sneak_hide_action","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_sneak_hide":{"name":"sneak_hide","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:sneak_hide","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_sneak_hide_mod":{"name":"sneak_hide_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:sneak_hide_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_education":{"name":"education","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:education","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_education_mod":{"name":"education_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:education_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_boats":{"name":"boats","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:boats","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_boats_mod":{"name":"boats_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:boats_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_energy_weapons":{"name":"energy_weapons","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:energy_weapons","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_energy_weapons_mod":{"name":"energy_weapons_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:energy_weapons_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_dexterity":{"name":"dexterity","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:dexterity","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_dexterity_mod":{"name":"dexterity_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:dexterity_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_vehicles":{"name":"vehicles","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:vehicles","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_vehicles_mod":{"name":"vehicles_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:vehicles_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_traps":{"name":"traps","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:traps","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_traps_mod":{"name":"traps_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:traps_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_lockpicking":{"name":"lockpicking","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:lockpicking","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_lockpicking_mod":{"name":"lockpicking_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:lockpicking_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_nature_science":{"name":"nature_science","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:nature_science","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_nature_science_mod":{"name":"nature_science_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:nature_science_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_medicine":{"name":"medicine","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:medicine","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_medicine_mod":{"name":"medicine_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:medicine_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repairs":{"name":"repairs","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repairs","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repairs_mod":{"name":"repairs_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repairs_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_riding":{"name":"riding","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:riding","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_riding_mod":{"name":"riding_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:riding_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_gambling":{"name":"gambling","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:gambling","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_gambling_mod":{"name":"gambling_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:gambling_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_explosives":{"name":"explosives","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:explosives","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_explosives_mod":{"name":"explosives_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:explosives_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_martial_arts":{"name":"martial_arts","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:martial_arts","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_martial_arts_mod":{"name":"martial_arts_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:martial_arts_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_technology":{"name":"technology","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:technology","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_technology_mod":{"name":"technology_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:technology_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_heavy_weapons":{"name":"heavy_weapons","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:heavy_weapons","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_heavy_weapons_mod":{"name":"heavy_weapons_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:heavy_weapons_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_underworld":{"name":"underworld","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:underworld","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_underworld_mod":{"name":"underworld_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:underworld_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_evade":{"name":"evade","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:evade","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_evade_mod":{"name":"evade_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:evade_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_carts":{"name":"carts","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:carts","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_carts_mod":{"name":"carts_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:carts_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_survival":{"name":"survival","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:survival","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_survival_mod":{"name":"survival_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:survival_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_know_the_zone":{"name":"know_the_zone","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:know_the_zone","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_know_the_zone_mod":{"name":"know_the_zone_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:know_the_zone_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repeating_trainedskills_$x_collapse":{"name":"repeating_trainedskills_$x_collapse","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_trainedskills:collapse","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_repeating_trainedskills_$x_roll":{"name":"repeating_trainedskills_$x_roll","type":"action","triggeredFuncs":["rollTrainedSkill"],"affects":[],"addFuncs":[],"listener":"clicked:repeating_trainedskills:roll","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_trainedskills_$x_skill_name":{"name":"repeating_trainedskills_$x_skill_name","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_trainedskills:skill_name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_trainedskills_$x_skill":{"name":"repeating_trainedskills_$x_skill","type":"span","triggeredFuncs":["updateTrainedSkill"],"affects":[],"addFuncs":[],"listener":"change:repeating_trainedskills:skill","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_trainedskills_$x_skill_mod":{"name":"repeating_trainedskills_$x_skill_mod","type":"span","triggeredFuncs":["updateTrainedSkill"],"affects":[],"addFuncs":[],"listener":"change:repeating_trainedskills:skill_mod","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_trainedskills_$x_name":{"name":"repeating_trainedskills_$x_name","type":"select","triggeredFuncs":["setSkillName"],"affects":[],"addFuncs":[],"listener":"change:repeating_trainedskills:name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_experience":{"name":"experience","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:experience","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_encumbrance":{"name":"encumbrance","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:encumbrance","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_encumbrance_max":{"name":"encumbrance_max","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:encumbrance_max","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_collapse":{"name":"repeating_weapons_$x_collapse","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:collapse","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"act_repeating_weapons_$x_attack-roll":{"name":"repeating_weapons_$x_attack-roll","type":"action","triggeredFuncs":["rollWeaponAttack"],"affects":[],"addFuncs":[],"listener":"clicked:repeating_weapons:attack-roll","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_name":{"name":"repeating_weapons_$x_name","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_skill_name":{"name":"repeating_weapons_$x_skill_name","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:skill_name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_grip":{"name":"repeating_weapons_$x_grip","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:grip","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_init":{"name":"repeating_weapons_$x_init","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:init","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"act_repeating_weapons_$x_damage-roll":{"name":"repeating_weapons_$x_damage-roll","type":"action","triggeredFuncs":["rollDamage"],"affects":[],"addFuncs":[],"listener":"clicked:repeating_weapons:damage-roll","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_damage":{"name":"repeating_weapons_$x_damage","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:damage","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_pen":{"name":"repeating_weapons_$x_pen","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:pen","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_range":{"name":"repeating_weapons_$x_range","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:range","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_durability":{"name":"repeating_weapons_$x_durability","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:durability","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_reliability":{"name":"repeating_weapons_$x_reliability","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:reliability","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_weight":{"name":"repeating_weapons_$x_weight","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:weight","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_ammo":{"name":"repeating_weapons_$x_ammo","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:ammo","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_weapons_$x_skill":{"name":"repeating_weapons_$x_skill","type":"select","triggeredFuncs":["setSkillName"],"affects":[],"addFuncs":[],"listener":"change:repeating_weapons:skill","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_armor_$x_collapse":{"name":"repeating_armor_$x_collapse","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_armor:collapse","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_rustningen buren på kroppen":{"name":"rustningen buren på kroppen","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:rustningen buren på kroppen","listenerFunc":"accessSheet","defaultValue":1,"calculation":"","initialFunc":"","formula":""},"attr_repeating_armor_$x_name":{"name":"repeating_armor_$x_name","type":"span","triggeredFuncs":["updateArmor"],"affects":[],"addFuncs":[],"listener":"change:repeating_armor:name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_armor_$x_absorption":{"name":"repeating_armor_$x_absorption","type":"span","triggeredFuncs":["updateArmor"],"affects":[],"addFuncs":[],"listener":"change:repeating_armor:absorption","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_armor_$x_limit":{"name":"repeating_armor_$x_limit","type":"span","triggeredFuncs":["updateArmor"],"affects":[],"addFuncs":[],"listener":"change:repeating_armor:limit","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_armor_$x_weight":{"name":"repeating_armor_$x_weight","type":"span","triggeredFuncs":["updateArmor"],"affects":[],"addFuncs":[],"listener":"change:repeating_armor:weight","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_armor_$x_equipped":{"name":"repeating_armor_$x_equipped","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_armor:equipped","listenerFunc":"accessSheet","defaultValue":1,"calculation":"","initialFunc":"","formula":""},"attr_crowncredits":{"name":"crowncredits","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:crowncredits","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_crowncredits_mod":{"name":"crowncredits_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:crowncredits_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_credits":{"name":"credits","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:credits","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_credits_mod":{"name":"credits_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:credits_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_cents":{"name":"cents","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:cents","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_cents_mod":{"name":"cents_mod","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:cents_mod","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repeating_gear_$x_equipped":{"name":"repeating_gear_$x_equipped","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_gear:equipped","listenerFunc":"accessSheet","defaultValue":1,"calculation":"","initialFunc":"","formula":""},"attr_repeating_gear_$x_name":{"name":"repeating_gear_$x_name","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_gear:name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_gear_$x_amount":{"name":"repeating_gear_$x_amount","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_gear:amount","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repeating_gear_$x_weight":{"name":"repeating_gear_$x_weight","type":"number","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_gear:weight","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_collapse":{"name":"repeating_abilities_$x_collapse","type":"checkbox","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:collapse","listenerFunc":"accessSheet","defaultValue":0,"calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_name":{"name":"repeating_abilities_$x_name","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:name","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_activation":{"name":"repeating_abilities_$x_activation","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:activation","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_range":{"name":"repeating_abilities_$x_range","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:range","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_duration":{"name":"repeating_abilities_$x_duration","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:duration","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_effect":{"name":"repeating_abilities_$x_effect","type":"text","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:effect","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""},"attr_repeating_abilities_$x_ability_description":{"name":"repeating_abilities_$x_ability_description","type":"span","triggeredFuncs":[],"affects":[],"addFuncs":[],"listener":"change:repeating_abilities:ability_description","listenerFunc":"accessSheet","defaultValue":"","calculation":"","initialFunc":"","formula":""}};
+  
+  kFuncs.cascades = cascades;
+  
+  const repeatingSectionDetails = [{"section":"repeating_trainedskills","fields":["collapse","skill_name","skill","skill_mod","name"]},{"section":"repeating_weapons","fields":["collapse","name","skill_name","grip","init","damage","pen","range","durability","reliability","weight","ammo","skill"]},{"section":"repeating_armor","fields":["collapse","equipped","name","absorption","limit","weight"]},{"section":"repeating_gear","fields":["equipped","name","amount","weight"]},{"section":"repeating_abilities","fields":["collapse","name","activation","range","duration","effect","ability_description"]}];
+  
+  kFuncs.repeatingSectionDetails = repeatingSectionDetails;
+  
+  const persistentTabs = ["mutantua_tab"];
+  
+  kFuncs.persistentTabs = persistentTabs;
+  /**
+ * The K-scaffold provides several variables to allow your scripts to tap into its information flow.
+ * @namespace Sheetworkers.Variables
+ */
+/**
+ * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}. Accessible by `k.sheetName`
+ * @memberof Variables
+ * @var
+ * @type {string}
+ */
+let sheetName = 'kScaffold Powered Sheet';
+kFuncs.sheetName = sheetName;
+/**
+	* This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet. Accessible via `k.version`
+ * @memberof Variables
+	* @var
+	* @type {number}
+	*/
+let version = 0;
+kFuncs.version = version;
+/**
+	* A boolean flag that tells the script whether to enable or disable {@link debug} calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for your entire session. Otherwise, it remains false.
+ * @memberof Variables
+	* @var
+	* @type {boolean}
+	*/
+let debugMode = false;
+kFuncs.debugMode = debugMode;
+/**
+	* A boolean flag that tells the script whether to output verbose logs of what is being done or not when {@link debugMode} is enabled.
+ * @memberof Variables
+	* @var
+	* @type {boolean}
+	*/
+let verboseMode = false;
+kFuncs.verboseMode = verboseMode;
+const funcs = {};
+kFuncs.funcs = funcs;
+const updateHandlers = {};
+const openHandlers = {};
+const initialSetups = {};
+const allHandlers = {};
+const addFuncs = {};
+
+const kscaffoldJSVersion = '2.7.2';
+const kscaffoldPUGVersion = '2.7.0';
+/**
+ * Defines the rollstring that rolls made using k.startRoll begin with. Defaults to "&{template:default}".
+ * @memberof Variables
+ * @var
+ * @type {string}
+ */
+let defaultRollStart = '&{template:default}';
+kFuncs.defaultRollStart = defaultRollStart;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * These are utility functions that are not directly related to Roll20 systems. They provide easy methods for everything from processing text and numbers to querying the user for input.
+ * @namespace Sheetworkers.Utilities
+ * @alias Utilities
+ */
+/**
+ * Replaces problem characters to use a string as a regex
+ * @memberof Utilities
+ * @param {string} text - The text to replace characters in
+ * @returns {string}
+ * @example
+ * const textForRegex = k.sanitizeForRegex('.some thing[with characters]');
+ * console.log(textForRegex);// => "\.some thing\[with characters\]"
+ */
+const sanitizeForRegex = function(text){
+  return text.replace(/\.|\||\(|\)|\[|\]|\-|\+|\?|\/|\{|\}|\^|\$|\*/g,'\\$&');
+};
+kFuncs.sanitizeForRegex = sanitizeForRegex;
+
+/**
+ * Converts a value to a number, it\'s default value, or `0` if no default value passed.
+ * @memberof Utilities
+ * @param {string|number} val - Value to convert to a number
+ * @param {number} def - The default value, uses 0 if not passed
+ * @returns {number|undefined}
+ * @example
+ * const num = k.value('100');
+ * console.log(num);// => 100
+ */
+const value = function(val,def){
+  const convertVal = +val;
+  if(def !== undefined && isNaN(def)){
+    throw(`K-scaffold Error: invalid default for value(). Default: ${def}`);
+  }
+  return convertVal === 0 ?
+    convertVal :
+    (+val||def||0);
+};
+kFuncs.value = value;
+
+/**
+ * Extracts the section (e.g. `repeating_equipment`), rowID (e.g `-;lkj098J:LKj`), and field name (e.g. `bulk`) from a repeating attribute name.
+ * @memberof Utilities
+ * @param {string} string - The string to parse
+ * @returns {array} - Array of matches. Index 0: the section name, e.g. repeating_equipment | Index 1:the row ID | index 2: The name of the attribute
+ * @returns {string[]}
+ * @example
+ * //Extract info from a full repeating name
+ * const [section,rowID,attrName] = k.parseRepeatName('repeating_equipment_-8908asdflkjZlkj23_name');
+ * console.log(section);// => "repeating_equipment"
+ * console.log(rowID);// => "-8908asdflkjZlkj23"
+ * console.log(attrName);// => "name"
+ * 
+ * //Extract info from just a row name
+ * const [section,rowID,attrName] = k.parseRepeatName('repeating_equipment_-8908asdflkjZlkj23');
+ * console.log(section);// => "repeating_equipment"
+ * console.log(rowID);// => "-8908asdflkjZlkj23"
+ * console.log(attrName);// => undefined
+ */
+const parseRepeatName = function(string){
+  let match = string.match(/(repeating_[^_]+)_([^_]+)(?:_(.+))?/);
+  match.shift();
+  return match;
+};
+kFuncs.parseRepeatName = parseRepeatName;
+
+/**
+ * Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.
+ * 
+ * Aliases: `k.parseClickTrigger`
+ * @memberof Utilities
+ * @param {string} string The triggerName property of the
+ * @returns {array} - For a repeating button named `repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `roll`, the array will be `[undefined,undefined,'roll']`
+ * @returns {string[]}
+ * @example
+ * //Parse a non repeating trigger
+ * const [section,rowID,attrName] = k.parseTriggerName('clicked:some-button');
+ * console.log(section);// => undefined
+ * console.log(rowID);// => undefined
+ * console.log(attrName);// => "some-button"
+ * 
+ * //Parse a repeating trigger
+ * const [section,rowID,attrName] = k.parseTriggerName('clicked:repeating_attack_-234lkjpd8fu8usadf_some-button');
+ * console.log(section);// => "repeating_attack"
+ * console.log(rowID);// => "-234lkjpd8fu8usadf"
+ * console.log(attrName);// => "some-button"
+ * 
+ * //Parse a repeating name
+ * const [section,rowID,attrName] = k.parseTriggerName('repeating_attack_-234lkjpd8fu8usadf_some-button');
+ * console.log(section);// => "repeating_attack"
+ * console.log(rowID);// => "-234lkjpd8fu8usadf"
+ * console.log(attrName);// => "some-button"
+ */
+const parseTriggerName = function(string){
+  let match = string.replace(/^clicked:/,'').match(/(?:(repeating_[^_]+)_([^_]+)_)?(.+)/);
+  match.shift();
+  return match;
+};
+kFuncs.parseTriggerName = parseTriggerName;
+const parseClickTrigger = parseTriggerName;
+kFuncs.parseClickTrigger = parseClickTrigger;
+
+/**
+ * Parses out the attribute name from the htmlattribute name.
+ * @memberof Utilities
+ * @param {string} string - The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).
+ * @returns {string}
+ * @example
+ * //Parse a name
+ * const attrName = k.parseHtmlName('attr_attribute_1');
+ * console.log(attrName);// => "attribute_1"
+ */
+const parseHTMLName = function(string){
+  let match = string.match(/(?:attr|act|roll)_(.+)/);
+  match.shift();
+  return match[0];
+};
+kFuncs.parseHTMLName = parseHTMLName;
+
+/**
+ * Capitalize each word in a string
+ * @memberof Utilities
+ * @param {string} string - The string to capitalize
+ * @returns {string}
+ * @example
+ * const capitalized = k.capitalize('a word');
+ * console.log(capitalized);// => "A Word"
+ */
+const capitalize = function(string){
+  return string.replace(/(?:^|\s+|\/)[a-z]/ig,(letter)=>letter.toUpperCase());
+};
+kFuncs.capitalize = capitalize;
+
+/**
+ * Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29). Stolen from [Oosh\'s Adventures with Startroll thread](https://app.roll20.net/forum/post/10346883/adventures-with-startroll).
+ * @memberof Utilities
+ * @param {string} query - The query should be just the text as the `?{` and `}` at the start/end of the query are added by the function.
+ * @returns {Promise} - Resolves to the selected value from the roll query
+ * @example
+ * const rollFunction = async function(){
+ *  //Get the result of a choose from list query
+ *  const queryResult = await extractQueryResult('Prompt Text Here|Option 1|Option 2');
+ *  console.log(queryResult);//=> "Option 1" or "Option 2" depending on what the user selects
+ * 
+ *  //Get free form input from the user
+ *  const freeResult = await extractQueryResult('Prompt Text Here');
+ *  consoel.log(freeResult);// => Whatever the user entered
+ * }
+ */
+const extractQueryResult = async function(query){
+  const rollObj = {
+    query:`[[0[response=?{${query}}]]]`
+  };
+	let {roll} = await _startRoll(rollObj,'!');
+  roll.finish();
+	return roll.results.query.expression.replace(/^.+?response=|\]$/g,'');
+};
+kFuncs.extractQueryResult = extractQueryResult;
+
+/**
+ * Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in `startRoll` being called (and thus an `await`), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call `startRoll` will keep the environment in sync.
+ * @memberof Utilities
+ * @param {string|number} [value] - The value to return. Optional.
+ * @returns {Promise} - Resolves to the value passed to the function
+ * @example
+ * const rollFunction = async function(){
+ *  //Get the result of a choose from list query
+ *  const queryResult = await pseudoQuery('a value');
+ *  console.log(queryResult);//=> "a value"
+ * }
+ */
+const pseudoQuery = async function(value){  
+  const rollObj = {
+    query:`[[0[response=${value}]]]`
+  };
+	let {roll} = await _startRoll(rollObj,'!');
+  roll.finish();
+	return roll.results.query.expression.replace(/^.+?response=|\]$/g,'');
+};
+kFuncs.pseudoQuery = pseudoQuery;
+
+/**
+ * An alias for console.log.
+ * @memberof Utilities
+ * @param {any} msg - The message can be a straight string, an object, or an array. If it is an object or array, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via `console.table`.
+ */
+const log = function(msg){
+  if(typeof msg === 'string'){
+    console.log(`%c${kFuncs.sheetName} log| ${msg}`,"background-color:#159ccf");
+  }else if(typeof msg === 'object'){
+    Object.keys(msg).forEach((m)=>{
+      if(typeof msg[m] === 'string'){
+        console.log(`%c${kFuncs.sheetName} log| ${m}: ${msg[m]}`,"background-color:#159ccf");
+      }else{
+        console.log(`%c${kFuncs.sheetName} log| ${typeof msg[m]} ${m}`,"background-color:#159ccf");
+        console.table(msg[m]);
+      }
+    });
+  }
+};
+kFuncs.log = log;
+
+/**
+ * Alias for console.log that only triggers when debug mode is enabled or when the sheet\'s version is `0`. Useful for entering test logs that will not pollute the console on the live sheet.
+ * @memberof Utilities
+ * @param {any} msg - 'See {@link k.log}
+ * @param {boolean} force - Pass as a truthy value to force the debug output to be output to the console regardless of debug mode.
+ * @returns {void}
+ */
+const debug = function(msg,force){
+  if(!kFuncs.debugMode && !force && kFuncs.version > 0) return;
+  if(typeof msg === 'string'){
+    console.warn(`%c${kFuncs.sheetName} DEBUG| ${msg}`,"background-color:tan;color:red;");
+  }else if(typeof msg === 'object'){
+    Object.keys(msg).forEach((m)=>{
+      if(typeof msg[m] === 'string'){
+        console.warn(`%c${kFuncs.sheetName} DEBUG| ${m}: ${msg[m]}`,"background-color:tan;color:red;");
+      }else{
+        console.warn(`%c${kFuncs.sheetName} DEBUG| ${typeof msg[m]} ${m}`,"background-color:tan;color:red;font-weight:bold;");
+        console.table(msg[m]);
+      }
+    });
+  }
+};
+kFuncs.debug = debug;
+
+/**
+ * Orders the section id arrays for all sections in the `sections` object to match the repOrder attribute.
+ * @memberof Utilities
+ * @param {attributesProxy} attributes - The attributes object that must have a value for the reporder for each section.
+ * @param {object[]} sections - Object containing the IDs for the repeating sections, indexed by repeating section name.
+ */
+const orderSections = function(attributes,sections,casc){
+  Object.keys(sections).forEach((section)=>{
+    attributes.attributes[`_reporder_${section}`] = commaArray(attributes[`_reporder_${section}`]);
+    sections[section] = orderSection(attributes.attributes[`_reporder_${section}`],sections[section],attributes,section,casc);
+  });
+};
+kFuncs.orderSections = orderSections;
+
+/**
+ * Orders a single ID array.
+ * @memberof Utilities
+ * @param {string[]} repOrder - Array of IDs in the order they are in on the sheet.
+ * @param {string[]} IDs - Array of IDs to be ordered. Aka the default ID Array passed to the getSectionIDs callback
+ * @param {AttributesProxy} [attributes] - The Kscaffold attributes object
+ * @param {string} [section] - the name of the section being ordered. If section and attributes are passed, will return an ordered array that does not include IDs for rows that do not exist.
+ * @param {object} [casc] - the object describing the default state of the sheet.
+ * @returns {string[]} - The ordered id array
+ */
+const orderSection = function(repOrder,IDs=[], attributes, section,casc){
+  const idArr = [...repOrder.filter(v => v),...IDs.filter(id => !repOrder.includes(id.toLowerCase()))]
+    .filter(id => {
+      const testAttr = Object.keys(casc).find(a => a.toLowerCase().startsWith(`attr_${section}_${id}`));
+      const testName = testAttr?.replace(/attr_/,'');
+      const idName = testName?.replace(/\$x/,id);
+      return (!section && !casc) ||
+        (
+          idName && 
+          (
+            attributes.attributes.hasOwnProperty(idName) ||
+            attributes.updates.hasOwnProperty(idName)
+          )
+        );
+    });
+  return idArr;
+};
+kFuncs.orderSection = orderSection;
+
+/**
+ * Splits a comma delimited string into an array
+ * @memberof Utilities
+ * @param {string} string - The string to split.
+ * @returns {array} - The string segments of the comma delimited list.
+ */
+const commaArray = function(string=''){
+  return string.toLowerCase().split(/\s*,\s*/);
+};
+kFuncs.commaArray = commaArray;
+
+// Roll escape functions for passing data in action button calls. Base64 encodes/decodes the data.
+const RE = {
+  chars: {
+      '"': '%quot;',
+      ',': '%comma;',
+      ':': '%colon;',
+      '}': '%rcub;',
+      '{': '%lcub;',
+  },
+  escape(data) {
+    return typeof data === 'object' ?
+      `KDATA${btoa(JSON.stringify(data))}` :
+      `KSTRING${btoa(data)}`;
+  },
+  unescape(string) {
+    const isData = typeof string === 'string' &&
+      (
+        string.startsWith('KDATA') ||
+        string.startsWith('KSTRING')
+      );
+    return isData ?
+      (
+        string.startsWith('KDATA') ?
+          JSON.parse(atob(string.replace(/^KDATA/,''))) :
+          atob(string.replace(/^KSTRING/,''))
+      ) :
+      string;
+  }
+};
+
+
+/**
+ * Encodes data in Base64. This is useful for passing roll information to action buttons called from roll buttons.
+ * @function
+ * @param {string|object|any[]} data - The data that you want to Base64 encode
+ * @returns {string} - The encoded data
+ * @memberof! Utilities
+ */
+const escape = RE.escape;
+/**
+ * Decodes Base64 encoded strings that were created by the K-scaffold
+ * @function
+ * @param {string|object|any[]} string - The string of encoded data to decode. If this is not a string, or is not a string that was encoded by the K-scaffold, it will be returned as is.
+ * @returns {string|object|any[]}
+ * @memberof! Utilities
+ */
+const unescape = RE.unescape;
+
+Object.assign(kFuncs,{escape,unescape});
+
+/**
+ * Parses a macro so that it is reduced to the final values of all attributes contained in the macro. Will drill down up to 99 levels deep. If the string was not parseable, string will be returned with as much parsed as possible.
+ * @memberof Utilities
+ * @param {string} mutStr - The string macro to parse
+ * @param {AttributesProxy} attributes - The K-scaffold Attributes Proxy
+ * @param {Object} sections - The K-scaffold sections object
+ * @returns {string} - The string with all attributes replaced by their values (if possible).
+ */
+const parseMacro = (str,attributes,sections) => {
+  let iter = 0;
+  let mutStr = str;
+  while(mutStr.match(/@{.+?}/) && iter < 99){
+    mutStr = mutStr.replace(/@{(.+?)}/g,(match,name) => {
+      name = name.replace(/\|/,'_');
+      return attributes[name] !== null && attributes[name] !== undefined ?
+        attributes[name] :
+        `@(${name})`;
+    })
+    iter++;
+  }
+  mutStr = mutStr.replace(/@\((.+?)\)/g,'@{$1}');
+  return mutStr;
+}
+kFuncs.parseMacro = parseMacro;
+
+/**
+ * Sends data to another character sheet to cause a change on that sheet. WARNING, this function should not be used in response to an attribute change to avoid spamming the chat with api messages.
+ * 
+ * ![k.send.gif](/k-scaffold/k.send.gif)
+ * @memberof Utilities
+ * @param {string} characterName - The character to connect to
+ * @param {string} funcName - Name of the function to call similar to function name used in {@link callFunc}.
+ * @param  {...any} args - The arguments to pass to the function call no the other sheet. These are passed after the normal destructure object for a K-scaffold function call.
+ * @example
+ * //Function that is called by the source sheet
+ * const dispatchPartner = async function({trigger,attributes,sections,casc}){
+ *  const partnerName = await (
+ *    attributes.partner_name ?
+ *      k.pseudoQuery(attributes.partner_name) :
+ *      k.extractQueryResult('Partner name')
+ *  );
+ *  attributes.partner_name = partnerName;
+ *  //passing the attributes of the source sheet
+ *  k.send(partnerName,'receivePartner',attributes);
+ *  attributes.set();
+ * };
+ * k.registerFuncs({dispatchPartner});
+ * 
+ * //Function called on target sheet. Partner is the attributes from the source sheet
+ * const receivePartner  = function({trigger,attributes,sections,casc},partner){
+ *   attributes.from_partner = partner.for_partner;
+ *   attributes.partner_name = partner.character_name;
+ * };
+ * k.registerFuncs({receivePartner });
+ */
+const send = async function(characterName,funcName,...args){
+  const data = RE.escape({
+    funcName,
+    args
+  });
+  const roll = await startRoll(`!@{${characterName}|character_name}%{${characterName}|k-network-call||${data}}&{noerror}`);
+  finishRoll(roll.rollId);
+};
+kFuncs.send = send;
+
+const kReceive = function({trigger,attributes,sections,casc}) {
+  const data = trigger.rollData;
+  callFunc(data.funcName,{attributes,sections,casc},...data.args);
+};
+funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * Detailed descriptions of the arguments that are passed to functions registered with the K-scaffold.
+ * @namespace Sheetworkers.Function Arguments
+ */
+/**
+ * An object that stores the rowID information for each repeating section on the sheet.
+ * @name sections
+ * @memberof Function Arguments
+ * @var
+ * @property {string[]} repeating_section_name - The row IDs of a given repeating section. The repeating section name is used **with** the `repeating_` prefix (e.g. `sections['repeating_weapons']`).
+ */
+/**
+ * Object that stores the default trigger information for all attributes. Indexed by attribute, button name, or fieldset name prefixed with `attr_`, `act_`, or `fieldset_` respectively.
+ * @name casc
+ * @memberof Function Arguments
+ * @var
+ */
+/**
+ * Object describing the attribute that is currently being worked on. In addition to the properties described here, the properties from the Roll20 event will also be present if the attribute was the original event. Additional properties may be present if you specified them when creating the input for the attribute.
+ * @name trigger
+ * @memberof Function Arguments
+ * @var
+ * @property {string} name - The full name of the attribute.
+ * @property {string[]} triggeredFuncs - Array of function names that will be called when this attribute is worked on.
+ * @property {string} calculation - The name of the function that is used to calculate the value of this attribute.
+ * @property {string} formula - The macro syntax formula to use to calculate this attributes value.
+ * @property {string[]} affects - Array of attribute names that this attribute might affect.
+ * @property {string[]} addFuncs - Functions that are called when the add row button is clicked for a customControlFieldset.
+ * @property {string} listener - What function was used to listen for changes to this attribute. Unless you have decided to implement your own event handling, this should always be `"accessSheet"`.
+ * @property {string} type - What type of thing this trigger is for (e.g. number, action).
+ */
+//# Attribute Obj Proxy handler
+/**
+	* A representation of the sheet's attributes. This is a proxy for the actual object and will keep track of original values and updates that have been applied. Calling an attribute directly on the attributes value will return it's current value coerced into a number if it is numeric. Setting a property on the attributes object will add it the list of updates which will be applied the next time the `set()` method is called on attributes.
+  * @name attributes
+  * @memberof Function Arguments
+  * @var
+  * @property {object} attributes - The raw original data of the character sheet.
+  * @property {object} updates - The raw data that will be saved to the character sheet once all operations have been completed.
+  * @property {function} set - Method to apply changes to the character sheet. This is called automatically at the end of the scaffold's event handling. Needs to be called manually if inside an asynchronous function, such as when using the startRoll sheetworker (or any of the scaffold aliases for startRoll). The method uses object destructuring syntax for the arguments it takes.
+  * @property {boolean} [set.vocal=false] - Whether the set is done silently or not. Should almost always be left at false. `attributes.set({vocal:true})`
+  * @property {function} [set.callback] - Callback function to be invoked once the setAttrs is complete. `attributes.set({callback(){/*do a thing}})`
+  * @property {any} attribute_name - Name of any attribute whose data from the character sheet you want to access. Will only return a value if the attribute was defined using the scaffold's pug mixins (e.g. +input). If the value of the attribute is numerical (e.g. `"5"`), it will be returned as a number. You can also apply changes by simply assigning a value to an attribute name (e.g. `attributes.character_name = 'New Character'`).
+  * @property {object} repOrders - Object showing the ordered arrays for the _reporder_ attributes for each repeating section. Indexed by repeating section name
+  * @property {object[]} repeating_section_name - Name of a repeating section whose data you want to access (e.g. `attributes.repeating_weapons`). The data will be returned as an array with objects describing each row in the order they are on the sheet. Objects are indexed by rowID as well. Mutating array methods are replaced by the `sort` and `move` methods. Non mutating array methods can be used as normal.
+  * @property {string} repeating_section_name._section - the name of the repeating section. Used internally by the scaffold. Readonly.
+  * @property {function} move - Method for reordering rows.
+  * @property {number|string} move.startingPosition - the row id or position index for the row you want to move.
+  * @property {number} move.destination - The position in the section where you want the row to be moved to. If the position is greater than the length of the section, the row will be moved to the last position. If the position is negative, it will be moved to the start of the section.
+  * @property {boolean} [move.silent=false] - Whether the reordering should trigger setSectionOrder or not.
+  * @property {function} sort - Alias for the default Array.sort method. Functions as the default sort method, but has an optional second argument.
+  * @property {function} sort.callback - The function to use for determining the sort order. See the [Array.sort documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) for details.
+  * @property {boolean} [sort.silent=false] - Whether to apply the sort to the display of the repeating section.
+  * @property {function} create - Method for creating a new row in a repeating section. Arguments for this method can be in any order. A row will not actually be created unless data is assigned to at least one attribute of the row, either at creation or later. Returns the object representing the new row.
+  * @property {string} [create.custom] - Custom text that replaces the starting characters of the rowID
+  * @property {object} [create.data] - what to set the attribute values of the row to. If not provided, the row object will be created, but no row will be created on the sheet until data is specified.
+  * @property {object} repeating_section_name.rowID_or_Index - Returns the object describing a row in a repeating section specified by row ID or indexed position. (e.g. `attributes.repeating_weapons[0]` returns the data for the first row in the weapons section)
+  * * @property {object} repeating_section_name.rowID_or_Index._id - The id of the row. Readonly.
+  * * @property {object} repeating_section_name.rowID_or_Index._section - The repeating section the row belongs to. Readonly.
+  * @property {any} repeating_section_name.rowID_or_Index.attribute_name - functions as an attribute_name call on the base attributes object. (e.g. `attributes['repeating_weapons_-jJ2soils_name']` is equivalent to `attributes.repeating_weapons['-jJ2soils'].name`).
+  * @type {object}
+	*/
+  const createAttrProxy = function(attrs,sections,casc){
+    //creates a proxy for the attributes object so that values can be worked with more easily.
+    const getCascObj = function(event){
+      const eventName = event.triggerName || event.sourceAttribute;
+      let typePrefix = eventName.startsWith('clicked:') ?
+        'act_' :
+        event.removedInfo ?
+        'fieldset_' :
+        'attr_';
+      let cascName = `${typePrefix}${eventName.replace(/(?:removed?|clicked):/,'')}`;
+      let cascObj = casc[cascName];
+      if(kFuncs.verboseMode){
+        debug({[cascName]:cascObj});
+      }
+      if(event && cascObj){
+        Object.assign(cascObj,event);
+        if(event.originalRollId){
+          cascObj.rollData = RE.unescape(event.originalRollId);
+        }
+      }
+      return cascObj || {};
+    };
+    
+    const triggerFunctions = function(obj){
+      if(obj.triggeredFuncs && obj.triggeredFuncs.length){
+        if(kFuncs.verboseMode){
+          debug(`triggering functions for ${obj.name}`);
+        }
+        obj.triggeredFuncs && obj.triggeredFuncs.forEach(func=>funcs[func] ? 
+          funcs[func]({trigger:obj,attributes,sections,casc}) :
+          debug(`!!!Warning!!! no function named ${func} found. Triggered function not called for ${obj.name}`,true));
+      }
+    };
+    
+    const initialFunction = function(obj){
+      if(obj.initialFunc){
+        if(kFuncs.verboseMode){
+          debug(`initial functions for ${obj.name}`);
+        }
+        funcs[obj.initialFunc] ?
+          funcs[obj.initialFunc]({trigger:obj,attributes,sections}) :
+          debug(`!!!Warning!!! no function named ${obj.initialFunc} found. Initial function not called for ${obj.name}`,true);
+      }
+    };
+    const alwaysFunctions = function(trigger){
+      Object.values(allHandlers).forEach((handler)=>{
+        handler({trigger,attributes,sections,casc});
+      });
+    };
+    const processChange = function({event,trigger}){
+      if(event && !trigger){
+        debug(`${event.sourceAttribute} change detected. No trigger found`);
+        return;
+      }
+      if(!attributes || !sections || !casc){
+        debug(`!!! Insufficient arguments || attributes > ${!!attributes} | sections > ${!!sections} | casc > ${!!casc} !!!`);
+        return;
+      }
+      if(kFuncs.verboseMode){
+        debug({trigger});
+      }
+      if(event){
+        if(Array.isArray(trigger.affects)){
+          attributes.queue.push(...trigger.affects);
+        }
+        alwaysFunctions(trigger,attributes,sections,casc);//Functions that should be run for all events.
+        initialFunction(trigger,attributes,sections,casc);//functions that should only be run if the attribute was the thing changed by the user
+  
+      }
+      if(trigger){
+        triggerFunctions(trigger,attributes,sections,casc);
+        if(!event){
+          // Handle autocalc formula
+          if(trigger.formula){
+            attributes[trigger.name] = parseKFormula({trigger,attributes,sections,casc});
+          }
+          // handle calculation of element
+          if(
+            trigger.calculation &&
+            funcs[trigger.calculation]
+          ){
+            attributes[trigger.name] = funcs[trigger.calculation]({trigger,attributes,sections,casc});
+          }else if(trigger.calculation && !funcs[trigger.calculation]){
+            debug(`K-Scaffold Error: No function named ${trigger.calculation} found`);
+          }
+        }
+      }
+      attributes.set();
+    };
+    const attrTarget = {
+      updates:{},
+      attributes:{...attrs},
+      repOrders:{},
+      queue: [],
+      casc:{},
+      alwaysFunctions,
+      processChange,
+      triggerFunctions,
+      initialFunction,
+      getCascObj
+    };
+    const repeatObjects = {};
+    const repeatTargetObjects = {};
+    const repeatHandler = {
+      get:function(obj,prop){
+        const row = `${obj._section}_${obj._id}`;
+        if(prop === '_isProxy'){
+          return true;
+        }
+        if(prop === 'toJSON'){
+          return () => {
+            return Object.keys(obj).reduce((o,k) => {
+              o[k] = attributes[`${row}_${k}`];
+              return o;
+            },{_id: obj._id,_section: obj._section});
+          }
+        }
+        if(prop === 'remove'){
+          return function(){
+            delete attributes[obj._section][obj._id];
+          }
+        }
+        return obj[prop];
+      },
+      set: function(obj,prop,value){
+        if(prop === '_id' || prop === '_section'){
+          throw new Error(`!!!Warning: cannot change the id or section of a repeating object!!!`);
+        }else if( prop === '_index'){
+          throw new Error(`!!!Warning: Cannot reorder sections by setting the _index. Sort the repeating array or use k.setSectionOrder!!!`);
+        }
+        const fullRef = `${obj._section}_${obj._id}_${prop}`;
+        attributes[fullRef] = value;
+        obj[prop] = value;
+      }
+    };
+    const repeatArrHandler = {
+      get(arr,prop){
+        prop = typeof prop === 'string' ?
+          prop.replace(/^\$/,'') :
+          prop;
+        if(prop === '_isProxy'){
+          return true;
+        }
+        if(
+          prop === 'fill' ||
+          prop === 'shift' ||
+          prop === 'pop' ||
+          prop === 'unshift' ||
+          prop === 'splice'
+        ){
+          throw new Error(`The ${prop} method is not allowed on section arrays`);
+        }
+        if(prop === 'create'){
+          return function(){
+            const argArray = [...arguments];
+            const custom = argArray.find(e => typeof e === 'string');
+            const data = argArray.find(e => typeof e === 'object' && !Array.isArray(e));
+  
+            const row = _generateRowID(arr._section,sections,custom);
+            const id = row.replace(/repeating_[^_]+_/,'');
+            arr[id] = createRepeatObj(arr._section,id);
+            arr.push(arr[id]);
+            if(data){
+              Object.entries(data).forEach(([key,value]) => {
+                if(arr[id].hasOwnProperty(key)){
+                  arr[id][key] = value;
+                }else{
+                  debug(`!!!Warning: no input exists in ${obj._section} for the attribute "${key}"!!!`);
+                }
+              });
+            }
+            return arr[id];
+          }
+        }
+        if(prop === 'move'){
+          return function(){
+            const ref = arguments[0];
+            const targ = arguments[1];
+            const vocal = !arguments[2]
+            // TODO: add protection for missing arguments
+            let id;
+            let index;
+            if(sections[arr._section].includes(ref)){
+              id = ref;
+              index = sections[arr._section].indexOf(id);
+            }else if(!Number.isNaN(ref)){
+              index = ref;
+              id = sections[arr._section][index];
+            }
+            if(
+              !Number.isNaN(index) &&
+              id &&
+              !Number.isNaN(targ)
+            ){
+              const obj = arr.splice(index,1);
+              arr.splice(targ,0,obj);
+              sections[arr._section].splice(index,1);
+              sections[arr._section].splice(targ,0,id);
+              if(vocal){
+                _setSectionOrder(arr._section,sections[arr._section]);
+              }
+            }
+          }
+        }
+        if(prop === 'sort'){
+          return function(){
+            const callback = arguments[0];
+            const vocal = !arguments[1];
+            sections[arr._section].sort((a,b) => {
+              const aObj = arr[a];
+              const bObj = arr[b];
+              const sortResult = callback(aObj,bObj);
+              return sortResult;
+            });
+            arr.sort((a,b) => {
+              const aIndex = sections[arr._section].indexOf(a._id);
+              const bIndex = sections[arr._section].indexOf(b._id);
+              return aIndex - bIndex;
+            });
+            // if not a silent sort, then apply the reordered section to the sheet via setSectionOrder
+            if(vocal){
+              _setSectionOrder(arr._section,sections[arr._section]);
+            }
+            return arr;
+          }
+        }
+        if(arr[prop] || Number.isNaN(prop)){
+          return Reflect.get(...arguments);
+        }
+        if(sections[arr._section].includes(prop)){
+          arr[prop] = createRepeatObj(arr._section,prop);
+          arr.push(arr[prop]);
+          return arr[prop];
+        }
+      },
+      set(obj,prop,value){
+        if(prop === 'section'){
+          throw new Error('!!!Warning: Section property of a repeating section is readonly!!!')
+        }
+      },
+      deleteProperty(arr,prop){
+        if(
+          !prop.startsWith('_') &&
+          arr[prop] &&
+          arr[prop]._isProxy
+        ){
+          let id;
+          let index;
+          if(typeof prop === 'string' && prop.startsWith('-')){
+            id = prop;
+            index = sections[arr._section].indexOf(id);
+          }else{
+            index = prop;
+            id = arr[index]._id;
+          }
+          delete arr[id];
+          arr.splice(index,1);
+          sections[arr._section].splice(index,1);
+          const row = `${arr._section}_${id}`;
+          removeRepeatingRow(row);
+        }
+      }
+    };
+    const createRepeatObj = (prop,id) => {
+      const row = `${prop}_${id}`;
+      const fields = repeatingSectionDetails.find(o => o.section === prop).fields;
+      const retObj = fields.reduce((o,field) => {
+        o[field] = attributes[`${row}_${field}`];
+        return o;
+      },{_id:id,_section: prop})
+      repeatTargetObjects[prop] = repeatTargetObjects[prop] || {};
+      repeatTargetObjects[prop][id] = retObj;
+      return new Proxy(retObj,repeatHandler);
+    }
+    const attrHandler = {
+      get:function(obj,prop){//gets the most value of the attribute.
+        if(prop === '_isProxy'){
+          return true;
+        }
+        if(prop === 'toJSON'){
+          return () => ({...obj.attributes,...obj.updates});
+        }else if(prop === 'set'){
+          return function(){
+            let {callback,vocal} = arguments[0] ? arguments[0] : {};
+            if(sections && casc && attributes.queue.length){
+              const triggerName = attributes.queue.shift();
+              const trigger = getCascObj({sourceAttribute:triggerName});
+              processChange({trigger,attributes,sections,casc});
+            }else{
+              if(kFuncs.verboseMode){
+                debug({updates:obj.updates});
+              }
+              const trueCallback = Object.keys(obj.repOrders).length ?
+                function(){
+                  Object.entries(obj.repOrders).forEach(([section,order])=>{
+                    _setSectionOrder(section,order)
+                  });
+                  callback && callback();
+                }:
+                callback;
+              Object.keys(obj.updates).forEach((key)=>obj.attributes[key] = obj.updates[key]);
+              const update = obj.updates;
+              obj.updates = {};
+              set(update,vocal,trueCallback);
+            }
+          }
+        }else if(/^repeating_[^_]+$/.test(prop)){
+          // if it's been lazy loaded, use it
+          if(!repeatObjects[prop]){
+            // otherwise lazy load it
+            const baseArr = [];
+            baseArr._section = prop;
+            repeatObjects[prop] = new Proxy(sections[prop].reduce((arr,id,i) => {
+              const rowObj = createRepeatObj(prop,id,i);
+              arr.push(rowObj);
+              arr[id] = rowObj;
+              return arr;
+            },baseArr),repeatArrHandler);
+          }
+          return repeatObjects[prop];
+        }else if(Object.keys(obj).some(key=>key===prop)){ 
+          return Reflect.get(...arguments)
+        }else{
+          let retValue;
+          switch(true){
+            case obj.repOrders.hasOwnProperty(prop):
+              retValue = obj.repOrders[prop];
+              break;
+            case obj.updates.hasOwnProperty(prop):
+              retValue = obj.updates[prop];
+              break;
+            default:
+              retValue = obj.attributes[prop];
+              break;
+          }
+          let cascRef = `attr_${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\$X')}`.toLowerCase();
+          let numRetVal = +retValue;
+          if(!Number.isNaN(numRetVal) && retValue !== ''){
+            retValue = numRetVal;
+          }else if(cascades[cascRef] && (typeof cascades[cascRef].defaultValue === 'number' || cascades[cascRef].type === 'number')){
+            retValue = cascades[cascRef].defaultValue;
+          }
+          return retValue;
+        }
+      },
+      set:function(obj,prop,value){
+        //Sets the value. Also verifies that the value is a valid attribute value
+        //e.g. not undefined, null, or NaN
+        if(value || value===0 || value===''){
+          if(/reporder/.test(prop)){
+            let section = prop.replace(/_reporder_/,'');
+            obj.repOrders[section] = value;
+          }else if(`${obj.attributes}` !== `${value}` || 
+            (obj.updates[prop] && `${obj.updates}` !== `${value}`)
+          ){
+            if(sections && casc){
+              let trigger = getCascObj({sourceAttribute:prop});
+              if(!trigger.name){
+                Object.assign(casc,expandCascade(cascades,sections));
+                trigger = getCascObj({sourceAttribute:prop});
+              }
+              if(Array.isArray(trigger.affects)){
+                attributes.queue.push(...trigger.affects);
+              }
+            }
+            const repRx = /^(repeating_[^_]+)_([^_]+)_(.+)$/;
+            if(repRx.test(prop)){
+              const [,section,rowID,field] = prop.match(repRx);
+              if(repeatObjects[section]){
+                repeatObjects[section][rowID] = repeatObjects[section][rowID] || createRepeatObj(section,rowID);
+                repeatTargetObjects[section][rowID][field] = value;
+              }
+            }
+            obj.updates[prop] = value;
+          }
+        }else{
+          debug(`!!!Warning: Attempted to set ${prop} to an invalid value:${value}; value not stored!!!`);
+        }
+        return true;
+      },
+      deleteProperty(obj,prop){
+        //removes the property from the original attributes, updates, and the reporders
+        Object.keys(obj).forEach((key)=>{
+          delete obj[key][prop.toLowerCase()];
+        });
+      }
+    };
+    const attributes = new Proxy(attrTarget,attrHandler);
+    return attributes;
+  };
+  
+  /**
+   * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
+   * @memberof Utilities
+   * @param {object} funcObj - Object with keys that are names to register functions under and values that are functions.
+   * @param {object} optionsObj - Object that contains options to use for this registration.
+   * @param {string[]} optionsObj.type - Array that contains the types of specialized functions that apply to the functions being registered. Valid types are `"opener"`, `"updater"`, and `"default"`. `"default"` is always used, and never needs to be passed.
+   * @returns {boolean} - True if the registration succeeded, false if it failed.
+   * @example
+   * //Basic Registration
+   * const myFunc = function({trigger,attributes,sections,casc}){};
+   * k.registerFuncs({myFunc});
+   * 
+   * //Register a function to run on sheet open
+   * const openFunc = function({trigger,attributes,sections,casc}){};
+   * k.registerFuncs({openFunc},{type:['opener']})
+   * 
+   * //Register a function to run on all events
+   * const allFunc = function({trigger,attributes,sections,casc}){};
+   * k.registerFuncs({allFunc},{type:['all']})
+   */
+  const registerFuncs = function(funcObj,optionsObj = {}){
+    if(typeof funcObj !== 'object' || typeof optionsObj !== 'object'){
+      debug(`!!!! K-scaffold error: Improper arguments to register functions !!!!`);
+      return false;
+    }
+    const typeArr = optionsObj.type ? ['default',...optionsObj.type] : ['default'];
+    const typeSwitch = {
+      'opener':openHandlers,
+      'updater':updateHandlers,
+      'new':initialSetups,
+      'all':allHandlers,
+      'default':funcs
+    };
+    let setState;
+    Object.entries(funcObj).map(([prop,value])=>{
+      typeArr.forEach((type)=>{
+        if(typeSwitch[type][prop]){
+          debug(`!!! Duplicate function name for ${prop} as ${type}!!!`);
+          setState = false;
+        }else if(typeof value === 'function'){
+          typeSwitch[type][prop] = value;
+          setState = setState !== false ? true : false;
+        }else{
+          debug(`!!! K-scaffold error: Function registration requires a function. Invalid value to register as ${type} !!!`);
+          setState = false;
+        }
+      });
+    });
+    return setState;
+  };
+  kFuncs.registerFuncs = registerFuncs;
+  
+  /**
+   * Function that sets up the action calls used in the roller mixin.
+   * @memberof Sheetworkers
+   * @param {object} attributes - The attribute values of the character
+   * @param {object[]} sections - All the repeating section IDs
+   */
+  const setActionCalls = function({attributes,sections}){
+    actionAttributes.forEach((base)=>{
+      let [section,,field] = k.parseTriggerName(base);
+      let fieldAction = field.replace(/_/g,'-');
+      if(section){
+        sections[section].forEach((id)=>{
+          attributes[`${section}_${id}_${field}`] = `%{${attributes.character_name}|${section}_${id}_${fieldAction}}`;
+        });
+      }else{
+        attributes[`${field}`] = `%{${attributes.character_name}|${fieldAction}}`;
+      }
+    });
+  };
+  funcs.setActionCalls = setActionCalls;
+  kFuncs.setActionCalls = setActionCalls;
+  
+  
+  /**
+   * Function that reduces Roll20 macro syntax formulas down to their calculated value.
+   * @memberof Sheetworkers
+   * @param {object} attributes - The attribute values of the character
+   * @param {object[]} sections - All the repeating section IDs
+   */
+  const parseKFormula = ({trigger,attributes,sections,casc}) => {
+    const [baseSection,rowID,attrName] = parseTriggerName(trigger.name);
+    const repeatBlockRx = baseSection ?
+      /(@{repeating_.+?_\$X_.+?})/g :
+      /={([^)]*repeating_[^_]+[^)]*)}=/g;
+    let mutFormula = trigger.formula;
+    mutFormula = mutFormula.replace(repeatBlockRx,(match,repeatMacro) => {
+      const [section] = repeatMacro.match(/repeating_[^_]+/);
+      const idArray = baseSection ?
+        [rowID] :
+        sections[section];
+      return idArray.map(id => {
+          return `(${repeatMacro.replace(/repeating_[^_]+?_[^_]+?_([^}]+)/g,`${section}_${id}_$1`)})`;
+        }).join(
+          trigger.type === 'number' ?
+            ' + ' :
+            ''
+        );
+    });
+    mutFormula = parseMacro(mutFormula,attributes)
+      .replace(/@{.+?}/g,'0');
+    const mathKeys = ['floor','ceil','round','abs'];
+    mathKeys.forEach(func => mutFormula = mutFormula.replace(new RegExp(`${func}\\(`,'g'),`Math.${func}(`));
+    const mathRx = new RegExp(`Math\\.(?:${mathKeys.join('|')})`,'g');
+    let noAlphaStr = mutFormula
+      .replace(mathRx,'');
+    return trigger.type !== 'text' ?
+      (
+        !noAlphaStr.match(/[a-z]/i) ?
+          eval(mutFormula) :
+          undefined
+      ) :
+      mutFormula;
+  };
+  funcs.parseKFormula = parseKFormula;
+  kFuncs.parseKFormula = parseKFormula;
+  
+  /**
+   * Function to call a function previously registered to the funcs object. May not be used that much in actual sheets, but very useful when writing unit tests for your sheet. Either returns the function or null if no function exists.
+   * @memberof Sheetworkers
+   * @param {string} funcName - The name of the function to invoke.
+   * @param {...any} args - The arguments to call the function with.
+   * @returns {function|null}
+   * @example
+   * //Call myFunc with two arguments
+   * k.callFunc('myFunc','an argument','another argument');
+   */
+  const callFunc = function(funcName,...args){
+    if(funcs[funcName]){
+      if(kFuncs.verboseMode){
+        debug(`calling ${funcName}`);
+      }
+      return funcs[funcName](...args);
+    }else{
+      debug(`Invalid function name: ${funcName}`);
+      return null;
+    }
+  };
+  kFuncs.callFunc = callFunc;/**@namespace Sheetworkers */
+/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+//Sheet Updaters and styling functions
+/**
+ * Function that calls the K-scaffold's update and sheet initialization routines.
+ */
+const updateSheet = function(){
+  log('updating sheet');
+  getAllAttrs({props:['debug_mode',...baseGet],callback:(attributes,sections,casc)=>{
+    kFuncs.debugMode = kFuncs.debugMode || !!attributes.debug_mode;
+    if(kFuncs.verboseMode){
+      debug({sheet_version:attributes.sheet_version});
+    }
+    if(!attributes.sheet_version){
+      Object.entries(initialSetups).forEach(([funcName,handler])=>{
+        if(typeof funcs[funcName] === 'function'){
+          if(kFuncs.verboseMode){
+            debug(`running ${funcName}`);
+          }
+          funcs[funcName]({attributes,sections,casc});
+        }else{
+          if(kFuncs.verboseMode){
+            debug(`!!!Warning!!! no function named ${funcName} found. Initial sheet setup not performed.`);
+          }
+        }
+      });
+    }else{
+      Object.entries(updateHandlers).forEach(([ver,handler])=>{
+        if(attributes.sheet_version < +ver){
+          handler({attributes,sections,casc});
+        }
+      });
+    }
+    if(kFuncs.verboseMode){
+      debug({openHandlers});
+    }
+    Object.entries(openHandlers).forEach(([funcName,func])=>{
+      if(typeof funcs[funcName] === 'function'){
+        if(kFuncs.verboseMode){
+          debug(`running ${funcName}`);
+        }
+        funcs[funcName]({attributes,sections,casc});
+      }else{
+        if(kFuncs.verboseMode){
+          debug(`!!!Warning!!! no function named ${funcName} found. Sheet open handling not performed.`);
+        }
+      }
+    });
+    setActionCalls({attributes,sections});
+    attributes.sheet_version = kFuncs.version;
+    log(`Sheet Update applied. Current Sheet Version ${kFuncs.version}`);
+    attributes.set();
+    log('Sheet ready for use');
+  }});
+};
+kFuncs.updateSheet = updateSheet;
+
+const initialSetup = function(attributes,sections){
+  if(kFuncs.verboseMode){
+    debug('Initial sheet setup');
+  }
+};
+
+/**
+ * This is the default listener function for attributes that the K-Scaffold uses. It utilizes the `triggerFuncs`, `listenerFunc`, `calculation`, and `affects` properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).
+ * @memberof Sheetworkers
+ * @param {Roll20Event} event - The Roll20 event object
+ * @returns {void}
+ * @example
+ * //Call from an attribute change
+ * on('change:an_attribute',k.accessSheet);
+ */
+const accessSheet = function(event){
+  if(kFuncs.verboseMode){
+    debug({funcs:Object.keys(funcs)});
+    debug({event});
+  }
+  getAllAttrs({callback:(attributes,sections,casc)=>{
+    let trigger = attributes.getCascObj(event,casc);
+    attributes.processChange({event,trigger,attributes,sections,casc});
+  }});
+};
+funcs.accessSheet = accessSheet;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/*
+Cascade Expansion functions
+*/
+//Expands the repeating section templates in cascades to reflect the rows actually available
+const expandCascade = function(cascade,sections){
+  return _.keys(cascade).reduce((memo,key)=>{//iterate through cascades and replace references to repeating attributes with correct row ids.
+    if(/^(?:act|attr)_repeating_/.test(key)){//If the attribute is a repeating attribute, do special logic
+      expandRepeating(memo,key,cascade,sections);
+    }else if(key){//for non repeating attributes do this logic
+      expandNormal(memo,key,cascade,sections);
+    }
+    return memo;
+  },{});
+};
+kFuncs.expandCascade = (sections) => expandCascade(cascades,sections);
+
+const expandRepeating = function(memo,key,cascade,sections){
+  key.replace(/((?:attr|act)_)(repeating_[^_]+)_[^_]+?_(.+)/,(match,type,section,field)=>{
+    (sections[section]||[]).forEach((id)=>{
+      memo[`${type}${section}_${id}_${field}`]=_.clone(cascade[key]);//clone the details so that each row's attributes have correct ids
+      memo[`${type}${section}_${id}_${field}`].name = `${section}_${id}_${field}`;
+      if(key.startsWith('attr_')){
+        memo[`${type}${section}_${id}_${field}`].affects = memo[`${type}${section}_${id}_${field}`].affects.reduce((m,affected)=>{
+          if(affected.startsWith(section)){//otherwise if the affected attribute is in the same section, simply set the affected attribute to have the same row id.
+            m.push(applyID(affected,id));
+          }else if(/repeating/.test(affected)){//If the affected attribute isn't in the same repeating section but is still a repeating attribute, add all the rows of that section
+            addAllRows(affected,m,sections);
+          }else{//otherwise the affected attribute is a non repeating attribute. Simply add it to the computed affected array
+            m.push(affected);
+          }
+          return m;
+        },[]);
+      }
+    });
+  });
+};
+
+const applyID = function(affected,id){
+  return affected.replace(/(repeating_[^_]+_)[^_]+(.+)/,`$1${id}$2`);
+};
+
+const expandNormal = function(memo,key,cascade,sections){
+  memo[key] = _.clone(cascade[key]);
+  if(key.startsWith('attr_')){
+    memo[key].affects = memo[key].affects || [];
+    memo[key].affects = memo[key].affects.reduce((m,a)=>{
+      if(/^repeating/.test(a)){
+        addAllRows(a,m,sections);
+      }else{
+        m.push(a);
+      }
+      return m;
+    },[]);
+  }
+};
+
+const addAllRows = function(affected,memo,sections){
+  affected.replace(/(repeating_[^_]+?)_[^_]+?_(.+)/,(match,section,field)=>{
+    sections[section].forEach(id=>memo.push(`${section}_${id}_${field}`));
+  });
+};/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * These are functions that provide K-scaffold aliases for the basic Roll20 sheetworker functions. These functions also provide many additional features on top of the standard Roll20 sheetworkers.
+ * @namespace Sheetworkers.Sheetworker Aliases
+ */
+/**
+ * Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either `repeating_section` or `section` formats. Note that the Roll20 sheetworker [setSectionOrder](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) currently causes some display issues on sheets.
+ * @memberof Sheetworker Aliases
+ * @name setSectionOrder
+ * @param {string} section - The name of the section, with or without `repeating_`
+ * @param {string[]} order - Array of ids describing the desired order of the section.
+ * @returns {void}
+ * @example
+ * //Set the order of a repeating_weapon section
+ * k.setSectionOrder('repeating_equipment',['id1','id2','id3']);
+ * //Can also specify the section name without the repeating_ prefix
+ * k.setSectionOrder('equipment',['id1','id2','id3']);
+ */
+const _setSectionOrder = function(section,order){
+  let trueSection = section.replace(/repeating_/,'');
+  setSectionOrder(trueSection,order);
+};
+// deprecation warning added to setSectionOrder
+kFuncs.setSectionOrder = (section,order) => {
+  debug('###Deprecation: It is recommended to use the "move" method of the nested section info feature of the attributes object instead of setSectionOrder');
+  _setSectionOrder(section,order);
+};
+
+/**
+ * Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.
+ * @memberof Sheetworker Aliases
+ * @name removeRepeatingRow
+ * @param {string} row - The row id to be removed
+ * @param {attributesProxy} attributes - The attribute values currently in memory
+ * @param {object} sections - Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.
+ * @returns {void}
+ * @example
+ * //Remove a repeating Row
+ * k.getAllAttrs({
+ *  callback:(attributes,sections)=>{
+ *    const rowID = sections.repeating_equipment[0];
+ *    k.removeRepeatingRow(`repeating_equipment_${rowID}`,attributes,sections);
+ *    console.log(sections.repeating_equipment); // => rowID no longer exists in the array.
+ *    console.log(attributes[`repeating_equipment_${rowID}_name`]); // => undefined
+ *  }
+ * })
+ */
+const _removeRepeatingRow = function(row,attributes,sections){
+  Object.keys(attributes.attributes).forEach((key)=>{
+    if(key.startsWith(row)){
+      delete attributes[key];
+    }
+  });
+  let [,section,rowID] = row.match(/(repeating_[^_]+)_(.+)/,'');
+  sections[section] = sections[section].filter((id)=>id!==rowID);
+  delete attributes[section][rowID];
+  removeRepeatingRow(row);
+};
+kFuncs.removeRepeatingRow = _removeRepeatingRow;
+
+/**
+ * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.
+ * @memberof Sheetworker Aliases
+ * @name getAttrs
+ * @param {string[]} [props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
+ * @param {function(attributesProxy)} callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.
+ * @example
+ * //Gets the attributes named in props.
+ * k.getAttrs({
+ *  props:['attribute_1','attribute_2'],
+ *  callback:(attributes)=>{
+ *    //Work with the attributes as you would in a normal getAttrs, or use the superpowers of the K-scaffold attributes object like so:
+ *    attributes.attribute_1 = 'new value';
+ *    attributes.set();
+ *  }
+ * })
+ */
+const _getAttrs = function({props=baseGet,callback}){
+  getAttrs(props,(values)=>{
+    const attributes = createAttrProxy(values);
+    callback(attributes);
+  });
+};
+kFuncs.getAttrs = _getAttrs;
+
+/**
+ * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.
+ * @memberof Sheetworker Aliases
+ * @param {Object} args
+ * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
+ * @param {repeatingSectionDetails} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten. 
+ * @param {function(attributesProxy,sectionObj,expandedCascade):void} args.callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback along with a {@link sectionObj} and {@link expandedCascade}.
+ * @example
+ * //Get every K-scaffold linked attribute on the sheet
+ * k.getAllAttrs({
+ *  callback:(attributes,sections,casc)=>{
+ *    //Work with the attributes as you please.
+ *    attributes.some_attribute = 'a value';
+ *    attributes.set();//Apply our change
+ *  }
+ * })
+ */
+const getAllAttrs = function({props=baseGet,sectionDetails=repeatingSectionDetails,callback}){
+  getSections(sectionDetails,(repeats,sections)=>{
+    getAttrs([...props,...repeats],(values)=>{
+      const casc = expandCascade(cascades,sections);
+      const attributes = createAttrProxy(values,sections,casc);
+      orderSections(attributes,sections,casc);
+      callback(attributes,sections,casc);
+    })
+  });
+};
+kFuncs.getAllAttrs = getAllAttrs;
+
+/**
+ * Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.
+ * @memberof Sheetworker Aliases
+ * @param {object[]} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten.
+ * @param {string} sectionDetails.section - The full name of the repeating section including the `repeating_` prefix.
+ * @param {string[]} sectionDetails.fields - Array of field names that need to be gotten from the repeating section
+ * @param {function(string[],sectionObj)} callback - The function to call once all IDs have been gotten and the array of repating attributes to get has been assembled. The callback is passed the array of repating attributes to get and a {@link sectionObj}.
+ * @example
+ * // Get some section details
+ * const sectionDetails = {
+ *  {section:'repeating_equipment',fields:['name','weight','cost']},
+ *  {section:'repeating_weapon',fields:['name','attack','damage']}
+ * };
+ * k.getSections(sectionDetails,(attributeNames,sections)=>{
+ *  console.log(attributeNames);// => Array containing all row specific attribute names
+ *  console.log(sections);// => Object with arrays containing the row ids. Indexed by section name (e.g. repeating_eqiupment)
+ * })
+ */
+const getSections = function(sectionDetails,callback){
+  let queueClone = _.clone(sectionDetails);
+  const worker = (queue,repeatAttrs=[],sections={})=>{
+    let detail = queue.shift();
+    getSectionIDs(detail.section,(IDs)=>{
+      sections[detail.section] = IDs;
+      IDs.forEach((id)=>{
+        detail.fields.forEach((f)=>{
+          repeatAttrs.push(`${detail.section}_${id}_${f}`);
+        });
+      });
+      repeatAttrs.push(`_reporder_${detail.section}`);
+      if(queue.length){
+        worker(queue,repeatAttrs,sections);
+      }else{
+        callback(repeatAttrs,sections);
+      }
+    });
+  };
+  if(!queueClone[0]){
+    callback([],{});
+  }else{
+    worker(queueClone);
+  }
+};
+kFuncs.getSections = getSections;
+
+// Sets the attributes while always calling with {silent:true}
+// Can be awaited to get the values returned from _setAttrs
+/**
+ * Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.
+ * @memberof Sheetworker Aliases
+ * @alias setAttrs
+ * @param {object} obj - The object containting attributes to set
+ * @param {boolean} [vocal=false] - Whether to set silently (default value) or not.
+ * @param {function()} [callback] - The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.
+ * @example
+ * //Set some attributes silently
+ * k.setAttrs({attribute_1:'new value'})
+ * //Set some attributes and triggers listeners
+ * k.setAttrs({attribute_1:'new value',true})
+ * //Set some attributes and call a callback function
+ * k.setAttrs({attribute_1:'new value'},null,()=>{
+ *  //Do something after the attribute is set
+ * })
+ */
+const set = function(obj,vocal=false,callback){
+  setAttrs(obj,{silent:!vocal},callback);
+};
+kFuncs.setAttrs = set;
+
+const generateCustomID = function(string){
+  if(!string.startsWith('-')){
+    string = `-${string}`;
+  }
+  rowID = generateRowID();
+  let re = new RegExp(`^.{${string.length}}`);
+  return `${string}${rowID.replace(re,'')}`;
+};
+
+
+/**
+ * Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.
+ * @memberof Sheetworker Aliases
+ * @name generateRowID
+ * @param {sectionObj} sections
+ * @param {string} [customText] - Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.
+ * @returns {string} - The created ID
+ * @example
+ * k.getAllAttrs({
+ *  callback:(attributes,sections,casc)=>{
+ *    //Create a new row ID
+ *    const rowID = k.generateRowID('repeating_equipment',sections);
+ *    console.log(rowID);// => repeating_equipment_-p8rg908ug0suzz
+ *    //Create a custom row ID
+ *    const customID = k.generateRowID('repeating_equipment',sections,'custom');
+ *    console.log(customID);// => repeating_equipment_-custom98uadj89kj
+ *  }
+ * });
+ */
+const _generateRowID = function(section,sections,customText){
+  let rowID = customText ?
+    generateCustomID(customText) :
+    generateRowID();
+  section = section.match(/^repeating_[^_]+$/) ?
+    section :
+    `repeating_${section}`;
+  sections[section] = sections[section] || [];
+  sections[section].push(rowID);
+  return `${section}_${rowID}`;
+};
+kFuncs.generateRowID = (section,sections,customText) => {
+  debug('###Deprecation: It is recommended to use the "create" method of the nested section info feature of the attributes object instead of k.generateRowID');
+  return _generateRowID(section,sections,customText);
+};
+
+/**
+ * An alias for [Roll20's getTranslationByKey](https://wiki.roll20.net/Sheet_Worker_Scripts#getTranslationByKey.28.5Bkey.5D.29) that also supports data-i18n-vars syntax replacement and returns the translation key if no value is found instead of `false`.
+ * @memberof Sheetworker Aliases
+ * @name getTranslationByKey
+ * @param {string} key - The translation key to look up.
+ * @param {string[]} [variables = []] - An array of variable values to replace variable indexes with.
+ * @returns {string}
+ */
+const _getTranslationByKey = (key,variables = []) => {
+  let translate = getTranslationByKey(key) || key;
+  console.warn('getTranslationByKey',getTranslationByKey(key));
+  console.warn('translate:',translate);
+  variables.forEach((v,i) => {
+    translate = translate.replace(new RegExp(`\\{\\{${i}\\}\\}`,'g'),v);
+  });
+  return translate;
+}
+kFuncs.getTranslationByKey = _getTranslationByKey;
+
+/**
+ * Assembles the roll string from the roll object
+ * @param {object} rollObj - object describing the roll
+ * @param {string} [rollStart = '@{template_start}'] - The string to start the roll with.
+ * @returns {string}
+ */
+const assembleRoll = (rollObj,rollStart = kFuncs.defaultRollStart) => {
+  return Object.entries(rollObj).reduce((str,[field,content])=>{
+    return str += ` {{${field}=${content ?? ''}}}`;
+  },`${rollStart}`);
+};
+
+
+/**
+ * @typedef {Object} kRoll
+ * @property {Object} roll - The roll object returned by [Roll20's startRoll](https://wiki.roll20.net/Custom_Roll_Parsing#Sheetworker_Functions).
+ * @property {Function} roll.finish - Finishes the associated roll passing it the computeObj and rollId.
+ * @property {Object} computeObj - object for storing manipulations to the roll. Assign manipulations to this, DO NOT reassign it to a new object.
+ */
+
+/**
+ * 
+ * @param {object} rollObj - Object specifying the fields to pass to the rolltemplate. Object keys are field names. Object values are the field values.
+ * @param {string} [startString = '@{template_start}'] - Text that should be prepended to the roll string that results from rollObj.
+ * @returns {kRoll} 
+ */
+const _startRoll = async (rollObj,startString) => {
+  const rollString = assembleRoll(rollObj,startString);
+  const roll = await startRoll(rollString);
+  const computeObj = {};
+  roll.finish = () => {
+    finishRoll(roll.rollId,computeObj);
+  };
+  return {roll, computeObj};
+};
+kFuncs.startRoll = _startRoll;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+const listeners = {};
+
+/**
+ * The array of attribute names that the k-scaffold gets by default. Does not incude repeating attributes.
+ * @memberof Variables
+ * @var
+ * @type {array}
+ */
+const baseGet = Object.entries(cascades).reduce((memo,[attrName,detailObj])=>{
+  if(!/repeating/.test(attrName) && detailObj.type !== 'action'){
+    memo.push(detailObj.name);
+  }
+  if(detailObj.listener){
+    listeners[detailObj.listener] = detailObj.listenerFunc;
+  }
+  return memo;
+},[]);
+kFuncs.baseGet = baseGet;
+
+const registerEventHandlers = function(){
+  on('sheet:opened',updateSheet);
+  if(kFuncs.verboseMode){
+    debug({funcKeys:Object.keys(funcs),funcs});
+  }
+  //Roll20 change and click listeners
+  Object.entries(listeners).forEach(([event,funcName])=>{
+    if(funcs[funcName]){
+      on(event,funcs[funcName]);
+    }else{
+      debug(`!!!Warning!!! no function named ${funcName} found. No listener created for ${event}`,true);
+    }
+  });
+  log(`kScaffold Loaded`);
+};
+setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
+
+/**
+ * Function to add a repeating section when the add button of a customControlFieldset or inlineFieldset is clicked.
+ * @memberof Sheetworkers
+ * @param {object} event - The R20 event object
+ */
+const addItem = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/add-/,'');
+  getAllAttrs({
+    callback:(attributes,sections,casc) => {
+      let row = _generateRowID(section,sections);
+      attributes[`${row}_name`] = '';
+      setActionCalls({attributes,sections});
+      const trigger = cascades[`fieldset_repeating_${section}`];
+      if(trigger){
+        if(trigger.addFuncs){
+          trigger.addFuncs.forEach((funcName) => {
+            if(funcs[funcName]){
+              funcs[funcName]({attributes,sections,casc,trigger,newRow:row});
+            }
+          });
+        }
+        if(Array.isArray(trigger.affects)){
+          attributes.queue.push(...trigger.affects);
+        }
+      }
+      attributes.set({attributes,sections,casc});
+    }
+  });
+};
+funcs.addItem = addItem;/**
+ * The default tab navigation function of the K-scaffold. Courtesy of Riernar. It will add `k-active-tab` to the active tab-container and `k-active-button` to the active button. You can either write your own CSS to control display of these, or use the default CSS included in `scaffold/_k.scss`. Note that `k-active-button` has no default CSS as it is assumed that you will want to style the active button to match your system.
+ * @memberof Sheetworkers
+ * @param {Object} trigger - The trigger object
+ * @param {object} attributes - The attribute values of the character
+ */
+const kSwitchTab = function ({ trigger, attributes }) {
+  const [container, tab] = (
+    trigger.name.match(/nav-tabs-(.+)--(.+)/) ||
+    []
+  ).slice(1);
+  $20(`[data-container-tab="${container}"]`).removeClass('k-active-tab');
+  $20(`[data-container-tab="${container}"][data-tab="${tab}"]`).addClass('k-active-tab');
+  $20(`[data-container-button="${container}"]`).removeClass('k-active-button');
+  $20(`[data-container-button="${container}"][data-button="${tab}"]`).addClass('k-active-button');
+  const tabInputName = `${container.replace(/\-/g,'_')}_tab`;
+  if(persistentTabs.indexOf(tabInputName) > -1){
+    attributes[tabInputName] = trigger.name;
+  }
+}
+
+registerFuncs({ kSwitchTab });
+
+/**
+ * Sets persistent tabs to their last active state
+ * @memberof Sheetworkers
+ * @param {object} attributes - The attribute values of the character
+ */
+const kTabOnOpen = function({trigger,attributes,sections,casc}){
+  if(typeof persistentTabs === 'undefined') return;
+  persistentTabs.forEach((tabInput) => {
+    const pseudoTrigger = {name:attributes[tabInput]};
+    kSwitchTab({trigger:pseudoTrigger, attributes});
+  });
+};
+registerFuncs({ kTabOnOpen },{type:['opener']});
+  return kFuncs;
+  }());
+  const actionAttributes = ["initiativebonus_action","influencelevel_action","acrobatics_action","bows_action","first_aid_action","rifles_action","perception_action","throwing_action","bartering_action","melee_action","pistols_action","sneak_hide_action"];const attributes = [{"name":"styrka","abbr":"sty","attr":"strength","value":""},{"name":"fysik","abbr":"fys","attr":"constitution","value":""},{"name":"storlek","abbr":"sto","attr":"size","value":""},{"name":"smidighet","abbr":"smi","attr":"agility","value":""},{"name":"intelligens","abbr":"int","attr":"intelligence","value":""},{"name":"vilja","abbr":"vil","attr":"willpower","value":""},{"name":"personlighet","abbr":"per","attr":"personality","value":""}];const secondary = [{"name":"skadebonus","abbr":"sb","attr":"damagebonus","type":"text","value":""},{"name":"initiativbonus","abbr":"ib","attr":"initiativebonus","type":"number","value":"","roll":"roller","rolltype":"init"},{"name":"bärförmåga","abbr":"bf","attr":"carrycap","type":"number","value":""},{"name":"reaktionsvärde","abbr":"rea","attr":"influencelevel","type":"number","value":"","roll":"roller","rolltype":"rea"}];const tertiary = [{"name":"rykte","attr":"reputation","type":"number","classes":"w50pc","value":"0"},{"name":"ff - strid","attr":"mov_combat","type":"number","classes":"w50pc","value":""},{"name":"status","attr":"status","type":"number","classes":"w50pc","value":"0"},{"name":"ff - springa","attr":"mov_run","type":"number","classes":"w50pc","value":""},{"name":"ff - sprint","attr":"mov_sprint","type":"number","classes":""},{"name":"kroppspoäng","attr":"hitpoints","type":"number","classes":"w60-40pc currMax","value":""},{"name":"traumatröskel","attr":"traumathreshold","type":"number","classes":"","value":""}];const info = [{"name":"namn","attr":"character_name","type":"text","classes":"wide-text-input"},{"name":"klass","attr":"class","type":"text","classes":"wide-text-input"},{"name":"tidigare yrke","attr":"prev_profession","type":"text","classes":"wide-text-input"},{"name":"hemort","attr":"origin","type":"text","classes":"wide-text-input"},{"name":"ålder","attr":"age","type":"number","classes":"w50pc"},{"name":"kön","attr":"gender","type":"text","classes":"w50pc"},{"name":"längd","attr":"height","type":"text","classes":"w50pc"},{"name":"vikt","attr":"weight","type":"text","classes":"w50pc"},{"name":"utseende","attr":"appearance","type":"textarea","classes":"wide-text-input"}];const skills = [{"name":"akrobatik","attr":"acrobatics","base":"agility"},{"name":"båge","attr":"bows","base":"agility"},{"name":"första hjälpen","attr":"first_aid","base":"intelligence"},{"name":"gevär","attr":"rifles","base":"agility"},{"name":"iakttagelseförmåga","attr":"perception","base":"intelligence"},{"name":"kasta","attr":"throwing","base":"agility"},{"name":"köpslå","attr":"bartering","base":"personality"},{"name":"närstrid","attr":"melee","base":"strength"},{"name":"pistol","attr":"pistols","base":"agility"},{"name":"smyga / gömma sig","attr":"sneak_hide","base":"agility"}];const trainedskills = [{"name":"bildning","attr":"education","base":"intelligence"},{"name":"båt","attr":"boats","base":"intelligence"},{"name":"energivapen","attr":"energy_weapons","base":"intelligence"},{"name":"fingerfärdighet","attr":"dexterity","base":"agility"},{"name":"fordon","attr":"vehicles","base":"intelligence"},{"name":"fällor","attr":"traps","base":"intelligence"},{"name":"låsdyrkning","attr":"lockpicking","base":"intelligence"},{"name":"naturvetenskap","attr":"nature_science","base":"intelligence"},{"name":"medicin","attr":"medicine","base":"intelligence"},{"name":"reparera","attr":"repairs","base":"intelligence"},{"name":"rida","attr":"riding","base":"agility"},{"name":"spel","attr":"gambling","base":"intelligence"},{"name":"sprängämnen","attr":"explosives","base":"intelligence"},{"name":"stridskonst","attr":"martial_arts","base":"agility"},{"name":"teknologi","attr":"technology","base":"intelligence"},{"name":"tunga vapen","attr":"heavy_weapons","base":"agility"},{"name":"undre världen","attr":"underworld","base":"intelligence"},{"name":"undvika","attr":"evade","base":"agility"},{"name":"vagn","attr":"carts","base":"agility"},{"name":"vildmarksvana","attr":"survival","base":"intelligence"},{"name":"zonkunskap","attr":"know_the_zone","base":"intelligence"}];const abilityfields = [{"name":"namn","attr":"name","type":"text","classes":"wide-text-input"},{"name":"aktivering","attr":"activation","type":"text","classes":"wide-text-input"},{"name":"räckvidd","attr":"range","type":"text","classes":"w50pc"},{"name":"varaktighet","attr":"duration","type":"text","classes":"w50pc"},{"name":"effekt","attr":"effect","type":"text","classes":"wide-text-input"},{"name":"Beskrivning","attr":"ability-description","type":"textarea","classes":"wide-text-input"}];/**
+ * Escapes problem characters in a string for use as a regex.
+ * @memberof Locals
+ * @param {string} string - The string to work on
+ * @returns {string}
+ */
+const replaceProblems = (string) => string.replace(/[\(\)\[\]\|\/\\]/g,'-');
+  const executeRoll = async function ({rollObj}) {
+   const computeObj = {};
+   rollObj.rollStr = `&{template:mutantua} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}}`;
+   if (rollObj.target) {
+      const rollCrit = Math.floor(rollObj.target / 10)||0;
+      rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${rollObj.target}]]}}`;
+   } 
+   else if (rollObj.damageDice) {      
+      rollObj.rollStr += ` {{damage=[[${rollObj.damageDice}+${rollObj.damageBonus}]]}} {{calcdamage=[[0]]}}`;
+   } else {
+      rollObj.rollStr += ` {{roll1=[[1d100cs<1cf100]]}}`;
+   }
+   k.log(`Executing roll string: ${rollObj.rollStr}`);
+   const roll = await startRoll(rollObj.rollStr);
+   if (rollObj.damageDice) {      
+      k.log(`Damage result: ${roll.results.damage.result}`);
+      computeObj.calcdamage = roll.results.damage.result < 1 ? 1 : 0;
+      k.log(`Calculated Damage: ${computeObj.calcdamage}`);
+   } 
+   k.log(`Roll: ${JSON.stringify(roll)}`); 
+   finishRoll(roll.rollId,computeObj);
+}
+  k.sheetName = 'Mutant UA';
+k.version = 0;const rollWeaponAttack = function ({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   const rollObj = {};
+   const [section,rowID,] = k.parseTriggerName(trigger.name);
+   const row =`${section}_${rowID}_`;
+   k.log('Name is '+ attributes[`${row}name`]);
+   rollObj.name = attributes[`${row}name`];
+   k.log(`Skill attribute is `+attributes[`${row}skill`]);
+   const skillAttr = attributes[`${row}skill`];
+   k.log(`Skill level is `+attributes[skillAttr]);
+   rollObj.rollSkill = attributes[skillAttr]||0;
+   rollObj.rollSkillMod = attributes[`${skillAttr}_mod`]||0;
+   rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
+
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
+   executeRoll({rollObj});
+}
+k.registerFuncs({rollWeaponAttack});
+
+const rollTrainedSkill = function ({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   const rollObj = {};
+   const [section,rowID] = k.parseTriggerName(trigger.name);
+   const row = `${section}_${rowID}_`;
+   k.log('Name is '+ attributes[`${row}skill_name`]);
+   rollObj.name = getTranslationByKey(attributes[`${row}name`].replace(/_/,'-')) ?
+                  getTranslationByKey(attributes[`${row}name`].replace(/_/,'-')) :
+                  attributes[`${row}name`];
+   k.log(`Skill attribute is `+attributes[`${row}skill`]);
+   rollObj.rollSkill = attributes[`${row}skill`];
+   rollObj.rollSkillMod = attributes[`${row}skill_mod`];
+   rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
+
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
+   executeRoll({rollObj});
+}
+k.registerFuncs({rollTrainedSkill});
+
+const rollSkill = function ({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   const rollObj = {};
+   //const [section,rowID,base] = k.parseTriggerName(trigger.name);
+   const name = trigger.name.replace(/-action/,'').toLowerCase();
+   k.log(`Base is ${name}`);
+   k.log(`Base translated is ${getTranslationByKey(name)}`);
+   //k.log('Name is '+base.replace(/-/g,'_').replace(/_action/,'').toLowerCase());
+   rollObj.name = getTranslationByKey(name);
+   const attr = name.replace(/-/g,'_').replace(/_action/,'');
+   k.log(`Roll name is `+rollObj.name);
+   k.log(`Roll attribute is `+attr);
+   k.log(`Roll level is `+`${attributes[attr]}`);
+   rollObj.rollSkill = attributes[attr];
+   rollObj.rollSkillMod = attributes[`${attr}_mod`]||0;
+   rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
+
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
+   executeRoll({rollObj});
+}
+k.registerFuncs({rollSkill});
+
+const rollAttribute = function ({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   const rollObj = {};
+   const [section,rowID,base] = k.parseTriggerName(trigger.name);
+   k.log(`Base is ${base}`);
+   //k.log('Name is '+base.replace(/-/g,'_').replace(/_action/,'').toLowerCase());
+   rollObj.name = getTranslationByKey(base.replace(/-action/,'').toLowerCase());
+   const attr = base.replace(/-/g,'_').replace(/_action/,'');
+   k.log(`Skill attribute is `+attr);
+   k.log(`Skill level is `+`${attributes[attr]}`);
+   rollObj.rollSkill = attributes[attr];
+   rollObj.rollSkillMod = attributes[`${attr}_mod`]||0;
+   rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
+
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
+   executeRoll({rollObj});
+}
+k.registerFuncs({rollAttribute});
+
+const rollInit = async function({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   const [section,rowID,base] = k.parseTriggerName(trigger.name);
+   k.log(`Base is ${base}`);
+   const rollObj = {
+      name : getTranslationByKey('initiativebonus'),
+      init : attributes['initiativebonus'],
+      initMod : attributes[`initiativebonnus_mod`]||0,
+   };
+   rollObj.rollInit = rollObj.init + rollObj.initMod;
+   //k.log('Name is '+base.replace(/-/g,'_').replace(/_action/,'').toLowerCase());
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //executeRoll({rollObj});
+   rollObj.rollStr = `&{template:mutantua} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}}`;
+   rollObj.rollStr += ` {{roll1=[[1d10+${rollObj.rollInit}]]}}`;
+   k.log(`Executing roll string: ${rollObj.rollStr}`);
+   const roll = await startRoll(rollObj.rollStr);
+   k.log(`Roll: ${JSON.stringify(roll)}`);
+   finishRoll(roll.rollId);
+}
+k.registerFuncs({rollInit})
+
+const rollDice = async function ({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   const rollObj = {};
+   const [section,rowID,base] = k.parseTriggerName(trigger.name);
+   const row = section ?
+      `${section}_${rowID}_` :
+      '';
+   rollObj.name = base.replace(/-/g,' ').replace(/ action/,'');
+   rollObj.name = getTranslationByKey(base.replace(/-action/,'')) != false ? getTranslationByKey(base.replace(/-action/,'')) : rollObj.name;
+   k.log(`Roll name after translation: ${rollObj.name}`);
+   rollObj.rollSkill = attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}`];
+   rollObj.rollSkillMod = attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_mod`]||0;
+   /* switch ( true ) {
+      case !section : 
+      {
+         rollObj.name = base.replace(/-/g,' ').replace(/ action/,'');
+         rollObj.rollSkill = attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}`];
+         rollObj.rollSkillMod = attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_mod`]||0;
+         break;
+      };
+      case section == 'repeating_weapons' : 
+      {
+         rollObj.name = attributes[`${row}name`];
+         const skillAttr = attributes[`${row}skill`];
+         rollObj.rollSkill = attributes[skillAttr];
+         rollObj.rollSkillMod = attributes[`${skillAttr}_mod`];
+         break;
+      }
+      case section == 'repeating_trainedskills' : 
+      {
+         rollObj.name = attributes[`${row}skill_name`];
+         const skillAttr = attributes[`${row}skill`];
+         rollObj.rollSkill = attributes[skillAttr];
+         rollObj.rollSkillMod = attributes[`${skillAttr}_mod`];
+         break;
+      }
+   } */
+   /* const name = !section ?
+      base.replace(/-/g,' ').replace(/ action/,'') :
+      attributes[`$${row}skill_name`] ? 
+        attributes[`${row}skill_name`] : attributes[`${row}name`];
+   const i18nKey = base.replace(/-action/,'');
+   k.log(`Roll name before translation: ${name}, base ${i18nKey} with translation ${getTranslationByKey(i18nKey)}`);
+   rollObj.name = getTranslationByKey(i18nKey) != false ? getTranslationByKey(i18nKey) : name;   
+   k.log(`Roll name after translation: ${rollObj.name}`);
+   rollObj.rollSkill = section ?
+      attributes[`${row}skill`] :
+      attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}`];
+   rollObj.rollSkillMod = section ?
+      attributes[`${row}skill_mod`]||0 :
+      attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_mod`]||0;
+   if ( section == 'repeating_weapons') {
+      rollObj.rollSkillMod = attributes[rollObj.rollSkill+'_mod'];
+      rollObj.rollSkill = attributes[rollObj.rollSkill];
+   }   */
+   rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
+
+   executeRoll({rollObj});
+
+   /* k.log(`Roll target: ${JSON.stringify(rollTarget)}`);
+   //rollStr = `&{template_start}`;
+   //rollStr = `&{template:default} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`;
+   rollStr = `&{template:mutantua} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`
+   //rollStr = `@{whisper}&{template:mutantua} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`
+   rollStr += ` {{roll-name=${rollName}}} {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${rollTarget}]]}}`;
+   k.log(`Roll str: ${rollStr}`);
+   const roll = await startRoll(rollStr);
+   finishRoll(roll.rollId); */
+}
+k.registerFuncs({rollDice});
+  const rollDamage = async function ({trigger,attributes,sections,casc}) {
+   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   rollObj = {};
+   const [section,rowID,base] = k.parseTriggerName(trigger.name);
+   const row = section ?
+      `${section}_${rowID}_` :
+      '';
+   const name = section ?
+      attributes[`${row}name`] :
+      base.replace(/-/g,' ').replace(/ action/,'');
+   const i18nKey = base.replace(/-action/,'');
+   k.log(`Roll name before translation: ${name}, base ${i18nKey} with translation ${getTranslationByKey(i18nKey)}`);
+   rollObj.name = getTranslationByKey(i18nKey) != false ? getTranslationByKey(i18nKey) : name;   
+   k.log(`Roll name after translation: ${rollObj.name}`);
+
+   rollObj.damageDice = section ?
+      attributes[`${row}damage`] :
+      attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_damage`];
+   if ( attributes[`${row}skill`] == 'melee' || attributes[`${row}skill`] == 'martial_arts' ) {
+      rollObj.damageBonus =  attributes.damagebonus;
+      rollObj.damageBonus = rollObj.damageBonus.replace(/[Tt]/g,'D');
+   }
+   rollObj.damageDice = rollObj.damageDice.replace(/[Tt]/g,'D');
+
+   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+
+   executeRoll({rollObj});
+
+}
+k.registerFuncs({rollDamage});const setSkillName = function ({trigger,attributes,sections,casc}) {
+   k.log(`Skill name trigger: ${JSON.stringify(trigger)}`);
+   const [section,rowID] = k.parseTriggerName(trigger.name);
+   const row = `${section}_${rowID}_`;
+   if ( section == 'repeating_weapons') {
+      k.log(`Skill attr : `+attributes[`${row}skill`].replace(/_/,'-'));
+      k.log(`Skill translation : `+getTranslationByKey(attributes[`${row}skill`].replace(/_/,'-')));
+      attributes[`${row}skill_name`] = getTranslationByKey(attributes[`${row}skill`].replace(/_/,'-'));
+   } else if ( section == 'repeating_trainedskills' ) {
+      const attr = attributes[`${row}name`],
+            i18n = attr.replace(/_/,'-');
+      attributes[`${row}skill_name`] = getTranslationByKey(i18n);
+      attributes[`${row}skill`] = attributes[attr];
+      attributes[`${row}skill_mod`] = attributes[`${attr}_mod`];      
+   }   
+   attributes.set();
+}
+k.registerFuncs({setSkillName},['opener']);
+
+const updateTrainedSkill = function({trigger,attributes,sections,casc}) {
+   k.log(`Slill value trigger: ${JSON.stringify(trigger)}`);
+   const [section,rowID] = k.parseTriggerName(trigger.name);
+   const row = `${section}_${rowID}_`,
+         attr = attributes[`${row}name`],
+         newVal = trigger.newValue,
+         srcAttr = trigger.sourceAttribute;
+   k.log(`SKill attribute is ${attr}, new value is ${newVal} from source attr ${srcAttr}`);
+   k.log(`Energy eapons: ${attributes['energy_weapons']}`)
+   k.log(`Trained skill attributes: `)
+   if ( srcAttr.endsWith("skill")) {
+      attributes[`${attr}`] = newVal;
+   } else if ( srcAttr.endsWith("skill_mod")) {
+      attributes[`${attr}_mod`] = newVal;      
+   }
+   attributes.set();
+   k.log(`Energy eapons: ${attributes['energy_weapons']}`)
+}
+k.registerFuncs({updateTrainedSkill});
+</script>
+
