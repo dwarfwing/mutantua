@@ -2281,7 +2281,7 @@ registerFuncs({ kTabOnOpen },{type:['opener']});
  */
 const replaceProblems = (string) => string.replace(/[\(\)\[\]\|\/\\]/g,'-');
   const executeRoll = async function ({rollObj,attributes}) {
-   k.log(`Executing roll object: ${JSON.stringify(rollObj)}`);
+   //k.log(`Executing roll object: ${JSON.stringify(rollObj)}`);
    let char_id = '';
    const computeObj = {};
    rollObj.rollStr = `&{template:mutantua} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}}`;
@@ -2305,14 +2305,14 @@ const replaceProblems = (string) => string.replace(/[\(\)\[\]\|\/\\]/g,'-');
    const roll = await startRoll(rollObj.rollStr);
 
    if (rollObj.damageDice && roll?.results?.damage?.result) {      
-      k.log(`Damage result: ${roll.results.damage.result}`);
+      //k.log(`Damage result: ${roll.results.damage.result}`);
       computeObj.calcdamage = roll.results.damage.result < 1 ? 1 : 0;
-      k.log(`Calculated Damage: ${computeObj.calcdamage}`);
+      //k.log(`Calculated Damage: ${computeObj.calcdamage}`);
    } 
    if ( rollObj.damageButton ) {
-      console.log(`Attributes: ${JSON.stringify(attributes)}`);
       computeObj.damageRoll = `&{template:mutantua} {{character_name=${attributes.character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}} {{target-area=[[1D6]]}} {{calcdamage=[[0]]}}`;
-      const perfectStr = roll.results.roll1.result < rollObj.target ? `+1D6[${getTranslationByKey('perfect-roll')}]` : '';
+      //k.log(`REsult ${roll.results.roll1.result} with ttarget ${rollObj.target} is perfect ${roll.results.roll1.result < (Math.floor(rollObj.target / 10)||0)}`)
+      const perfectStr = roll.results.roll1.result < (Math.floor(rollObj.target / 10)||0) ? `+1D6[${getTranslationByKey('perfect-roll')}]` : '';
       computeObj.damageRoll += ` {{damage=[[${rollObj.damageDice}[${getTranslationByKey('damage')}]${dmgBonusStr}${perfectStr}]]}}`;
       computeObj.damageRoll = k.escape(computeObj.damageRoll);
    }
@@ -2321,15 +2321,15 @@ const replaceProblems = (string) => string.replace(/[\(\)\[\]\|\/\\]/g,'-');
 }
   k.sheetName = 'Mutant UA';
 k.version = 0;const rollWeaponAttack = function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const rollObj = {};
    const [section,rowID,] = k.parseTriggerName(trigger.name);
    const row =`${section}_${rowID}_`;
-   k.log('Name is '+ attributes[`${row}name`]);
+   //k.log('Name is '+ attributes[`${row}name`]);
    rollObj.name = attributes[`${row}name`];
-   k.log(`Skill attribute is `+attributes[`${row}skill`]);
+   //k.log(`Skill attribute is `+attributes[`${row}skill`]);
    const skillAttr = attributes[`${row}skill`];
-   k.log(`Skill level is `+attributes[skillAttr]);
+   //k.log(`Skill level is `+attributes[skillAttr]);
    rollObj.rollSkill = attributes[skillAttr]||0;
    rollObj.rollSkillMod = attributes[`${skillAttr}_mod`]||0;
    rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
@@ -2338,10 +2338,10 @@ k.version = 0;const rollWeaponAttack = function ({trigger,attributes,sections,ca
       attributes[`${row}damage`] :
       attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_damage`];
    if ( attributes[`${row}skill`] == 'melee' || attributes[`${row}skill`] == 'martial_arts' ) {
-      rollObj.damageBonus =  attributes.damagebonus;
-      rollObj.damageBonus = rollObj.damageBonus.replace(/[Tt]/g,'D');
+      rollObj.damageBonus = (/[Tt]/g).test(attributes.damagebonus) ? attributes.damagebonus.replaceAll(/[Tt]/g,'D') : attributes.damagebonus;
+      //rollObj.damageBonus = rollObj.damageBonus.test(/Tt/g) ? rollObj.damageBonus.replace(/[Tt]/g,'D') : rollObj.damageBonus;
    }
-   rollObj.damageDice = rollObj.damageDice.replace(/[Tt]/g,'D');
+   rollObj.damageDice = rollObj.damageDice.replaceAll(/[Tt]/g,'D');
 
    k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
    //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
@@ -2350,15 +2350,15 @@ k.version = 0;const rollWeaponAttack = function ({trigger,attributes,sections,ca
 k.registerFuncs({rollWeaponAttack});
 
 const rollTrainedSkill = function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const rollObj = {};
    const [section,rowID] = k.parseTriggerName(trigger.name);
    const row = `${section}_${rowID}_`;
-   k.log('Name is '+ attributes[`${row}skill_name`]);
+   //k.log('Name is '+ attributes[`${row}skill_name`]);
    rollObj.name = getTranslationByKey(attributes[`${row}name`].replace(/_/,'-')) ?
                   getTranslationByKey(attributes[`${row}name`].replace(/_/,'-')) :
                   attributes[`${row}name`];
-   k.log(`Skill attribute is `+attributes[`${row}skill`]);
+   //k.log(`Skill attribute is `+attributes[`${row}skill`]);
    rollObj.rollSkill = attributes[`${row}skill`];
    rollObj.rollSkillMod = attributes[`${row}skill_mod`];
    rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
@@ -2370,18 +2370,18 @@ const rollTrainedSkill = function ({trigger,attributes,sections,casc}) {
 k.registerFuncs({rollTrainedSkill});
 
 const rollSkill = function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+  // k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const rollObj = {};
    //const [section,rowID,base] = k.parseTriggerName(trigger.name);
    const name = trigger.name.replace(/-action/,'').toLowerCase();
-   k.log(`Base is ${name}`);
-   k.log(`Base translated is ${getTranslationByKey(name)}`);
+   //k.log(`Base is ${name}`);
+   //k.log(`Base translated is ${getTranslationByKey(name)}`);
    //k.log('Name is '+base.replace(/-/g,'_').replace(/_action/,'').toLowerCase());
    rollObj.name = getTranslationByKey(name);
    const attr = name.replace(/-/g,'_').replace(/_action/,'');
-   k.log(`Roll name is `+rollObj.name);
-   k.log(`Roll attribute is `+attr);
-   k.log(`Roll level is `+`${attributes[attr]}`);
+   //k.log(`Roll name is `+rollObj.name);
+   //k.log(`Roll attribute is `+attr);
+   //k.log(`Roll level is `+`${attributes[attr]}`);
    rollObj.rollSkill = attributes[attr];
    rollObj.rollSkillMod = attributes[`${attr}_mod`]||0;
    rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
@@ -2393,15 +2393,15 @@ const rollSkill = function ({trigger,attributes,sections,casc}) {
 k.registerFuncs({rollSkill});
 
 const rollAttribute = function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const rollObj = {};
    const [section,rowID,base] = k.parseTriggerName(trigger.name);
-   k.log(`Base is ${base}`);
+   //k.log(`Base is ${base}`);
    //k.log('Name is '+base.replace(/-/g,'_').replace(/_action/,'').toLowerCase());
    rollObj.name = getTranslationByKey(base.replace(/-action/,'').toLowerCase());
    const attr = base.replace(/-/g,'_').replace(/_action/,'');
-   k.log(`Skill attribute is `+attr);
-   k.log(`Skill level is `+`${attributes[attr]}`);
+   //k.log(`Skill attribute is `+attr);
+   //k.log(`Skill level is `+`${attributes[attr]}`);
    rollObj.rollSkill = attributes[attr];
    rollObj.rollSkillMod = attributes[`${attr}_mod`]||0;
    rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
@@ -2413,9 +2413,9 @@ const rollAttribute = function ({trigger,attributes,sections,casc}) {
 k.registerFuncs({rollAttribute});
 
 const rollInit = async function({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const [section,rowID,base] = k.parseTriggerName(trigger.name);
-   k.log(`Base is ${base}`);
+   //k.log(`Base is ${base}`);
    const rollObj = {
       name : getTranslationByKey('initiativebonus'),
       init : attributes['initiativebonus'],
@@ -2423,11 +2423,11 @@ const rollInit = async function({trigger,attributes,sections,casc}) {
    };
    rollObj.rollInit = rollObj.init + rollObj.initMod;
    //k.log('Name is '+base.replace(/-/g,'_').replace(/_action/,'').toLowerCase());
-   k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
+   //k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
    //executeRoll({rollObj});
    rollObj.rollStr = `&{template:mutantua} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}}`;
    rollObj.rollStr += ` {{roll1=[[1d10+${rollObj.rollInit} &{tracker} ]]}}`;
-   k.log(`Executing roll string: ${rollObj.rollStr}`);
+   //k.log(`Executing roll string: ${rollObj.rollStr}`);
    const roll = await startRoll(rollObj.rollStr);
    k.log(`Roll: ${JSON.stringify(roll)}`);
    finishRoll(roll.rollId);
@@ -2435,7 +2435,7 @@ const rollInit = async function({trigger,attributes,sections,casc}) {
 k.registerFuncs({rollInit})
 
 const rollDice = async function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const rollObj = {};
    const [section,rowID,base] = k.parseTriggerName(trigger.name);
    const row = section ?
@@ -2456,7 +2456,7 @@ const rollDice = async function ({trigger,attributes,sections,casc}) {
 }
 k.registerFuncs({rollDice});
   const rollDamage = async function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    rollObj = {};
    if (trigger.originalRollId) {  
       rollObj.damageRoll = k.unescape(trigger.originalRollId);
@@ -2471,18 +2471,18 @@ k.registerFuncs({rollDice});
          attributes[`${row}name`] :
          base.replace(/-/g,' ').replace(/ action/,'');
       const i18nKey = base.replace(/-action/,'');
-      k.log(`Roll name before translation: ${name}, base ${i18nKey} with translation ${getTranslationByKey(i18nKey)}`);
+      //k.log(`Roll name before translation: ${name}, base ${i18nKey} with translation ${getTranslationByKey(i18nKey)}`);
       rollObj.name = getTranslationByKey(i18nKey) != false ? getTranslationByKey(i18nKey) : name;   
-      k.log(`Roll name after translation: ${rollObj.name}`);
+      //k.log(`Roll name after translation: ${rollObj.name}`);
 
       rollObj.damageDice = section ?
          attributes[`${row}damage`] :
          attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_damage`];
       if ( attributes[`${row}skill`] == 'melee' || attributes[`${row}skill`] == 'martial_arts' ) {
-         rollObj.damageBonus =  attributes.damagebonus;
-         rollObj.damageBonus = rollObj.damageBonus.replace(/[Tt]/g,'D');
+        rollObj.damageBonus = /[Tt]/g.test(attributes.damagebonus) ? attributes.damageBonus.replaceAll(/[Tt]/g,'D') : attributes.damageBonus;
+         //rollObj.damageBonus = rollObj.damageBonus.test(/Tt/g) ? rollObj.damageBonus.replace(/[Tt]/g,'D') : rollObj.damageBonus;
       }
-      rollObj.damageDice = rollObj.damageDice.replace(/[Tt]/g,'D');
+      rollObj.damageDice = rollObj.damageDice.replaceAll(/[Tt]/g,'D');
    }
 
    k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
