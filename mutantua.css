@@ -1719,6 +1719,25 @@ body.sheet-darkmode .charactersheet {
   border: 0;
   outline: 0;
 }
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button {
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"] {
+  color: var(--inverse-font-color);
+  background-color: var(--border-color);
+  margin: 0.25rem;
+  line-height: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  corner-shape: superellipse(0);
+  border-radius: 0.25rem;
+}
 
 :where(.sheet-darkmode.ui-widget-content) .sheet-rolltemplate-mutantua {
   --backColor:var(--dm-backColor);

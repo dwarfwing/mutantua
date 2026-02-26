@@ -94,6 +94,7 @@
   "strength": "styrka",
   "survival": "vildmarksvana",
   "target": "FV",
+  "target-area": "Träffområde",
   "technology": "teknologi",
   "throwing": "kasta",
   "throwing-short": "Kasta",
@@ -109,5 +110,6 @@
   "tabs-mutantua-npc": "NPC",
   "tabs-mutantua-monster": "Monster",
   "tabs-mutantua-settings": "settings",
-  "sneak_hide": "smyga / gömma sig"
+  "sneak_hide": "smyga / gömma sig",
+  "perfect-roll": "Perfekt slag"
 }
