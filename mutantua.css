@@ -1276,9 +1276,11 @@ body .ui-dialog .tab-content .charsheet button[type=action], body .ui-dialog .ta
 body .ui-dialog .tab-content .charsheet button[type=action]:hover, body .ui-dialog .tab-content .charsheet button[type=roll]:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
-body .ui-dialog .tab-content .charsheet button[type=action]:before {
-  content: "T";
+body .ui-dialog .tab-content .charsheet button[type=action]:before,
+body .ui-dialog .tab-content .charsheet button[type=roll].roller:before {
+  content: "0";
   font-family: dicefontd10;
+  font-size: 1.375rem;
 }
 body .ui-dialog .tab-content .charsheet .tabs__header button[type=action]:before,
 body .ui-dialog .tab-content .charsheet button[type=roll] + button[type=action]:before,
@@ -1428,8 +1430,9 @@ body .ui-dialog .tab-content .charsheet .label-input button.roller:hover {
   backdrop-filter: brightness(90%);
 }
 body .ui-dialog .tab-content .charsheet .label-input button.roller:before {
-  content: "T";
+  content: "0";
   font-family: dicefontd10;
+  font-size: 1.375rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input label.right-align {
   display: flex;
