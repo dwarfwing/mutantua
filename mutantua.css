@@ -192,6 +192,10 @@ body .ui-dialog .nav-tabs a {
 body .ui-dialog .tabs__header {
   height: 1.75rem;
 }
+body .ui-dialog .tab-content .charsheet button[type=action][name=act_k-network-call] {
+  display: none;
+  height: 0;
+}
 body .ui-dialog .tab-content .charsheet {
   background-color: var(--background-color-inv);
   background-repeat: repeat-y;
@@ -1196,6 +1200,7 @@ body .ui-dialog .tab-content .charsheet #main .logo {
   background-repeat: no-repeat;
   background-size: 18rem 4rem;
   margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 body .ui-dialog .tab-content .charsheet #main .tabs {
   margin-top: -2rem;
@@ -1394,16 +1399,22 @@ body .ui-dialog .tab-content .charsheet .label-input {
   margin: 0;
   padding: 0;
   border-bottom: 1px solid var(--border-color);
+  align-content: stretch;
 }
 body .ui-dialog .tab-content .charsheet .label-input label,
 body .ui-dialog .tab-content .charsheet .label-input label.text-input,
 body .ui-dialog .tab-content .charsheet .label-input button.roller {
   border-right: 1px solid var(--border-color);
+  align-content: center;
+  width: auto;
+  padding: 0;
 }
 body .ui-dialog .tab-content .charsheet .label-input * {
   height: 100%;
   padding-block: 0;
   margin-block: 0;
+  align-self: center;
+  align-content: center;
 }
 body .ui-dialog .tab-content .charsheet .label-input input[type=number],
 body .ui-dialog .tab-content .charsheet .label-input span.input-span {
@@ -1411,6 +1422,7 @@ body .ui-dialog .tab-content .charsheet .label-input span.input-span {
   box-sizing: content-box;
   border-radius: 0;
   text-align: center;
+  align-content: center;
 }
 body .ui-dialog .tab-content .charsheet .label-input button.roller:hover {
   backdrop-filter: brightness(90%);
@@ -1474,15 +1486,19 @@ body .ui-dialog .tab-content .charsheet .label-input.wide-text-input label {
   min-width: 10em;
   width: 30%;
 }
-body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span {
+body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) {
   max-width: calc(100% - 10rem);
   width: 70%;
 }
-body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span input[type=text] {
+body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) input[type=text] {
   text-align: center;
 }
-body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span input[type=text], body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span textarea {
+body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) input[type=text], body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) textarea {
   width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .label-input span.input-span-textarea {
+  width: 100%;
+  height: auto;
 }
 body .ui-dialog .tab-content .charsheet .label-input.w50pc {
   box-sizing: border-box;
@@ -1513,6 +1529,10 @@ body .ui-dialog .tab-content .charsheet .section-attributes {
 body .ui-dialog .tab-content .charsheet .section-attributes button.roller + button {
   display: none;
 }
+body .ui-dialog .tab-content .charsheet .section-attributes input {
+  width: 100%;
+  text-align: center;
+}
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 {
   grid-template-columns: auto 0 4rem 4rem;
 }
@@ -1534,9 +1554,26 @@ body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded option 
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded select {
   width: 100%;
+  height: unset;
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded select:open {
   max-height: 6rem;
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded select + input[type=checkbox] + input[type=text] {
+  display: none;
+  height: auto;
+  width: 100%;
+  border-bottom: 1px dashed black;
+  margin-bottom: 2px;
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded select + input[type=checkbox]:checked + input[type=text] {
+  display: block;
+}
+body .ui-dialog .tab-content .charsheet .section-encumbrance .currMax span {
+  text-align: center;
+}
+body .ui-dialog .tab-content .charsheet .section-encumbrance .currMax input {
+  width: 2.5rem;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons {
   width: 100%;
@@ -1544,7 +1581,7 @@ body .ui-dialog .tab-content .charsheet .section-weapons {
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div {
   display: grid;
-  grid-template-columns: 20% 10% 5% 5% 10% 5% 12% 5% 12% 5% 12%;
+  grid-template-columns: 20% 10% 5% 5% 10% 5% 12% 9% 10% 5% 10%;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div * {
   border: 0;
@@ -1563,6 +1600,9 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem button {
   display: flex;
   justify-content: center;
 }
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem button.init-button span {
+  width: 1rem;
+}
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_skill_name] {
   overflow-x: hidden;
   text-indent: 0.25rem;
@@ -1570,6 +1610,14 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_damage].text-span {
   width: auto;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem span.currMax {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem span.slash {
+  width: 1rem;
 }
 body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 span {
   border-right: 0;
@@ -1580,8 +1628,20 @@ body .ui-dialog .tab-content .charsheet .section-gear .expanded {
 body .ui-dialog .tab-content .charsheet .section-gear .expanded input {
   text-transform: uppercase;
 }
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0;
+}
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem {
-  margin-block: 0.5rem;
+  margin: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapse {
+  right: -1.25rem;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .label-title button {
+  justify-content: center;
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded {
   display: flex;
@@ -1684,14 +1744,16 @@ body.sheet-darkmode .charactersheet {
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total :is(label, span),
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target :is(label, span),
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage :is(label, span) {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage :is(label, span),
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea :is(label, span) {
   max-width: 50%;
   width: 50%;
   line-height: 1.25rem;
@@ -1702,18 +1764,21 @@ body.sheet-darkmode .charactersheet {
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total label,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target label,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label {
   justify-content: flex-end;
   padding-right: 0.5rem;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total label:after,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target label:after,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label:after {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label:after,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label:after {
   content: ":";
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target span,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage span {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea span {
   justify-self: flex-start;
   background-color: transparent;
   border: 0;
@@ -1721,14 +1786,22 @@ body.sheet-darkmode .charactersheet {
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button {
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: flex-end;
 }
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button.sheet-hit-area-buttons {
+  flex-wrap: wrap;
+}
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"],
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"] {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"] {
   color: var(--inverse-font-color);
   background-color: var(--border-color);
   margin: 0.25rem;
@@ -1737,6 +1810,21 @@ body.sheet-darkmode .charactersheet {
   flex-wrap: nowrap;
   corner-shape: superellipse(0);
   border-radius: 0.25rem;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"] span {
+  line-height: 0.8rem;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span.fullcrit, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span.sheet-fullcrit, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total .inlinerollresult.fullcrit {
+  color: green;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span.fullfail, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span.sheet-fullfail, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total .inlinerollresult.fullfail {
+  color: #b31515;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea {
+  justify-content: center;
 }
 
 :where(.sheet-darkmode.ui-widget-content) .sheet-rolltemplate-mutantua {
