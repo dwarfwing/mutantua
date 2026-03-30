@@ -1,10 +1,6 @@
 {
-  "authors": [
-    "Richard W"
-  ],
-  "roll20userid": [
-    "8097845"
-  ],
+  "authors": ["Richard W"],
+  "roll20userid": ["8097845"],
   "preview": "mutantua.png",
   "legacy": false,
   "html": "mutantua.html",

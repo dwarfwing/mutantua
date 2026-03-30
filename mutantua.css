@@ -167,6 +167,10 @@ body {
   --font-color: #000;
   --font-color2: #3e3e3e;
   --inverse-font-color: #fff;
+  --success-color: #319131;
+  --success-bg-color: #acdcbc;
+  --fail-color: #913131;
+  --fail-bg-color: #dcacac;
   --text-transform: uppercase;
   --border-color: #000;
   --fill-collor: transparent;
@@ -1260,12 +1264,19 @@ body .ui-dialog .tab-content .charsheet .tabs .tabs__header ul li {
 }
 body .ui-dialog .tab-content .charsheet .tabs--mutantua__container--pc {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   gap: 1rem;
 }
 body .ui-dialog .tab-content .charsheet .tabs--mutantua__container--pc .box.coverall {
   height: -webkit-fill-available;
   align-content: flex-start;
+}
+body .ui-dialog .tab-content .charsheet label.label-input-label,
+body .ui-dialog .tab-content .charsheet h2.header-field,
+body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > .header-field[name] {
+  white-space: nowrap;
+  overflow-x: hidden;
+  justify-content: left;
 }
 body .ui-dialog .tab-content .charsheet button[type=action], body .ui-dialog .tab-content .charsheet button[type=roll] {
   width: 100%;
@@ -1276,11 +1287,16 @@ body .ui-dialog .tab-content .charsheet button[type=action], body .ui-dialog .ta
 body .ui-dialog .tab-content .charsheet button[type=action]:hover, body .ui-dialog .tab-content .charsheet button[type=roll]:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
+body .ui-dialog .tab-content .charsheet .label-input button[type=action]:before,
 body .ui-dialog .tab-content .charsheet button[type=action]:before,
-body .ui-dialog .tab-content .charsheet button[type=roll].roller:before {
+body .ui-dialog .tab-content .charsheet button[type=roll].btn.roller:before {
   content: "0";
   font-family: dicefontd10;
-  font-size: 1.375rem;
+  font-size: 1.75rem;
+  text-transform: none;
+  align-self: center;
+  padding: 0;
+  margin: 0;
 }
 body .ui-dialog .tab-content .charsheet .tabs__header button[type=action]:before,
 body .ui-dialog .tab-content .charsheet button[type=roll] + button[type=action]:before,
@@ -1293,7 +1309,6 @@ body .ui-dialog .tab-content .charsheet input[type=checkbox]:not(.collapse):not(
 }
 body .ui-dialog .tab-content .charsheet input[type=checkbox]:not(.collapse):not(.fill-left__radio):before {
   color: var(--font-color);
-  content: "✗";
   place-self: center center;
   grid-area: content;
   font-weight: var(--checkWeight);
@@ -1312,7 +1327,6 @@ body .ui-dialog .tab-content .charsheet .box {
   flex-wrap: wrap;
   border: 0;
   border-block: 3px solid var(--border-color);
-  min-width: 50%;
   position: relative;
   background-color: var(--background-color-box);
 }
@@ -1328,17 +1342,20 @@ body .ui-dialog .tab-content .charsheet .box .box-header {
   display: flex;
   flex-direction: row;
 }
+body .ui-dialog .tab-content .charsheet .box .box-header h2, body .ui-dialog .tab-content .charsheet .box .box-header .input-label:not(.stacked).large > [name] {
+  font-size: 85%;
+}
 body .ui-dialog .tab-content .charsheet .box .box-header.field-count-1 {
   display: grid;
-  grid-template-columns: auto 4rem;
+  grid-template-columns: 1fr 4rem;
 }
 body .ui-dialog .tab-content .charsheet .box .box-header.field-count-2 {
   display: grid;
-  grid-template-columns: auto 4rem 4rem;
+  grid-template-columns: 1fr 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .box .box-header.field-count-3 {
   display: grid;
-  grid-template-columns: auto 4rem 4rem 4rem;
+  grid-template-columns: 1fr 4rem 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .box .repcontainer {
   width: 100%;
@@ -1426,6 +1443,11 @@ body .ui-dialog .tab-content .charsheet .label-input span.input-span {
   text-align: center;
   align-content: center;
 }
+body .ui-dialog .tab-content .charsheet .label-input input[type=number] input,
+body .ui-dialog .tab-content .charsheet .label-input span.input-span input {
+  width: 100%;
+  box-sizing: border-box;
+}
 body .ui-dialog .tab-content .charsheet .label-input button.roller:hover {
   backdrop-filter: brightness(90%);
 }
@@ -1437,7 +1459,6 @@ body .ui-dialog .tab-content .charsheet .label-input button.roller:before {
 body .ui-dialog .tab-content .charsheet .label-input label.right-align {
   display: flex;
   justify-content: right;
-  margin-right: 1rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input label.comma, body .ui-dialog .tab-content .charsheet .label-input span.comma {
   padding-right: 0.5rem;
@@ -1456,18 +1477,18 @@ body .ui-dialog .tab-content .charsheet .label-input.input-count-1 button.roller
 }
 body .ui-dialog .tab-content .charsheet .label-input.input-count-2 {
   display: grid;
-  grid-template-columns: auto 4rem 4rem;
+  grid-template-columns: 1fr 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input.input-count-2 span.input-0 {
   border: 0;
   border-right: 1px solid var(--border-color);
 }
 body .ui-dialog .tab-content .charsheet .label-input.input-count-2.checkboxed {
-  grid-template-columns: 2rem auto 4rem 4rem;
+  grid-template-columns: 2rem 1fr 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input.input-count-3 {
   display: grid;
-  grid-template-columns: auto 4rem 4rem 4rem;
+  grid-template-columns: 1fr 4rem 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input.input-count-3 label,
 body .ui-dialog .tab-content .charsheet .label-input.input-count-3 button.roller,
@@ -1483,25 +1504,28 @@ body .ui-dialog .tab-content .charsheet .label-input.input-count-3 span.input-la
   border: 0;
 }
 body .ui-dialog .tab-content .charsheet .label-input.input-count-3.checkboxed {
-  grid-template-columns: 2rem auto 4rem 4rem 4rem;
+  grid-template-columns: 2rem 1fr 4rem 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input.wide-text-input label {
-  min-width: 10em;
   width: 30%;
 }
-body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) {
+body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea, .adaptive--text__span) {
   max-width: calc(100% - 10rem);
   width: 70%;
 }
-body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) input[type=text] {
+body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea, .adaptive--text__span) input[type=text] {
   text-align: center;
 }
-body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) input[type=text], body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea) textarea {
+body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea, .adaptive--text__span) input[type=text], body .ui-dialog .tab-content .charsheet .label-input.wide-text-input span:not(.input-span-textarea, .adaptive--text__span) textarea {
   width: 100%;
 }
 body .ui-dialog .tab-content .charsheet .label-input span.input-span-textarea {
   width: 100%;
   height: auto;
+}
+body .ui-dialog .tab-content .charsheet .label-input .adaptive.input-span-adaptive * {
+  align-content: unset;
+  min-height: 4rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input.w50pc {
   box-sizing: border-box;
@@ -1536,8 +1560,38 @@ body .ui-dialog .tab-content .charsheet .section-attributes input {
   width: 100%;
   text-align: center;
 }
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row {
+  display: grid;
+  grid-template-columns: 1fr 4rem;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row label {
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row input {
+  border-left: 1px solid var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row button[type=action].attribute-roll {
+  display: none;
+  width: 2rem;
+  justify-self: center;
+  justify-content: center;
+  margin-inline: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row button[type=action].attribute-roll:before {
+  content: "t";
+  font-size: 2.25rem;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row button[type=action].attribute-roll:last-of-type:before {
+  content: "k";
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row:hover {
+  grid-template-columns: 1fr 2.25rem 2.25rem 4rem;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row:hover button[type=action].attribute-roll {
+  display: flex;
+}
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 {
-  grid-template-columns: auto 0 4rem 4rem;
+  grid-template-columns: 1fr 0 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 button[type=action] {
   display: hidden;
@@ -1546,7 +1600,7 @@ body .ui-dialog .tab-content .charsheet .section-trainedskills {
   border-bottom: 1px solid var(--border-color);
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills :is(.expanded, .collapsed) > .label-input {
-  grid-template-columns: auto 4rem 4rem;
+  grid-template-columns: 1fr 4rem 4rem;
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills :is(.expanded, .collapsed) button span {
   padding-left: 0.25rem;
@@ -1584,7 +1638,7 @@ body .ui-dialog .tab-content .charsheet .section-weapons {
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div {
   display: grid;
-  grid-template-columns: 20% 10% 5% 5% 10% 5% 12% 9% 10% 5% 10%;
+  grid-template-columns: 19% 5% 8% 5% 5% 10% 5% 10% 8% 10% 5% 10%;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div * {
   border: 0;
@@ -1606,10 +1660,15 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem button {
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem button.init-button span {
   width: 1rem;
 }
-body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_skill_name] {
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_skill_name],
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_range],
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem select[name=attr_skill],
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem select[name=attr_skill] option,
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[name=attr_range] {
   overflow-x: hidden;
   text-indent: 0.25rem;
   white-space: nowrap;
+  font0size: 85%;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_damage].text-span {
   width: auto;
@@ -1622,8 +1681,94 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem span.currMax {
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span.slash {
   width: 1rem;
 }
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem .smaller-text, body .ui-dialog .tab-content .charsheet .section-weapons .repitem select.smaller-text option {
+  font-size: 80%;
+}
 body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 span {
   border-right: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 span.colon {
+  font-size: 85%;
+  text-align: right;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 span.colon:after {
+  content: ":";
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 input:not(:checked):before {
+  content: " ";
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 label.input-label input {
+  width: 0;
+  min-width: 0;
+  border: 0;
+  pointer-events: none;
+  margin-right: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 label.input-label input:before {
+  all: unset;
+  content: "";
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 label.input-label input:after {
+  width: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 label.input-label input.armor-icon:checked:after {
+  content: "directions_walk";
+  font-family: "Material Symbols Outlined";
+  width: 0.75rem;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 label.input-label input.helmet-icon:checked:after {
+  content: "face_6";
+  font-family: "Material Symbols Outlined";
+  width: 0.75rem;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 input[class*=indicator] {
+  justify-self: center;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .collapsed label.input-label {
+  overflow-x: hidden;
+}
+body .ui-dialog .tab-content .charsheet .section-armor .expanded label.text-input {
+  overflow-x: hidden;
+}
+body .ui-dialog .tab-content .charsheet .section-shield .box-header {
+  display: grid;
+  grid-template-columns: 1fr 3rem 3rem 3rem 6rem 3rem;
+}
+body .ui-dialog .tab-content .charsheet .section-shield .collapsed,
+body .ui-dialog .tab-content .charsheet .section-shield .expanded {
+  display: grid;
+  grid-template-columns: 2rem 1fr 3rem 3rem 3rem 6rem 3rem;
+}
+body .ui-dialog .tab-content .charsheet .section-shield .collapsed label.input-label {
+  overflow-x: hidden;
+}
+body .ui-dialog .tab-content .charsheet .section-shield .expanded label.text-input {
+  overflow-x: hidden;
+}
+body .ui-dialog .tab-content .charsheet .section-shield label:is(.input-label, .text-input) {
+  border: 0;
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-shield span.input-span {
+  display: flex;
+  justify-content: space-evenly;
+  border-left: 1px solid var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-shield .label-input.input-count-3 span {
+  border-right: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-shield .label-input.input-count-3 span.colon {
+  font-size: 85%;
+  text-align: right;
+}
+body .ui-dialog .tab-content .charsheet .section-shield .label-input.input-count-3 span.colon:after {
+  content: ":";
+}
+body .ui-dialog .tab-content .charsheet .section-shield .label-input.input-count-3 input:not(:checked):before {
+  content: " ";
+}
+body .ui-dialog .tab-content .charsheet .section-shield .repitem {
+  border-bottom: 1px solid var(--border-color);
 }
 body .ui-dialog .tab-content .charsheet .section-gear .expanded {
   background-color: transparent;
@@ -1639,17 +1784,80 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem {
   margin: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapse {
   right: -1.25rem;
 }
-body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .label-title button {
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed {
+  display: flex;
+  flex-direction: column;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .label-title {
+  width: 100%;
+  display: flex;
   justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .label-title button {
+  width: auto;
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed input[type=checkbox].display-toggle + div {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed input[type=checkbox].display-toggle:checked + div {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span {
+  text-transform: none;
+  margin-inline: 0.25rem;
+  text-align: center;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span:after {
+  content: ",";
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span:first-of-type {
+  text-transform: uppercase;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details div:last-of-type span:last-of-type:after {
+  content: "";
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span.colon:after {
+  content: ":";
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details {
+  /*& > span:after {
+     content: '';
+  } */
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .label-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .label-title button {
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .w50pc label {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .w50pc span {
+  width: unset;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .label-input.wide-text-input label {
+  width: 68%;
 }
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);
@@ -1687,6 +1895,10 @@ body.sheet-darkmode .charactersheet {
   --font-color2: #3e3e3e;
   --font-color-inv: #c3c3c3;
   --inverse-font-color: #a1a1a1;
+  --success-color: #319131;
+  --success-bg-color: #acdcbc;
+  --fail-color: #913131;
+  --fail-bg-color: #dcacac;
   --text-transform: uppercase;
   --border-color: #000;
   --fill-collor: transparent;
@@ -1729,6 +1941,7 @@ body.sheet-darkmode .charactersheet {
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-header h2, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-header body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name], body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-header .input-label:not(.stacked).large > [name] {
   color: var(--inverse-font-color);
+  text-align: center;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-title {
   width: 100%;
@@ -1748,7 +1961,8 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1756,7 +1970,8 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total :is(label, span),
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target :is(label, span),
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage :is(label, span),
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea :is(label, span) {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea :is(label, span),
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty :is(label, span) {
   max-width: 50%;
   width: 50%;
   line-height: 1.25rem;
@@ -1768,20 +1983,23 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total label,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target label,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty label {
   justify-content: flex-end;
   padding-right: 0.5rem;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total label:after,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target label:after,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label:after,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label:after {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label:after,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty label:after {
   content: ":";
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage span,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea span {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty span {
   justify-self: flex-start;
   background-color: transparent;
   border: 0;
@@ -1790,7 +2008,8 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button {
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: flex-end;
@@ -1798,13 +2017,15 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button.sheet-hit-area-buttons,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button.sheet-hit-area-buttons,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button.sheet-hit-area-buttons,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button.sheet-hit-area-buttons {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button.sheet-hit-area-buttons {
   flex-wrap: wrap;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"],
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"] {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button a[href^="~"] {
   color: var(--inverse-font-color);
   background-color: var(--border-color);
   margin: 0.25rem;
@@ -1817,8 +2038,26 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"] span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"] span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"] span,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"] span {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button a[href^="~"] span {
   line-height: 0.8rem;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border-color);
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty span {
+  width: 100%;
+  font-size: 67.5%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty span.sheet-success {
+  background-color: var(--success-bg-color);
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty span.sheet-fail {
+  background-color: var(--fail-bg-color);
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span.fullcrit, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span.sheet-fullcrit, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total .inlinerollresult.fullcrit {
   color: green;

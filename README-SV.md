@@ -16,8 +16,6 @@ I spelet på Roll20, gå först till Spelinställningarna och scrolla till botte
 
 Spelledaren kommer att ge rättigheter att ändra i karaktärsbladet, som hittas i Journal-tabben. Klicka för att öppna karaktärsbladet. 
 
-Vissa fält eller sektioner har två olika lägen, ett redigerings-läge och ett spel-läge. Man kan byta mellan lägena med hjälp av den kugghjulsikonen som dyker upp till höger när man hovrar med musen över något som går att ändra läge på. När man är i redigeringsläge så har de flesta fält en pulserande effekt för att man ska se tydligt vilket läge man är i. De flesta knappar eller klickbara delar är bara aktiva i spel-läget. 
-
 Formuläret är indelat i olika sektioner. Högst upp finns Grundegenskaper, övriga attribut, samt information om karaktären. Under det finns färdigheter, till vänster de generella och till höger de intränade färdigheterna. Under färdigheterna så finns vapensektionen, och under den finns utrustning och skydd till vänster och förmågor till höger. 
 
 Det finns en liten T10-ikon som visar var det går att slå tärningar. Det sker då automatiskt enligt informationen i karaktärsbladet och resulatet dyker upp i chatten. 
@@ -26,19 +24,13 @@ Det finns en liten T10-ikon som visar var det går att slå tärningar. Det sker
 
 Dessa skrivs in i respektive fält. Det finns ågra få automatiskt uträknade fält, dessa går inte att redigera men går ofta att lägga till modifikationer i närliggande fält. Vissa fält som t ex Hälsa och Förflyttning måste alltså räknas ut och skrivas i manuellt (för tillfället). 
 
-Vissa värden har modifikationer, som kan skrivas i för att modifiera ett annat uträknat värde. Till exmepel så har färdigheterna en kolumn med modifikationer, här kan temporära ändringar i FV åstadkommas genom att lägga till en modifikation. Mer permanenta modifikationer läggs med fördel till i själva FV värdet självt. 
-
-Grundegenskaper har två olika typer av tärningsslag, svårighetsbaserade eller motståndsslag. Klickbara ikoner dyker upp när man hovrar över respektive grundegenskap. Den med "00" till vänster är svårighetsslag och den med "10" till höger är för motsåndsslag. Svårighetsbaserade slag är som Färdighetsslag där FV är GEx7 för enkla saker, GEx5 för normala, GEx3 för svåra, och GE för mycket svåra. Resultatet i chatten när man slår visar vilka av dessa nivåer man klarat. Motståndsslag slås med 1T10 + GE, och jämförs oftast med ett slag av motståndaren.   
+Vissa värden har modifikationer, som kan skrivas i för att modifiera ett annat uträknat värde. 
 
 Initiativbonus och Reaktionsvärde är klickbara fält, för att rulla repsektive tärningar. 
 
 Vissa sekundära värden har modifikationer, så att du kan justera bas-värdet. 
 
-Skadebonuns har inte en modifikation, utan snarare en override av det vanliga värdet. Detta kan användas när skadebonusen tillfälligt ändras. 
-
 Kroppspoäng har både ett nuvarande och ett maximalt värde. När du tar skada så ändrar du enbart det nuvarande värdet. 
-
-Bärförmågan under sekundära grundegenskaper styr hur stor bärförmåga som listas i den sektion under tränade färdigheter som även listar hur mycket bärförmåga som nyttjas. NB: Inga modifikationer sker autmoatiskt om bärfömågan överskrids.  
 
 ### Repeterande listor
 
@@ -64,8 +56,6 @@ Vapen är också en repeterande lista. Det viktiga är att välja rätt Färdigh
 
 Speciellt för vapen är att det går att slå för vapnets träff genom att klicka på vapnets namn. Från resultet i chatten kan man sen slå för skadan, vilket räcknar in kritiska träffar baserat på färdigheten man använder. När man slagit skada i chatten får man även möjlighet att slå träffområde. 
 
-Det finns många orsaker till att chansen att lyckas modifieras när man strider, och det finns därför ett specifikt MOdifikations+fält för vapnet som kan användas temporaärt när vapnet ska användas. 
-
 Vapen har också betydelse för turordningen, och initiativet kan slås med värdet som lagts in under Init. OM man samtidigt markerar sin egen ikon på spelfältet, så kommer initiativet läggas in i Roll20 initiative tracker. 
 
 Skada kan slås via träffresulatet i chatten, men också direkt ifrån formuläret. När skadan slås direkt från formuläret så räknas inget extra skada ut pga potentiella perfekta slag, men det gör det om man först slår för vapnets attack (knappen vid vapnet namn).
@@ -74,48 +64,17 @@ Skada kan slås via träffresulatet i chatten, men också direkt ifrån formulä
 
 Rustning har värden både för Begränsning och Vikt. Det är bara vikt som räknas ut och läggs till värdet mot bärförmågan, men bara om den inte är påtagen (knappen till vänster är ett V). Om rustningen är avtagen så klickar man bort det (och visar istället ett X). Detta påverkar den använda Bärförmågan.
 
-> Notera att automatiska avdrag görs för rustningar och hjälmars Begränsning på de är burna, detta återspeglar sig när man slår för de påverkade färdigheterna. Detta gör det viktigt att markera rätt typ av rustning i redigeringsläget för rustningen. 
+> Notera att inga automatiska avdrag görs (ännu) för rustningar med Begränsningar. 
 
 ### Utrustning
 
-Utrustningslistan och dess antal och vikt läggs samman gentemot den utnyttjade bärförmågan. Notera att om en sak avmarkeras så räknas den inte som buren och därför inte heller gentemot bärförmågan. Det som skiljer sig från den regeln är Rustning, som inte räknas mot bärförmåga då den bärs men gör det om den inte är påtagen. 
+Utrustningslistan och dess antal och vikt läggs samman gentemot den utnyttjade bärförmåga. Notera att om en sak avmarkeras så räknas den inte som buren och därför inte heller gentemot bärförmågan. 
 
 ### Förmågor
 
-Denna lista visar de förmågor, dvs, mutationer, optioner eller talanger som är relevanta för typen av karaktär. När en förmåga inte är i redigeringsläge så kommer den att visa de fält som har fyllts i. Vill man inte se detta så kan den informationen istället läggas till i beskrivningsfältet. 
+Denna lista visar de förmågor, dvs, mutationer, optioner eller talanger som är relevanta för typen av karaktär. 
 
-Det finns ett fält för Färdighetsslag där ett färdighetvärde kan läggas in. Detta dyker sen upp som ett klickbart val för förmågan, och slås som ett vanligt färdighetsslag. NB: Det finns ingen modifikations-fält ännu, så modifikationer måste ske direkt i FV eller manuellt uträknat efter slaget. 
+Notera att tärningsslaget inte är ett färdighetsslag. Om en förmåga skulle behöva ett vanligt T100 färdighetsslag öven om det kan läggas in som en T100, det är bättre attlägga till såna som i listan med Tränade färdigheter med valet "Lägg till Manuellt". 
 
-Notera att Tärningsslaget inte är ett färdighetsslag. Om en förmåga skulle behöva ett vanligt T100 färdighetsslag öven om det kan läggas in som en T100, det är bättre attlägga till såna som i listan med Tränade färdigheter med valet "Lägg till Manuellt". 
 
-### Rolltemplate och Macron
 
-Notera att i rollformuläret kan man skriva tärningar på det svenska viset med T, ex 1T10, men när man använder rolltemplate direkt måste man använda D.  
-
-I exemplen beh;ver man byta ut texten som b;rjar med __ och slutar med __. 
-
-#### Vanliga färdighetsslag
-
-```
-   &{template:mutantua} {{character_name=__karaktärsnamn__}} {{roll-name=__namn på slaget__}} {{roll1=[[1d100cs<__perfekt__cf100]]}} {{target=[[__FV__]]}}
-```
-
-Exempel:
-
-```
-   &{template:mutantua} {{character_name=Jerry}} {{roll-name=SKJUTA}} {{roll1=[[1d100cs<5cf100]]}} {{target=[[55]]}}
-```
-
-#### Skada
-
-Notera att {{calcdamage=[[0]]}} på slutet måste vara med för att det ska funka
-
-```
-   &{template:mutantua} {{character_name=__karaktärsnamn__}} {{roll-name=__namn på slaget__}}  {{damage=[[__skadetärningar__[Skada]__+skadebonus__[Skadebonus]__+annan bonus__[bonus]]]}} {{target-area=[[1D6]]}} {{calcdamage=[[0]]}}
-```
-
-Exempel:
-
-```
-   &{template:mutantua} {{character_name=Jerry}} {{roll-name=ELDSKADA}}  {{damage=[[1T6+2[Eld]+1T4[Hetta] ]]}} {{target-area=[[1D6]]}} {{calcdamage=[[0]]}}
-```
