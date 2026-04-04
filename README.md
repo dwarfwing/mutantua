@@ -48,7 +48,7 @@ I redigeringsläge kan mycket av informatione uppdateras, och när man går ur d
 
 Dessa listor kan också editeras genom att flytta runt rader eller ta bort rader, för att göra det börja med att klicka på ikonen med tre rader och en penna i det nedre högra hörnet av listan. Då ställs listan i editeringsläge, och du kan flytta rader upp och ner genom att "ta tag" i ikonen till vänster, medan soptunneikonen till höger gör att raden tas bort. 
 
-> Notera att ingen fråga elelr varning dyker upp när en rad tas bort, så var försiktig med den funktionen. 
+> Notera att ingen fråga eller varning dyker upp när en rad tas bort, så var försiktig med den funktionen. 
 
 ### Färdigheter
 
@@ -60,7 +60,7 @@ Man kan också välja att lägga till egna träande fäardigheter genom att väl
 
 ### Vapen
 
-Vapen är också en repeterande lista. Det viktiga är att välja rätt Färdighet i rullisten "Färd.", så att slagen med vapnet sker på rätt sätt. 
+Vapen är också en repeterande lista. Det viktiga är att välja rätt Färdighet i rullisten "Färd.", så att slagen med vapnet sker på rätt sätt. Om det inte finns en passande färdighet, så välj det sista valet, "Manuellt". När man går ur redigeringsläge så visas istället för färdighetens namn ett fält där man manuellt kan lägga in ett färdighetsvärde. 
 
 Speciellt för vapen är att det går att slå för vapnets träff genom att klicka på vapnets namn. Från resultet i chatten kan man sen slå för skadan, vilket räcknar in kritiska träffar baserat på färdigheten man använder. När man slagit skada i chatten får man även möjlighet att slå träffområde. 
 
@@ -72,9 +72,9 @@ Skada kan slås via träffresulatet i chatten, men också direkt ifrån formulä
 
 ### Rustning
 
-Rustning har värden både för Begränsning och Vikt. Det är bara vikt som räknas ut och läggs till värdet mot bärförmågan, men bara om den inte är påtagen (knappen till vänster är ett V). Om rustningen är avtagen så klickar man bort det (och visar istället ett X). Detta påverkar den använda Bärförmågan.
+Rustning har värden både för Begränsning och Vikt. Det är bara vikt som räknas ut och läggs till värdet mot bärförmågan, men bara om den inte är påtagen (knappen till vänster är ett V). Om rustningen är avtagen så klickar man bort det (och visar istället ett X). Detta påverkar den belastningen gentemot Bärförmågan.
 
-> Notera att automatiska avdrag görs för rustningar och hjälmars Begränsning på de är burna, detta återspeglar sig när man slår för de påverkade färdigheterna. Detta gör det viktigt att markera rätt typ av rustning i redigeringsläget för rustningen. 
+> Notera att automatiska avdrag görs för rustningar och hjälmars Begränsning på när de är burna (checkboxen iklickad), detta återspeglar sig när man slår för de påverkade färdigheterna. Detta gör det viktigt att markera rätt typ av rustning i redigeringsläget för rustningen. När de inte är burna så räknas de däremot med i belastningen.
 
 ### Utrustning
 
@@ -84,9 +84,13 @@ Utrustningslistan och dess antal och vikt läggs samman gentemot den utnyttjade 
 
 Denna lista visar de förmågor, dvs, mutationer, optioner eller talanger som är relevanta för typen av karaktär. När en förmåga inte är i redigeringsläge så kommer den att visa de fält som har fyllts i. Vill man inte se detta så kan den informationen istället läggas till i beskrivningsfältet. 
 
-Det finns ett fält för Färdighetsslag där ett färdighetvärde kan läggas in. Detta dyker sen upp som ett klickbart val för förmågan, och slås som ett vanligt färdighetsslag. NB: Det finns ingen modifikations-fält ännu, så modifikationer måste ske direkt i FV eller manuellt uträknat efter slaget. 
+Det finns ett fält för Färdighetsslag där ett färdighetvärde kan läggas in. Detta dyker sen upp som ett klickbart val för förmågan, och slås som ett vanligt färdighetsslag. När förmågan inte är i redigeringsläge så visas färdighetsvärdet förkortat till FV och följs av en fält för att lägga till en modifiering (Mod.).  
 
-Notera att Tärningsslaget inte är ett färdighetsslag. Om en förmåga skulle behöva ett vanligt T100 färdighetsslag öven om det kan läggas in som en T100, det är bättre attlägga till såna som i listan med Tränade färdigheter med valet "Lägg till Manuellt". 
+Notera att Tärningsslaget inte är ett färdighetsslag, utan används för andra slag som t ex 2T10+1/10 av ett färdighetsvärde. I dessa specifika fall får man räkna ut 1/10 och lägga in som t e 2T10+3. 
+
+Om tärningsslag för Skada har lagt in så kan det slås direkt från normalläget för förmågan, men kommer också dyka upp som en knapp i resultatet av Färdighetsslaget eller Tärningsslaget i chatten.  
+
+Förmågor har ett val kallat Resonans i redigeringsläget, denna bör enbart klickas i för PSI-mutationer och gör att en Resonans-sektion visas ovanför Förmågorna. När en sådan mutation misslyckas så läggs 1 till den nuvarande REsonansen för karaktären, och resultatet i chatten kommer att ha en Resonans-knapp man kan använda för att slå ett Resoans-test med 2T6 + Resonansvärdet - VIL. Det går även att slå direkt från Resonans-fältet, men slår man från resultatet i chatten så tas även fummel (+5 på slaget) med i beräkning. 
 
 ### Rolltemplate och Macron
 

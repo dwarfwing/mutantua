@@ -1303,6 +1303,9 @@ body .ui-dialog .tab-content .charsheet button[type=roll] + button[type=action]:
 body .ui-dialog .tab-content .charsheet button[type=action].hidden:before {
   content: "";
 }
+body .ui-dialog .tab-content .charsheet input[type=number].underline, body .ui-dialog .tab-content .charsheet input[type=text].underline {
+  border-bottom: 1px solid var(--border-color);
+}
 body .ui-dialog .tab-content .charsheet input[type=checkbox]:not(.collapse):not(.fill-left__radio) {
   align-self: center;
   border: 1px solid var(--font-color2);
@@ -1344,6 +1347,10 @@ body .ui-dialog .tab-content .charsheet .box .box-header {
 }
 body .ui-dialog .tab-content .charsheet .box .box-header h2, body .ui-dialog .tab-content .charsheet .box .box-header .input-label:not(.stacked).large > [name] {
   font-size: 85%;
+}
+body .ui-dialog .tab-content .charsheet .box .box-header.field-count-0 {
+  display: flex;
+  justify-content: center;
 }
 body .ui-dialog .tab-content .charsheet .box .box-header.field-count-1 {
   display: grid;
@@ -1462,6 +1469,7 @@ body .ui-dialog .tab-content .charsheet .label-input label.right-align {
 }
 body .ui-dialog .tab-content .charsheet .label-input label.comma, body .ui-dialog .tab-content .charsheet .label-input span.comma {
   padding-right: 0.5rem;
+  box-sizing: border-box;
 }
 body .ui-dialog .tab-content .charsheet .label-input label.comma:after, body .ui-dialog .tab-content .charsheet .label-input span.comma:after {
   content: ": ";
@@ -1660,6 +1668,15 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem button {
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem button.init-button span {
   width: 1rem;
 }
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-skillname-toggle + span + input,
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-skillname-toggle:checked + span {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-skillname-toggle:checked + span + input {
+  display: flex;
+  box-sizing: border-box;
+  font-size: 100%;
+}
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_skill_name],
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_range],
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem select[name=attr_skill],
@@ -1681,7 +1698,7 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem span.currMax {
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span.slash {
   width: 1rem;
 }
-body .ui-dialog .tab-content .charsheet .section-weapons .repitem .smaller-text, body .ui-dialog .tab-content .charsheet .section-weapons .repitem select.smaller-text option {
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem .smaller-text {
   font-size: 80%;
 }
 body .ui-dialog .tab-content .charsheet .section-armor .label-input.input-count-3 span {
@@ -1776,6 +1793,82 @@ body .ui-dialog .tab-content .charsheet .section-gear .expanded {
 body .ui-dialog .tab-content .charsheet .section-gear .expanded input {
   text-transform: uppercase;
 }
+body .ui-dialog .tab-content .charsheet .section-resonance {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance + p {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance {
+  display: grid;
+  grid-template-columns: auto 4rem 2rem 2rem;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance .label-input-roller {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance .label-input-roller button {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance .input-resonance, body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance .span-resonance {
+  border-right: 1px solid var(--border-color);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit-toggle:checked ~ input.input-resonance,
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit-toggle:not(:checked) ~ span.span-resonance {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit-toggle ~ input.input-resonance {
+  animation-name: bgpulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit-toggle:not(:checked) ~ input.input-resonance,
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit-toggle:checked ~ span.span-resonance {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit {
+  position: relative;
+  appearance: unset;
+  border: 0;
+  place-content: center;
+  place-self: center;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit:before {
+  font-family: "Material Symbols Outlined";
+  inset: 0;
+  font-weight: normal;
+  font-size: 95%;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit:checked:before {
+  content: "edit_off";
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit:not(:checked):before {
+  content: "edit";
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance button[type=action] {
+  justify-self: center;
+  place-self: center;
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance button[type=action] + button[type=action] {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance button[type=action]:before {
+  font-family: "Material Symbols Outlined";
+  content: "x_circle";
+  font-size: 1.25rem;
+  line-height: 0.5rem;
+  justify-self: center;
+}
+body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance button[type=roll] + button[type=action] {
+  display: none;
+}
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -1816,12 +1909,24 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
   flex-wrap: wrap;
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   text-transform: none;
   margin-inline: 0.25rem;
   text-align: center;
 }
-body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span:after {
-  content: ",";
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details input.skill-mod {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--border-color);
+  width: 2.5rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span:after, body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details input:after {
+  content: ", ";
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span:first-of-type {
   text-transform: uppercase;
@@ -1850,6 +1955,13 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .label-title button {
   justify-content: center;
 }
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded span:not(.label-title), body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded label {
+  font-size: 85%;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .w50pc {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .w50pc label {
   width: 100%;
 }
@@ -1858,6 +1970,17 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded .label-input.wide-text-input label {
   width: 68%;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded input[type=checkbox] {
+  width: 1.5rem;
+  justify-self: center;
+}
+body .ui-dialog .tab-content .charsheet .section-notes .adaptive {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .abilities-notes-col input.resonance-toggle:checked + .section-resonance,
+body .ui-dialog .tab-content .charsheet .abilities-notes-col input.resonance-toggle:checked + .section-resonance + p {
+  display: block;
 }
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);
@@ -1962,18 +2085,20 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance {
   width: 100%;
   display: flex;
   flex-direction: row;
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total :is(label, span),
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target :is(label, span),
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage :is(label, span),
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea :is(label, span),
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty :is(label, span) {
-  max-width: 50%;
-  width: 50%;
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty :is(label, span),
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance :is(label, span) {
   line-height: 1.25rem;
   display: flex;
   align-self: center;
@@ -1984,7 +2109,8 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target label,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty label {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty label,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance label {
   justify-content: flex-end;
   padding-right: 0.5rem;
 }
@@ -1992,40 +2118,60 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target label:after,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage label:after,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea label:after,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty label:after {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty label:after,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance label:after {
   content: ":";
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea span,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty span {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance span {
   justify-self: flex-start;
   background-color: transparent;
   border: 0;
   outline: 0;
 }
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-resonance-button,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-resonance-button,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-resonance-button,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-resonance-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-resonance-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-damage-button,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-resonance-button {
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: flex-end;
 }
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button.sheet-hit-area-buttons, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-resonance-button.sheet-hit-area-buttons,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-resonance-button.sheet-hit-area-buttons,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-resonance-button.sheet-hit-area-buttons,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button.sheet-hit-area-buttons,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button.sheet-hit-area-buttons {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-resonance-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-resonance-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-damage-button.sheet-hit-area-buttons,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-resonance-button.sheet-hit-area-buttons {
   flex-wrap: wrap;
 }
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"], .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-resonance-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-resonance-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-resonance-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"],
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button a[href^="~"] {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-resonance-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-resonance-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-damage-button a[href^="~"],
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-resonance-button a[href^="~"] {
   color: var(--inverse-font-color);
   background-color: var(--border-color);
   margin: 0.25rem;
@@ -2035,11 +2181,17 @@ body.sheet-darkmode .charactersheet {
   corner-shape: superellipse(0);
   border-radius: 0.25rem;
 }
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-damage-button a[href^="~"] span, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-resonance-button a[href^="~"] span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-resonance-button a[href^="~"] span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-resonance-button a[href^="~"] span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-damage-button a[href^="~"] span,
-.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button a[href^="~"] span {
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-resonance-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-resonance-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-damage-button a[href^="~"] span,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-resonance-button a[href^="~"] span {
   line-height: 0.8rem;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty {
