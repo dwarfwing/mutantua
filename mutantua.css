@@ -1604,6 +1604,18 @@ body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 button[type=action] {
   display: hidden;
 }
+body .ui-dialog .tab-content .charsheet .section-skill input.exp-toggle {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .repitem:hover {
+  position: relative;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .repitem:hover input.exp-toggle {
+  display: flex;
+  position: absolute;
+  left: -1rem;
+  width: 1rem;
+}
 body .ui-dialog .tab-content .charsheet .section-trainedskills {
   border-bottom: 1px solid var(--border-color);
 }
@@ -2218,6 +2230,7 @@ body.sheet-darkmode .charactersheet {
   color: #b31515;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea {
+  display: flex;
   justify-content: center;
 }
 
