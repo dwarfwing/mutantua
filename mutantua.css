@@ -1811,6 +1811,10 @@ body .ui-dialog .tab-content .charsheet .section-resonance {
 body .ui-dialog .tab-content .charsheet .section-resonance + p {
   display: none;
 }
+body .ui-dialog .tab-content .charsheet .section-resonance input.resonance-toggle:checked + .section-resonance,
+body .ui-dialog .tab-content .charsheet .section-resonance input.resonance-toggle:checked + .section-resonance + p {
+  display: block;
+}
 body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance {
   display: grid;
   grid-template-columns: auto 4rem 2rem 2rem;
