@@ -58,6 +58,12 @@ Tränade färdigheter är en s.k. repeterande lista (se ovan). De färdigheter s
 
 Man kan också välja att lägga till egna träande fäardigheter genom att välja det sista valet i listan, "Lägg till manuellt". Man får då skriva i ett eget namn, men i övrigt funkar det som andra färdigheter. 
 
+#### Förbättringsslag
+
+När man lyckas eller slår perfekt med en färdighet så markeras autoamtiskt detta med en liten diamant i kanten av färdighetens värde. Dessa markeringar syns bara då de är markerade eller när man hovrar över fältet. Det finns en för normala lyckade (den översta) och perfekta slag (den nedre).
+
+I slutet av en session så kan man slå förbättringsslag genom att klicka på Erfanrehets-knappen. Då kommer man slå förbättringsslag för alla markerade färdigheter, viskat till SL, och resultatet kommer automatiskt uppdatera färdigheterna. 
+
 ### Vapen
 
 Vapen är också en repeterande lista. Det viktiga är att välja rätt Färdighet i rullisten "Färd.", så att slagen med vapnet sker på rätt sätt. Om det inte finns en passande färdighet, så välj det sista valet, "Manuellt". När man går ur redigeringsläge så visas istället för färdighetens namn ett fält där man manuellt kan lägga in ett färdighetsvärde. 
@@ -92,13 +98,17 @@ Om tärningsslag för Skada har lagt in så kan det slås direkt från normallä
 
 Förmågor har ett val kallat Resonans i redigeringsläget, denna bör enbart klickas i för PSI-mutationer och gör att en Resonans-sektion visas ovanför Förmågorna. När en sådan mutation misslyckas så läggs 1 till den nuvarande REsonansen för karaktären, och resultatet i chatten kommer att ha en Resonans-knapp man kan använda för att slå ett Resoans-test med 2T6 + Resonansvärdet - VIL. Det går även att slå direkt från Resonans-fältet, men slår man från resultatet i chatten så tas även fummel (+5 på slaget) med i beräkning. 
 
-### Rolltemplate och Macron
+## Fordon
+
+TBA
+
+## Rolltemplate och Macron
 
 Notera att i rollformuläret kan man skriva tärningar på det svenska viset med T, ex 1T10, men när man använder rolltemplate direkt måste man använda D.  
 
 I exemplen beh;ver man byta ut texten som b;rjar med __ och slutar med __. 
 
-#### Vanliga färdighetsslag
+### Vanliga färdighetsslag
 
 ```
    &{template:mutantua} {{character_name=__karaktärsnamn__}} {{roll-name=__namn på slaget__}} {{roll1=[[1d100cs<__perfekt__cf100]]}} {{target=[[__FV__]]}}
@@ -110,7 +120,7 @@ Exempel:
    &{template:mutantua} {{character_name=Jerry}} {{roll-name=SKJUTA}} {{roll1=[[1d100cs<5cf100]]}} {{target=[[55]]}}
 ```
 
-#### Skada
+### Skada
 
 Notera att {{calcdamage=[[0]]}} på slutet måste vara med för att det ska funka
 
