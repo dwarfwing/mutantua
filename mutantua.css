@@ -166,14 +166,15 @@ body {
   --font-family: "PT Serif", Serif;
   --font-color: #000;
   --font-color2: #3e3e3e;
-  --inverse-font-color: #fff;
+  --font-color-inverse: #fff;
   --success-color: #319131;
   --success-bg-color: #acdcbc;
   --fail-color: #913131;
   --fail-bg-color: #dcacac;
   --text-transform: uppercase;
   --border-color: #000;
-  --fill-collor: transparent;
+  --fill-color: #505050;
+  --fill-color-none: transparent;
   --background-color: transparent;
   --background-color2: #e3e3e3;
   --background-color-inv: var(--dark-surface1);
@@ -1518,6 +1519,10 @@ body .ui-dialog .tab-content .charsheet .label-input.input-count-3 span.input-la
 body .ui-dialog .tab-content .charsheet .label-input.input-count-3.checkboxed {
   grid-template-columns: 2rem 1fr 4rem 4rem 4rem;
 }
+body .ui-dialog .tab-content .charsheet .label-input.input-count-4 {
+  display: grid;
+  grid-template-columns: 1fr 4rem 4rem 4rem 4rem;
+}
 body .ui-dialog .tab-content .charsheet .label-input.wide-text-input label {
   width: 30%;
 }
@@ -1605,6 +1610,36 @@ body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row:hover
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 {
   grid-template-columns: 1fr 0 4rem 4rem;
 }
+body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 span.input-span.input-0 {
+  position: relative;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 span.input-span.input-0 input[type=checkbox] {
+  display: none;
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  max-width: 0.2rem;
+  max-height: 0.2rem;
+  height: 0.2rem;
+  width: 0.2rem;
+  padding: 0;
+  min-width: 0.6rem;
+  min-height: 0.6rem;
+  transform: rotate(45deg);
+}
+body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 span.input-span.input-0 input[type=checkbox].improve-mark-perfect {
+  top: 50%;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 span.input-span.input-0 input[type=checkbox]:checked {
+  display: flex;
+  background-color: var(--fill-color);
+}
+body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 span.input-span.input-0 input[type=checkbox]:checked:before {
+  content: "";
+}
+body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 span.input-span.input-0:hover input[type=checkbox] {
+  display: flex;
+}
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 button[type=action] {
   display: hidden;
 }
@@ -1649,6 +1684,39 @@ body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded select 
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills .expanded select + input[type=checkbox]:checked + input[type=text] {
   display: block;
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 {
+  position: relative;
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 input[type=checkbox] {
+  display: none;
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  max-width: 0.2rem;
+  max-height: 0.2rem;
+  height: 0.2rem;
+  width: 0.2rem;
+  padding: 0;
+  min-width: 0.6rem;
+  min-height: 0.6rem;
+  transform: rotate(45deg);
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 input[type=checkbox].improve-mark-perfect {
+  top: 50%;
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 input[type=checkbox]:checked {
+  display: flex;
+  background-color: var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 input[type=checkbox]:checked:before {
+  content: "";
+}
+body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0:hover input[type=checkbox] {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet .section-experience .label-input.input-count-1 button[type=action] {
+  display: none;
 }
 body .ui-dialog .tab-content .charsheet .section-encumbrance .currMax span {
   text-align: center;
@@ -2021,10 +2089,43 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details span.colon:after {
   content: ":";
 }
-body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details {
-  /*& > span:after {
-     content: '';
-  } */
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level {
+  position: relative;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=number] {
+  text-align: left;
+  pointer-events: none;
+  padding-left: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox] {
+  display: none;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.8rem;
+  max-width: 0.4rem;
+  max-height: 0.4rem;
+  height: 0.4rem;
+  width: 0.4rem;
+  padding: 0;
+  min-width: 0.4rem;
+  min-height: 0.4rem;
+  transform: rotate(45deg);
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox]:after {
+  content: "";
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox].improve-mark-perfect {
+  top: 45%;
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox]:checked {
+  display: flex;
+  background-color: var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox]:checked:before {
+  content: "";
+}
+body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level:hover input[type=checkbox] {
+  display: flex;
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .expanded {
   display: flex;
@@ -2066,6 +2167,332 @@ body .ui-dialog .tab-content .charsheet .abilities-notes-col input.resonance-tog
 body .ui-dialog .tab-content .charsheet .abilities-notes-col input.resonance-toggle:checked + .section-resonance + p {
   display: block;
 }
+body .ui-dialog .tab-content .charsheet .section-vehicle-data .box {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0.5rem;
+  background-color: transparent;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-data .box > * {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-data .box label.input-label span {
+  text-indent: 0.5rem;
+  padding-right: 0.75rem;
+  text-transform: capitalize;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-data .box label.input-label span:after {
+  content: attr(value);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info {
+  margin-bottom: 1rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info label-input {
+  display: grid;
+  grid-template-columns: auto 4rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info__vehicle-name {
+  display: flex;
+  justify-self: center;
+  margin-bottom: 0.5rem;
+  font-size: 200%;
+  text-align: center;
+  font-variant-caps: small-caps;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info__vehicle-info {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info__vehicle-info label.input-label.input-label-text {
+  text-indent: 0.5rem;
+  padding-right: 0.75rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info__vehicle-info label.input-label.input-label-text span {
+  padding-right: 0.75rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-info__vehicle-info label.input-label.input-label-text input[type=text] {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box {
+  background-color: transparent;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem .expanded, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem .collapsed {
+  display: grid;
+  grid-template-columns: auto 5% 5% 5% 5% 5% 5% 5% 8% 8% 8% 5% 5% 5%;
+  column-gap: 0.25rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header {
+  background-color: var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header h1, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header h2, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header .input-label:not(.stacked).large > [name] {
+  color: var(--font-color-inverse);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem {
+  margin-top: 0.25rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem button {
+  border: 1px solid var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem button.init-button, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem button.damage-button {
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem div.label-input {
+  display: flex;
+  width: 100%;
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem div.label-input span {
+  width: 100%;
+  background-color: transparent;
+  color: var(--font-color);
+  height: 2rem;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.75rem;
+  corner-bottom-right-shape: bevel;
+  text-align: center;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem div.label-input input {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-eliminated {
+  margin-top: 1rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-eliminated .box {
+  background-color: transparent;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-eliminated .adaptive {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-gear {
+  margin-top: 1rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-gear .box {
+  background-color: transparent;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-gear .box .repitem {
+  margin-top: 0.25rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-gear .box .repitem .input-count-3 {
+  grid-template-columns: auto 3.75rem 3.75rem 3.75rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-gear .box .repitem label {
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-gear .box .repitem label:first-of-type input {
+  border-radius: 0;
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-2:checked ~ .section-vehicle-hitareas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-2:checked ~ .section-vehicle-hitareas .box:is(:nth-of-type(2), :nth-of-type(3)) {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-4:checked ~ .section-vehicle-hitareas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-4:checked ~ .section-vehicle-hitareas .box:is(:nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5)) {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-6:checked ~ .section-vehicle-hitareas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-6:checked ~ .section-vehicle-hitareas .box:is(:nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7)) {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-8:checked ~ .section-vehicle-hitareas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-8:checked ~ .section-vehicle-hitareas .box:is(:nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9)) {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-8:checked ~ .section-vehicle-hitareas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .ui-dialog .tab-content .charsheet input.hitareas-8:checked ~ .section-vehicle-hitareas .box:is(:nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(10), :nth-of-type(11), :nth-of-type(12), :nth-of-type(13)) {
+  display: flex;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__header {
+  display: flex;
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__header button[type=roll] {
+  width: auto;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__header button[type=action] {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas span.hitarea-name {
+  justify-self: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas span.hitarea-name input {
+  min-width: 5rem;
+  border: 0;
+  text-transform: uppercase;
+  field-sizing: content;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas span.hitarea-name:before {
+  content: attr(value);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box {
+  display: none;
+  justify-content: center;
+  align-self: flex-start;
+  border: 2px solid var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas {
+  margin-top: 1rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__header {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__header select {
+  appearance: auto;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box {
+  width: 45%;
+  margin-top: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box > h3 {
+  height: 2rem;
+  font-size: 0.675rem;
+  display: flex;
+  justify-content: center;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box > h3 span, body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box > h3 input {
+  text-align: center;
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box > * {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box > * input {
+  border: 1px solid var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box > * input:first-of-type {
+  border-radius: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box span.hitarea-name {
+  background-color: var(--border-color);
+  color: var(--font-color-inverse);
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas > .box .repitem {
+  margin-top: 0.25rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__fixed-components .box-header.field-count-1 {
+  grid-template-columns: auto 2.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__fixed-components .repitem {
+  display: grid;
+  grid-template-columns: auto 2rem;
+  column-gap: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__fixed-components .repitem input[type=checkbox]:checked:before {
+  content: "✗";
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-hitareas__extra-plating .repitem {
+  display: grid;
+  grid-template-columns: auto 3rem;
+  column-gap: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body .cut-corner {
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.75rem;
+  corner-bottom-right-shape: bevel;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body .box-header {
+  background-color: var(--border-color);
+  color: var(--font-color-inverse);
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body .box-header h1, body .ui-dialog .tab-content .charsheet .vehicle-body .box-header h2, body .ui-dialog .tab-content .charsheet .vehicle-body .box-header .input-label:not(.stacked).large > [name] {
+  color: var(--font-color-inverse);
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body .bottom {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  column-gap: 0.75rem;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body .col-1 {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body .col-2 {
+  width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label, body .ui-dialog .tab-content .charsheet .vehicle-body .label-input {
+  width: 100%;
+  column-gap: 0.5rem;
+  row-gap: 0.375rem;
+  border: 0;
+  border-right: 0;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label:input-label-text, body .ui-dialog .tab-content .charsheet .vehicle-body .label-input:input-label-text {
+  grid-template-columns: auto 10rem;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label.input-count-1:not(.input-label-text), body .ui-dialog .tab-content .charsheet .vehicle-body .label-input.input-count-1:not(.input-label-text) {
+  display: grid;
+  grid-template-columns: auto 4rem;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label span, body .ui-dialog .tab-content .charsheet .vehicle-body .label-input span {
+  border: 1px solid var(--border-color);
+  padding: 0;
+  background-color: var(--border-color);
+  color: var(--font-color-inverse);
+  height: 2rem;
+  box-sizing: border-box;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label input, body .ui-dialog .tab-content .charsheet .vehicle-body .label-input input {
+  height: 2rem;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.75rem;
+  corner-bottom-right-shape: bevel;
+  text-align: center;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label input[type=number], body .ui-dialog .tab-content .charsheet .vehicle-body .label-input input[type=number] {
+  width: 4rem;
+}
+body .ui-dialog .tab-content .charsheet .vehicle-body label.input-label input[type=text], body .ui-dialog .tab-content .charsheet .vehicle-body .label-input input[type=text] {
+  width: 10rem;
+}
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);
   --selectedColor:var(--dm-selectedColor);
@@ -2078,7 +2505,7 @@ body.sheet-darkmode {
   --disabledColor:var(--dm-disabledColor);
   --font-color: #e3e3e3;
   --font-color2: #a3a3a3;
-  --inverse-font-color: #3e3e3e;
+  --font-color-inverse: #3e3e3e;
   --border-color: #e3e3e3;
   --fill-color: #000;
   --background-color: #000;
@@ -2101,7 +2528,7 @@ body.sheet-darkmode .charactersheet {
   --font-color: #000;
   --font-color2: #3e3e3e;
   --font-color-inv: #c3c3c3;
-  --inverse-font-color: #a1a1a1;
+  --font-color-inverse: #a1a1a1;
   --success-color: #319131;
   --success-bg-color: #acdcbc;
   --fail-color: #913131;
@@ -2147,7 +2574,7 @@ body.sheet-darkmode .charactersheet {
   backdrop-filter: invert(100%);
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-header h2, .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-header body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name], body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-header .input-label:not(.stacked).large > [name] {
-  color: var(--inverse-font-color);
+  color: var(--font-color-inverse);
   text-align: center;
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-title {
@@ -2256,7 +2683,7 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-resonance-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-damage-button a[href^="~"],
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-resonance-button a[href^="~"] {
-  color: var(--inverse-font-color);
+  color: var(--font-color-inverse);
   background-color: var(--border-color);
   margin: 0.25rem;
   line-height: 1rem;
@@ -2277,6 +2704,14 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-damage-button a[href^="~"] span,
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-resonance-button a[href^="~"] span {
   line-height: 0.8rem;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-total.sheet-roll-skill-improvement,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-target.sheet-roll-skill-improvement,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-damage.sheet-roll-skill-improvement,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea.sheet-roll-skill-improvement,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty.sheet-roll-skill-improvement,
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-resonance.sheet-roll-skill-improvement {
+  border-top: 1px solid var(--border-color);
 }
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-difficulty {
   display: grid;
@@ -2318,7 +2753,7 @@ body.sheet-darkmode .charactersheet {
   --disabledColor:var(--dm-disabledColor);
   --font-color: #e3e3e3;
   --font-color2: #a3a3a3;
-  --inverse-font-color: #3e3e3e;
+  --font-color-inverse: #3e3e3e;
   --border-color: #e3e3e3;
   --fill-color: #000;
   --background-color: #000;
