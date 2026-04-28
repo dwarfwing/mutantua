@@ -2067,6 +2067,7 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
   text-transform: none;
   margin-inline: 0.25rem;
   text-align: center;
+  align-self: center;
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details input.skill-mod {
   margin: 0;
@@ -2187,6 +2188,9 @@ body .ui-dialog .tab-content .charsheet .section-vehicle-data .box label.input-l
 body .ui-dialog .tab-content .charsheet .section-vehicle-data .box label.input-label span:after {
   content: attr(value);
 }
+body .ui-dialog .tab-content .charsheet .section-vehicle-data .box label.input-label input[type=text] {
+  width: 4rem;
+}
 body .ui-dialog .tab-content .charsheet .section-vehicle-info {
   margin-bottom: 1rem;
 }
@@ -2225,7 +2229,7 @@ body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box {
 }
 body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem .expanded, body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem .collapsed {
   display: grid;
-  grid-template-columns: auto 5% 5% 5% 5% 5% 5% 5% 8% 8% 8% 5% 5% 5%;
+  grid-template-columns: auto 5% 5% 5% 5% 5% 5% 5% 10% 8% 6% 5% 5% 5%;
   column-gap: 0.25rem;
 }
 body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .box-header {
@@ -2264,6 +2268,9 @@ body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem div.la
 }
 body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem div.label-input input {
   width: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-vehicle-weapons .repitem div.label-input span[name=attr_range] {
+  font-size: 80%;
 }
 body .ui-dialog .tab-content .charsheet .section-vehicle-eliminated {
   margin-top: 1rem;

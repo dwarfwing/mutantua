@@ -18,6 +18,7 @@
   "agility": "smidighet",
   "ammo-max-abbr": "Ammo",
   "amount": "antal",
+  "appearance": "Utseende",
   "armor": "Rustning",
   "armor-indicator-desc": "@{repeating_armor_$X_armor}",
   "attribute-roll": "Slå grundegenskap med T100 mot svårighetsgrader",
