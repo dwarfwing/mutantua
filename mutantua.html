@@ -2646,7 +2646,11 @@ funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
               sections[arr._section].splice(index,1);
               sections[arr._section].splice(targ,0,id);
               if(vocal){
-                _setSectionOrder(arr._section,sections[arr._section]);
+                attributes.set({
+                  callback(){
+                    _setSectionOrder(arr._section,sections[arr._section]);
+                  }
+                });
               }
             }
           }
@@ -2666,9 +2670,14 @@ funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
               const bIndex = sections[arr._section].indexOf(b._id);
               return aIndex - bIndex;
             });
-            // if not a silent sort, then apply the reordered section to the sheet via setSectionOrder
+            // Defer setSectionOrder into a set() callback so it fires AFTER pending setAttrs
+            // (the sort may coexist with attribute writes that create the rows being reordered).
             if(vocal){
-              _setSectionOrder(arr._section,sections[arr._section]);
+              attributes.set({
+                callback(){
+                  _setSectionOrder(arr._section,sections[arr._section]);
+                }
+              });
             }
             return arr;
           }
@@ -2731,11 +2740,19 @@ funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
         }else if(prop === 'set'){
           return function(){
             let {callback,vocal} = arguments[0] ? arguments[0] : {};
+            // Preserve the caller's callback across cascade-queue processing. Without this,
+            // the recursive set() triggered by cascade processing (which passes no callback)
+            // would drop the original caller's callback silently.
+            if(callback){
+              obj._pendingCallback = callback;
+            }
             if(sections && casc && attributes.queue.length){
               const triggerName = attributes.queue.shift();
               const trigger = getCascObj({sourceAttribute:triggerName});
               processChange({trigger,attributes,sections,casc});
             }else{
+              const resolvedCallback = callback || obj._pendingCallback;
+              obj._pendingCallback = undefined;
               if(kFuncs.verboseMode){
                 debug({updates:obj.updates});
               }
@@ -2744,9 +2761,9 @@ funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
                   Object.entries(obj.repOrders).forEach(([section,order])=>{
                     _setSectionOrder(section,order)
                   });
-                  callback && callback();
+                  resolvedCallback && resolvedCallback();
                 }:
-                callback;
+                resolvedCallback;
               Object.keys(obj.updates).forEach((key)=>obj.attributes[key] = obj.updates[key]);
               const update = obj.updates;
               obj.updates = {};
@@ -2786,7 +2803,10 @@ funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
           let numRetVal = +retValue;
           if(!Number.isNaN(numRetVal) && retValue !== ''){
             retValue = numRetVal;
-          }else if(cascades[cascRef] && (typeof cascades[cascRef].defaultValue === 'number' || cascades[cascRef].type === 'number')){
+          }else if(cascades[cascRef] && cascades[cascRef].type === 'number'){
+            // Only substitute the default when the input is explicitly typed as a number.
+            // Previously the proxy also substituted when defaultValue was numeric, which caused
+            // non-numeric checkbox values (e.g. '/w gm') to be clobbered by the numeric default (0).
             retValue = cascades[cascRef].defaultValue;
           }
           return retValue;
@@ -2799,8 +2819,8 @@ funcs.kReceive = kReceive;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
           if(/reporder/.test(prop)){
             let section = prop.replace(/_reporder_/,'');
             obj.repOrders[section] = value;
-          }else if(`${obj.attributes}` !== `${value}` || 
-            (obj.updates[prop] && `${obj.updates}` !== `${value}`)
+          }else if(`${obj.attributes[prop]}` !== `${value}` ||
+            (obj.updates.hasOwnProperty(prop) && `${obj.updates[prop]}` !== `${value}`)
           ){
             if(sections && casc){
               let trigger = getCascObj({sourceAttribute:prop});
@@ -3545,6 +3565,30 @@ const repeatingSum = (destinations, section, fields) => {
     }); 
 };
 
+  /**
+ * Updates to version 1.1. Converts ability name attribute to skill_name.
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const updatev1dot1 = function({trigger,attributes,sections,casc}) {
+   k.log(`Updating from v1 to v1.1`);
+   sections.repeating_abilities.forEach( (rowId) => {
+      const row = `repeating_abilities_${rowId}`;
+      k.log(`Updating name for ability row ${row}`);
+      const name = attributes[`${row}_name`],
+            skill_name = attributes[`${row}_skill_name`];
+      k.log(`Name ${name} to skill name ${skill_name}`);
+      if( (skill_name == undefined || skill_name == '') && (name != undefined || name != '') ) {
+         k.log(`Setting name ${name} to skill name ${skill_name}`);
+         attributes[`${row}_skill_name`] = name; 
+      }
+   });
+   attributes.version = '1.1';
+   attributes.set();
+}
+k.registerFuncs({'1.1':updatev1dot1},{type:['updater']});
   const executeRoll = async function ({rollObj,attributes,sections}) {
    //k.log(`Executing roll object: ${JSON.stringify(rollObj)}`);
    let char_id = '';
@@ -3915,7 +3959,7 @@ const rollAbilitySkill = async function ({trigger,attributes,sections,casc}) {
    const row = `${section}_${rowID}_`;
    //k.log('Name is '+ attributes[`${row}skill_name`]);
    rollObj.skillAttr = `${section}_${rowID}`;
-   rollObj.name = attributes[`${row}name`];
+   rollObj.name = attributes[`${row}skill_name`];
    rollObj.abilitySkillRoll = true; 
    rollObj.target = attributes[`${row}skill`] + (attributes[`${row}skill_mod`]||0);
    const rollCrit = Math.ceil(rollObj.target / 10) != 0 ? Math.ceil(rollObj.target / 10) : 1;
