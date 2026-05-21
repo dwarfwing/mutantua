@@ -668,7 +668,7 @@
                 </option>
                 <option data-i18n="bows" value="bows">Båge
                 </option>
-                <option data-i18n="energy-weapons" value="energy_weapons">Energi*
+                <option data-i18n="energy-weapons" value="energy_weapons">Energi
                 </option>
                 <option data-i18n="rifles" value="rifles">Gevär
                 </option>
@@ -680,17 +680,21 @@
                 </option>
                 <option data-i18n="melee" value="melee">Närstrid
                 </option>
-                <option data-i18n="explosives" value="explosives">Spräng*
+                <option data-i18n="explosives" value="explosives">Spräng
                 </option>
-                <option data-i18n="martial-arts" value="martial_arts">Stridsk.*
+                <option data-i18n="martial-arts" value="martial_arts">Stridsk.
                 </option>
-                <option data-i18n="heavy-weapons" value="heavy_weapons">Tungt*
+                <option data-i18n="heavy-weapons" value="heavy_weapons">Tungt
                 </option>
                 <option data-i18n="pistols" value="pistols">Pistol
                 </option>
-                <option data-i18n="sabre" value="sabrefencing">Sabel*
+                <option data-i18n="sabre" value="sabrefencing">Sabel
                 </option>
-                <option data-i18n="rapier" value="rapierfencing">Värja*
+                <option data-i18n="rapier" value="rapierfencing">Värja
+                </option>
+                <option data-i18n="bodybombing" value="bodybombing">Bodybombing
+                </option>
+                <option data-i18n="knifefighting" value="knifefighting">Knivfajt
                 </option>
                 <option data-i18n="manual" value="manual">Manuellt
                 </option>
@@ -1893,7 +1897,10 @@
         </div>{{/rollTotal() computed::calcdamage 0}}{{#rollTotal() computed::calcdamage 1}}
         <div class="sheet-roll-damage">
           <label data-i18n="damage">Skada</label><span>{{computed::calcdamage}} ({{damage}}) </span>
-        </div>{{/rollTotal() computed::calcdamage 1}}{{/damage}}{{#rollTotal() computed::improvementsuccess 1}}             
+        </div>{{/rollTotal() computed::calcdamage 1}}{{/damage}}{{#hitarea}}{{#damage}}
+        <div class="sheet-roll-damage sheet-roll-hitarea">
+          <label data-i18n="damage">Skada</label><span>{{damage}} </span>
+        </div>{{/damage}}{{/hitarea}}{{#rollTotal() computed::improvementsuccess 1}}             
         <div class="sheet-roll-damage sheet-roll-skill-improvement">
           <label data-i18n="improvement">Förbättring</label><span>{{rollImprov}} </span>
         </div>{{/rollTotal() computed::improvementsuccess 1}}{{#rollTotal() computed::improvementsuccess 0}} 
@@ -1907,11 +1914,14 @@
         <div class="sheet-roll-resonance sheet-roll-resonance-button"><span class="resonance-roll-button">[{{resonance-label}}](~{{character_name}}|rollResonance)</span></div>{{/rollTotal() computed::abilityfail 1}}{{#rollTotal() computed::abilityfail 2}}
         <div class="sheet-roll-resonance sheet-roll-resonance-button sheet-roll-resonance-button-crit"><span class="resonance-roll-button">[{{resonance-label}}](~{{character_name}}|rollResonanceCrit)</span></div>{{/rollTotal() computed::abilityfail 2}}{{#hitareas}}
         <div class="sheet-roll-damage sheet-roll-damage-button hit-area-buttons">
-          <label data-i18n="target-area">Träffområde</label><span class="damage-roll-button">[<span data-i18n='d2'>d2</span>](~{{character_name}}|hitarea-2)</span><span class="damage-roll-button">[<span data-i18n='d4'>d4</span>](~{{character_name}}|hitarea-4)</span><span class="damage-roll-button">[<span data-i18n='d6'>d6</span>](~{{character_name}}|hitarea-6)</span><span class="damage-roll-button">[<span data-i18n='d8'>d8</span>](~{{character_name}}|hitarea-8)</span><span class="damage-roll-button">[<span data-i18n='d10'>d10</span>](~{{character_name}}|hitarea-10)</span><span class="damage-roll-button">[<span data-i18n='d12'>d12</span>](~{{character_name}}|hitarea-12)</span>
+          <label data-i18n="target-area">Träffområde</label><span class="damage-roll-button">[<span data-i18n='d2'>d2</span>](~{{character_name}}|hitarea-2||{{computed::damageTotal}})</span><span class="damage-roll-button">[<span data-i18n='d4'>d4</span>](~{{character_name}}|hitarea-4||{{computed::damageTotal}})</span><span class="damage-roll-button">[<span data-i18n='d6'>d6</span>](~{{character_name}}|hitarea-6||{{computed::damageTotal}})</span><span class="damage-roll-button">[<span data-i18n='d8'>d8</span>](~{{character_name}}|hitarea-8||{{computed::damageTotal}})</span><span class="damage-roll-button">[<span data-i18n='d10'>d10</span>](~{{character_name}}|hitarea-10||{{computed::damageTotal}})</span><span class="damage-roll-button">[<span data-i18n='d12'>d12</span>](~{{character_name}}|hitarea-12||{{computed::damageTotal}})</span>
         </div>{{/hitareas}}{{#hitarearoll}}
-        <div class="sheet-roll-hitarea">{{#rollTotal() computed::hitareadetails 1}}<span>{{hitarearoll}} {{#computed::hitarea}} ({{computed::hitarea}}) {{/computed::hitarea}} </span>{{/rollTotal() computed::hitareadetails 1}}{{#rollTotal() computed::hitareadetails 0}}<span>{{hitarearoll}}  </span>{{/rollTotal() computed::hitareadetails 0}}
-        </div>{{/hitarearoll}}{{#easy}}
-        <div class="sheet-roll-difficulty">  {{#rollLess() roll1 easy}}<span class="success" data-i18n="easy">EASY  </span>{{/rollLess() roll1 easy}}{{#rollGreater() roll1 easy}}<span class="fail" data-i18n="easy">EASY  </span>{{/rollGreater() roll1 easy}}{{#rollLess() roll1 normal}}<span class="success" data-i18n="normal">NORMAL  </span>{{/rollLess() roll1 normal}}{{#rollGreater() roll1 normal}}<span class="fail" data-i18n="normal">NORMAL  </span>{{/rollGreater() roll1 normal}}{{#rollLess() roll1 difficult}}<span class="success" data-i18n="difficult">DIFFICULT  </span>{{/rollLess() roll1 difficult}}{{#rollGreater() roll1 difficult}}<span class="fail" data-i18n="difficult">DIFFICULT  </span>{{/rollGreater() roll1 difficult}}{{#rollLess() roll1 absurd}}<span class="success" data-i18n="absurd">ABSURD  </span>{{/rollLess() roll1 absurd}}{{#rollGreater() roll1 absurd}}<span class="fail" data-i18n="absurd">ABSURD</span>{{/rollGreater() roll1 absurd}}
+        <div class="sheet-roll-hitarea">              
+          <label data-i18n="hitarea">träffområde</label><span class="align-center">{{hitarearoll}} </span>
+        </div>{{#rollTotal() computed::hitareadetails 1}}
+        <div class="sheet-roll-result">
+           {{computed::hitarea}}</div>{{/rollTotal() computed::hitareadetails 1}}{{/hitarearoll}}{{#easy}}
+        <div class="sheet-roll-difficulty">  {{#rollLess() roll1 easy}}<span class="success" data-i18n="easy">EASY </span>{{/rollLess() roll1 easy}}{{#rollTotal() roll1 easy}}<span class="success" data-i18n="easy">EASY  </span>{{/rollTotal() roll1 easy}}{{#rollGreater() roll1 easy}}<span class="fail" data-i18n="easy">EASY  </span>{{/rollGreater() roll1 easy}}{{#rollLess() roll1 normal}}<span class="success" data-i18n="normal">NORMAL  </span>{{/rollLess() roll1 normal}}{{#rollTotal() roll1 normal}}<span class="success" data-i18n="normal">NORMAL  </span>{{/rollTotal() roll1 normal}}{{#rollGreater() roll1 normal}}<span class="fail" data-i18n="normal">NORMAL  </span>{{/rollGreater() roll1 normal}}{{#rollLess() roll1 difficult}}<span class="success" data-i18n="difficult">DIFFICULT  </span>{{/rollLess() roll1 difficult}}{{#rollTotal() roll1 difficult}}<span class="success" data-i18n="difficult">DIFFICULT  </span>{{/rollTotal() roll1 difficult}}{{#rollGreater() roll1 difficult}}<span class="fail" data-i18n="difficult">DIFFICULT  </span>{{/rollGreater() roll1 difficult}}{{#rollLess() roll1 absurd}}<span class="success" data-i18n="absurd">ABSURD  </span>{{/rollLess() roll1 absurd}}{{#rollTotal() roll1 absurd}}<span class="success" data-i18n="absurd">ABSURD  </span>{{/rollTotal() roll1 absurd}}{{#rollGreater() roll1 absurd}}<span class="fail" data-i18n="absurd">ABSURD</span>{{/rollGreater() roll1 absurd}}
         </div>{{/easy}}
       </div>
     </div>
@@ -3609,10 +3619,13 @@ k.registerFuncs({'1.1':updatev1dot1},{type:['updater']});
          const rollCrit = Math.floor(rollObj.target / 10)||0;
          rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${rollObj.target}]]}}`;
       } else if (rollObj.hitAreaDie) {
-         rollObj.rollStr += ` {{hitarearoll=[[1D${rollObj.hitAreaDie}]]}} {{hitarea=[[0]]}} {{hitareadetails=[[0]]}}`; 
+         rollObj.rollStr += ` {{hitarearoll=[[1D${rollObj.hitAreaDie}]]}} {{hitarea=[[0]]}} {{hitareadetails=[[0]]}}`;
+         if ( rollObj.damage ) {
+            rollObj.rollStr += ` {{damage=${rollObj.damage}}}`;
+         } 
       }
       if (rollObj.damageDice && !rollObj.damageButton ) {      
-         rollObj.rollStr += ` {{damage=[[${rollObj.damageDice}[${getTranslationByKey('damage')}]${dmgBonusStr}]]}} {{target-area=[[1D6]]}} {{calcdamage=[[0]]}}`;
+         rollObj.rollStr += ` {{damage=[[${rollObj.damageDice}[${getTranslationByKey('damage')}]${dmgBonusStr}]]}} {{target-area=[[1D6]]}} {{calcdamage=[[0]]}} {{damageTotal=[[0]]}}`;
       } else if (rollObj.damageRoll) {
          rollObj.rollStr = rollObj.damageRoll;
       } else if (rollObj.damageButton) {
@@ -3672,13 +3685,18 @@ k.registerFuncs({'1.1':updatev1dot1},{type:['updater']});
       rollObj.result = roll.results.roll1.result; 
    }
 
-   if (rollObj.damageDice && roll?.results?.damage?.result) {      
+   /* if (rollObj.damageDice && roll?.results?.damage?.result) {      
       //k.log(`Damage result: ${roll.results.damage.result}`);
       computeObj.calcdamage = roll.results.damage.result < 1 ? 1 : 0;
       //k.log(`Calculated Damage: ${computeObj.calcdamage}`);
-   } 
+   } */ 
+   if ( rollObj.damageRoll || ( rollObj.damageDice && !rollObj.damageButton  ) ) { 
+      computeObj.calcdamage = roll.results.damage.result < 1 ? 1 : 0;     
+      computeObj.damageTotal = roll?.results?.damage?.result;
+      //console.log(`Damage total: ${computeObj.damageTotal}`);
+   }
    if ( rollObj.damageButton && !rollObj.shotgun ) {
-      computeObj.damageRoll = `&{template:mutantua} {{character_name=${attributes.character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}} {{target-area=[[1D6]]}} {{hitareas=true}} {{calcdamage=[[0]]}}`;
+      computeObj.damageRoll = `&{template:mutantua} {{character_name=${attributes.character_name}}} {{character_id=@{character_id}}} {{roll-name=${rollObj.name}}} {{target-area=[[1D6]]}} {{hitareas=true}} {{calcdamage=[[0]]}} {{damageTotal=[[0]]}}`;
       //k.log(`REsult ${roll.results.roll1.result} with ttarget ${rollObj.target} is perfect ${roll.results.roll1.result < (Math.floor(rollObj.target / 10)||0)}`)
       
       computeObj.damageRoll += ` {{damage=[[${rollObj.damageDice}[${getTranslationByKey('damage')}]${dmgBonusStr}${perfectStr}]]}}`;
@@ -3793,7 +3811,7 @@ k.registerFuncs({'1.1':updatev1dot1},{type:['updater']});
       }
    }
    if ( rollObj.vehicleHitarea ) {
-      k.log(`Vehicle hit area ${roll?.results?.hitarearoll?.result}`);
+     // k.log(`Vehicle hit area ${roll?.results?.hitarearoll?.result}`);
       //k.log(`Vehicle hit area sections ${JSON.stringify(sections.repeating_vehiclehitareas)}`);
       const area = roll?.results?.hitarearoll?.result;
       computeObj.hitareadetails = 1;
@@ -3803,45 +3821,24 @@ k.registerFuncs({'1.1':updatev1dot1},{type:['updater']});
    //k.log(`Compute Object: ${JSON.stringify(computeObj)}`); 
    finishRoll(roll.rollId,computeObj);
 }
-
-const weaponTrainedSkillImprove = function({rollObj,attributes,sections,perfect}) {
-   k.log(`Updating Improvement for weapon skill`);
-   const attr = rollObj.skillAttr;
-   k.log(`Weapon skill is ${attr}`);
-   var rowID = "";
-   sections[`repeating_trainedskills`].forEach( (cv) => {
-      let name = attributes[`repeating_trainedskills_${cv}_name`];
-      k.log(`Current row: ${cv} and name ${name}`);
-      if ( name == attr ) {
-         rowID = cv;
-      }
-   });
-   k.log(`Row ID to mark imrpovement ${rowID}`);
-   if ( !perfect ) {
-      const prev = attributes[`repeating_trainedskills_${rowID}_improve`];
-      k.log(`Previous value ${prev}`);
-      attributes[`repeating_trainedskills_${rowID}_improve`] = 1; 
-   } else {
-      attributes[`repeating_trainedskills_${rowID}_improve_perfect`] = 1; 
-   }
-   attributes.set();
-}
   k.sheetName = 'Mutant UA';
 k.version = 1.1;const rollWeaponAttack = function ({trigger,attributes,sections,casc}) {
-   k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
+   //k.log(`Roll trigger: ${JSON.stringify(trigger)}`);
    const rollObj = {};
    const [section,rowID,] = k.parseTriggerName(trigger.name);
    const row =`${section}_${rowID}_`;
+   const weaponSkill = attributes[`${row}skill`];
+   console.log(`Weapon skill : ${weaponSkill}`);
    rollObj.weaponRoll = true; 
    //k.log('Name is '+ attributes[`${row}name`]);
    rollObj.name = attributes[`${row}name`];
    //k.log(`Skill attribute is `+attributes[`${row}skill`]);
-   rollObj.shotgun = attributes[`${row}skill`] == 'shotgun_rifles' ? 'rifles' : 
-                     ( attributes[`${row}skill`] == 'shotgun_pistols' ) ? 'pistols' : false; 
+   rollObj.shotgun = weaponSkill == 'shotgun_rifles' ? 'rifles' : 
+                     ( weaponSkill == 'shotgun_pistols' ) ? 'pistols' : false; 
 
    rollObj.skillAttr = section != 'repeating_vehicleweapons' ? attributes[`${row}skill`] : 'vehicle';
    rollObj.skillAttr = rollObj.skillAttr.replace(/^shotgun_/,'');
-   k.log(`Weapon skill: ${rollObj.skillAttr}`);
+   //k.log(`Weapon skill: ${rollObj.skillAttr}`);
    if ( rollObj.skillAttr == 'manual' || rollObj.skillAttr == 'vehicle' ) {
       rollObj.rollSkill = attributes[`${row}skill_manual`];
       rollObj.rollSkillMod = 0;
@@ -3856,7 +3853,11 @@ k.version = 1.1;const rollWeaponAttack = function ({trigger,attributes,sections,
    rollObj.damageDice = section ?
       attributes[`${row}damage`] :
       attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_damage`];
-   if ( attributes[`${row}skill`] == 'melee' || attributes[`${row}skill`] == 'martial_arts'  || attributes[`${row}skill`] == 'sabrefencing' ) {
+   if ( weaponSkill == 'melee' || 
+      weaponSkill == 'martial_arts'  || 
+      weaponSkill == 'sabrefencing' || 
+      weaponSkill == 'bodybombing' || 
+      weaponSkill == 'knifefighting' ) {
          const damageBonus = attributes[`damagebonus`],
                damageBonusMod = attributes[`damagebonus_mod`],
                bonus = damageBonusMod == '' || damageBonusMod == undefined ? damageBonus : damageBonusMod;
@@ -3952,7 +3953,7 @@ const rollAbility = function ({trigger,attributes,sections,casc}) {
    const row = `${section}_${rowID}_`;
    //k.log('Name is '+ attributes[`${row}skill_name`]);
    if ( attributes[`${row}roll`] == '' && attributes[`${row}damage`] == '' ) { return; }
-   rollObj.name = attributes[`${row}name`];
+   rollObj.name = attributes[`${row}skill_name`];
    rollObj.abilityDice = attributes[`${row}roll`].replaceAll(/[Tt]/g,'D');
 
    //k.log(`Skill attribute is `+attributes[`${row}skill`]);
@@ -3988,7 +3989,7 @@ const rollAbilitySkill = async function ({trigger,attributes,sections,casc}) {
    if ( attributes[`${row}damage`] && attributes[`${row}damage`] != '' ) {
       rollObj.damageButton = true;
       rollObj.damageDice = attributes[`${row}damage`].replaceAll(/[Tt]/g,'D');
-      rollObj.rollStr += ' {{damageRoll=[[0]]}} {{button-label=^{damage}}}';
+      rollObj.rollStr += ' {{damageRoll=[[0]]}} {{button-label=^{damage}}} {{damageTotal=[[0]]';
    }
    if ( attributes[`${row}ability_resonance`] == '1' || attributes[`${row}ability_resonance`] == 'on' ) {
       //k.log(`Ability with resonance`);
@@ -4185,15 +4186,19 @@ k.registerFuncs({abilityDice});
       const row = section ?
          `${section}_${rowID}_` :
          '';
+      const weaponSkill = attributes[`${row}skill`];
+      console.log(`Weapon skill : ${weaponSkill}`);
       const name = section ?
-         attributes[`${row}name`] :
+         (attributes[`${row}skill_name`] ? 
+         attributes[`${row}skill_name`] :
+         attributes[`${row}name`]):
          base.replace(/-/g,' ').replace(/ action/,'');
       const i18nKey = base.replace(/-action/,'');
       //k.log(`Roll name before translation: ${name}, base ${i18nKey} with translation ${getTranslationByKey(i18nKey)}`);
       rollObj.name = getTranslationByKey(i18nKey) != false ? getTranslationByKey(i18nKey) : name;   
       //k.log(`Roll name after translation: ${rollObj.name}`);
-      rollObj.shotgun = attributes[`${row}skill`] == 'shotgun_rifles' ? 'rifles' : 
-                     ( attributes[`${row}skill`] == 'shotgun_pistols' ) ? 'pistols' : false; 
+      rollObj.shotgun = weaponSkill == 'shotgun_rifles' ? 'rifles' : 
+                     ( weaponSkill == 'shotgun_pistols' ) ? 'pistols' : false; 
       if ( rollObj.shotgun ) {
          //k.log(`Weapon is Shotgun`);
          rollObj.shotgun_olden = attributes[`${row}olden`]||0,
@@ -4204,7 +4209,11 @@ k.registerFuncs({abilityDice});
          rollObj.damageDice = section ?
             attributes[`${row}damage`] :
             attributes[`${base.replace(/-/g,'_').replace(/_action/,'').toLowerCase()}_damage`];
-         if ( attributes[`${row}skill`] == 'melee' || attributes[`${row}skill`] == 'martial_arts'  || attributes[`${row}skill`] == 'sabrefencing' ) {
+         if ( weaponSkill == 'melee' || 
+               weaponSkill == 'martial_arts'  || 
+               weaponSkill == 'sabrefencing' || 
+               weaponSkill == 'bodybombing' || 
+               weaponSkill == 'knifefighting' ) {
             const damageBonus = attributes[`damagebonus`],
                   damageBonusMod = attributes[`damagebonus_mod`],
                   bonus = damageBonusMod == '' || damageBonusMod == undefined ? damageBonus : damageBonusMod;
@@ -4225,8 +4234,14 @@ k.registerFuncs({abilityDice});
 k.registerFuncs({rollDamage});
 
 const rollHitArea = function({trigger,attributes,sections,casc}) {
+   rollObj = {};
+   //console.log(`Hitarea trigger: ${JSON.stringify(trigger)}`); 
+   if (trigger.originalRollId) { 
+      rollObj.damage = k.unescape(trigger.originalRollId);
+      console.log(`Previous roll data: ${JSON.stringify(rollObj.damage)}`);   
+   } 
    //k.log(`Hit area roll trigger: ${JSON.stringify(trigger)}`);
-   const rollObj = {name: getTranslationByKey('hitarea')};
+   rollObj.name = getTranslationByKey('hitarea');
    rollObj.hitAreaDie = trigger.name.replace(/hitarea-/,'');
 
    //k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
@@ -4550,7 +4565,29 @@ const rollImprovement = async function({attributes,skillAttr,skillName,improvAtt
 
    executeRoll({rollObj,attributes,sections});
 }
-k.registerFuncs({rollVehicleHitarea});
+k.registerFuncs({rollVehicleHitarea});const weaponTrainedSkillImprove = function({rollObj,attributes,sections,perfect}) {
+   k.log(`Updating Improvement for weapon skill`);
+   const attr = rollObj.skillAttr;
+   k.log(`Weapon skill is ${attr}`);
+   var rowID = "";
+   sections[`repeating_trainedskills`].forEach( (cv) => {
+      let name = attributes[`repeating_trainedskills_${cv}_name`];
+      k.log(`Current row: ${cv} and name ${name}`);
+      if ( name == attr ) {
+         rowID = cv;
+      }
+   });
+   k.log(`Row ID to mark imrpovement ${rowID}`);
+   if ( !perfect ) {
+      const prev = attributes[`repeating_trainedskills_${rowID}_improve`];
+      k.log(`Previous value ${prev}`);
+      attributes[`repeating_trainedskills_${rowID}_improve`] = 1; 
+   } else {
+      attributes[`repeating_trainedskills_${rowID}_improve_perfect`] = 1; 
+   }
+   attributes.set();
+}
+
   
   
   const calcEncumbrance = function({trigger,attributes,sections,casc}) {

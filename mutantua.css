@@ -179,8 +179,11 @@ body {
   --background-color2: #e3e3e3;
   --background-color-inv: var(--dark-surface1);
   --background-color-box: rgb(0,0,0,0.1);
+  --dm-collapseExpandedColor: #e3e3e3;
   --rt-bg-color: #fff;
   --invert-bg: invert(0);
+  --anim-pulse: bgpulse;
+  --collapseHoverOpacity: 1;
   color: var(--font-color);
   background-color: var(--background-color-inv);
   font-size: 1rem;
@@ -1272,6 +1275,10 @@ body .ui-dialog .tab-content .charsheet .tabs--mutantua__container--pc .box.cove
   height: -webkit-fill-available;
   align-content: flex-start;
 }
+body .ui-dialog .tab-content .charsheet .collapse-container > .collapse:not(:checked),
+body .ui-dialog .tab-content .charsheet .repitem > .collapse:not(:checked) {
+  opacity: var(--collapseHoverOpacity);
+}
 body .ui-dialog .tab-content .charsheet label.label-input-label,
 body .ui-dialog .tab-content .charsheet h2.header-field,
 body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > .header-field[name] {
@@ -1377,7 +1384,7 @@ body .ui-dialog .tab-content .charsheet .box .repcontainer.editmode + .repcontro
   content: "playlist_add_check";
 }
 body .ui-dialog .tab-content .charsheet .box .repcontainer .collapse:not(checked) ~ .expanded {
-  animation-name: bgpulse;
+  animation-name: var(--anim-pulse);
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
@@ -1389,6 +1396,14 @@ body .ui-dialog .tab-content .charsheet .box .repcontainer .collapse:not(checked
   }
   100% {
     background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@keyframes bgpulse-dark {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: transparent;
   }
 }
 body .ui-dialog .tab-content .charsheet .box .repcontrol {
@@ -1707,7 +1722,7 @@ body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.i
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 input[type=checkbox]:checked {
   display: flex;
-  background-color: var(--border-color);
+  background-color: var(--fill-color);
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills span.input-span.input-0 input[type=checkbox]:checked:before {
   content: "";
@@ -1974,7 +1989,7 @@ body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-r
   width: 100%;
 }
 body .ui-dialog .tab-content .charsheet .section-resonance .label-input.column-resonance input.resonance-edit-toggle ~ input.input-resonance {
-  animation-name: bgpulse;
+  animation-name: var(--anim-pulse);
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
@@ -2120,7 +2135,7 @@ body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcont
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox]:checked {
   display: flex;
-  background-color: var(--border-color);
+  background-color: var(--fill-color);
 }
 body .ui-dialog .tab-content .charsheet .section-abilities .box-ability .repcontainer .repitem .collapsed .ability-details .detail span.skill-level input[type=checkbox]:checked:before {
   content: "";
@@ -2528,13 +2543,17 @@ body.sheet-darkmode {
   --font-color-inverse: #3e3e3e;
   --border-color: #e3e3e3;
   --fill-color: #000;
+  --fill-color: #e3e3e3;
+  --checkColor: var(--fontColor);
   --background-color: #000;
   --background-color: var(--dark-surface1);
   --background-color2: #3e3e3e;
   --background-color-inv: #5e5e5e;
   --background-color-box: rgb(255,255,255,0.1);
+  --collapseExpandedColor: var(--dm-collapseExpandedColor);
   --rt-bg-color: #000;
   --invert-bg: invert(100%);
+  --anim-pulse: bgpulse-dark;
 }
 body.sheet-darkmode .charactersheet {
   background-color: var(--dark-surface1);
@@ -2576,6 +2595,15 @@ body.sheet-darkmode .charactersheet {
   font-weight: bolder;
   letter-spacing: 0.1em;
   background: transparent;
+  color: var(--font-color);
+}
+.sheet-rolltemplate-mutantua h1.align-center, .sheet-rolltemplate-mutantua h2.align-center, .sheet-rolltemplate-mutantua body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > .align-center[name], body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-mutantua .input-label:not(.stacked).large > .align-center[name], .sheet-rolltemplate-mutantua h3.align-center, .sheet-rolltemplate-mutantua h4.align-center, .sheet-rolltemplate-mutantua span.align-center, .sheet-rolltemplate-mutantua label.align-center, .sheet-rolltemplate-mutantua li.align-center, .sheet-rolltemplate-mutantua button.align-center, .sheet-rolltemplate-mutantua div.align-center, .sheet-rolltemplate-mutantua a.align-center, .sheet-rolltemplate-mutantua input[type=text].caps-input.align-center {
+  align-self: center;
+  align-content: center;
+  align-items: center;
+}
+.sheet-rolltemplate-mutantua a span {
+  color: var(--font-color-inverse);
 }
 .sheet-rolltemplate-mutantua .sheet-template {
   width: 100%;
@@ -2759,9 +2787,30 @@ body.sheet-darkmode .charactersheet {
 .sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea {
   display: flex;
   justify-content: center;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea .align-center {
+  font-size: 85%;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea + .sheet-roll-result {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 80%;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea + .sheet-roll-result span {
+  background-color: unset;
+  border: unset;
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea + .sheet-roll-result span::before {
+  content: "(";
+}
+.sheet-rolltemplate-mutantua .sheet-template .sheet-container .sheet-roll-result .sheet-roll-hitarea + .sheet-roll-result span::after {
+  content: ")";
 }
 
-:where(.sheet-darkmode.ui-widget-content) .sheet-rolltemplate-mutantua {
+.sheet-rolltemplate-darkmode {
   --backColor:var(--dm-backColor);
   --selectedColor:var(--dm-selectedColor);
   --unselectedColor1:var(--dm-unselectedColor1);
@@ -2776,11 +2825,15 @@ body.sheet-darkmode .charactersheet {
   --font-color-inverse: #3e3e3e;
   --border-color: #e3e3e3;
   --fill-color: #000;
+  --fill-color: #e3e3e3;
+  --checkColor: var(--fontColor);
   --background-color: #000;
   --background-color: var(--dark-surface1);
   --background-color2: #3e3e3e;
   --background-color-inv: #5e5e5e;
   --background-color-box: rgb(255,255,255,0.1);
+  --collapseExpandedColor: var(--dm-collapseExpandedColor);
   --rt-bg-color: #000;
   --invert-bg: invert(100%);
+  --anim-pulse: bgpulse-dark;
 }

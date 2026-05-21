@@ -28,7 +28,7 @@
   "basic-skills": "naturliga färdigheter",
   "blackpowder-or-olden": "Svartkrut eller Forn",
   "boats": "båt",
-  "bodybombing": "bodybombing",
+  "bodybombing": "Bodybombing",
   "bows": "Båge",
   "buck-or-slug": "Hagel/Flechette eller Slug",
   "campaign": "Kampanj",
@@ -221,5 +221,6 @@
   "shotgun-damage": "Hagelskada",
   "shotgun-rifles": "Hagelgevär",
   "shotgun-pistols": "Hagelpistol",
-  "skill-improvment-desc": "Slår förbättringsslag för all färdigheter markerade för detta. "
+  "skill-improvment-desc": "Slår förbättringsslag för all färdigheter markerade för detta. ",
+  "abilitydamage": "Skada"
 }
