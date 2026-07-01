@@ -1208,7 +1208,41 @@ body .ui-dialog .tab-content .charsheet #main .logo {
   background-repeat: no-repeat;
   background-size: 18rem 4rem;
   margin-bottom: 1rem;
-  margin-bottom: 3rem;
+}
+body .ui-dialog .tab-content .charsheet #main .roll {
+  display: block;
+  height: 2rem;
+  display: flex;
+  justify-self: left;
+  place-content: center;
+  place-items: center;
+  width: 50%;
+  z-index: 100;
+  position: relative;
+}
+body .ui-dialog .tab-content .charsheet #main .roll input {
+  text-align: right;
+  align-self: flex-end;
+}
+body .ui-dialog .tab-content .charsheet #main .roll input, body .ui-dialog .tab-content .charsheet #main .roll select, body .ui-dialog .tab-content .charsheet #main .roll span, body .ui-dialog .tab-content .charsheet #main .roll button {
+  color: var(--font-color-inverse);
+  border-radius: 0.25rem;
+  padding: 0;
+  margin-inline: 0;
+  border: 0;
+  align-self: center;
+}
+body .ui-dialog .tab-content .charsheet #main .roll select {
+  appearance: auto;
+  -webkit-appearance: auto;
+  text-align: left;
+}
+body .ui-dialog .tab-content .charsheet #main .roll button {
+  width: auto;
+  margin-left: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet #main .roll button[type=action] {
+  display: none;
 }
 body .ui-dialog .tab-content .charsheet #main .tabs {
   margin-top: -2rem;
@@ -1494,6 +1528,9 @@ body .ui-dialog .tab-content .charsheet .label-input label.comma, body .ui-dialo
 body .ui-dialog .tab-content .charsheet .label-input label.comma:after, body .ui-dialog .tab-content .charsheet .label-input span.comma:after {
   content: ": ";
 }
+body .ui-dialog .tab-content .charsheet .label-input span.info {
+  font-family: Pictos;
+}
 body .ui-dialog .tab-content .charsheet .label-input span.input-last {
   border-right: 0;
 }
@@ -1557,7 +1594,7 @@ body .ui-dialog .tab-content .charsheet .label-input span.input-span-textarea {
 }
 body .ui-dialog .tab-content .charsheet .label-input .adaptive.input-span-adaptive * {
   align-content: unset;
-  min-height: 4rem;
+  min-height: 5rem;
 }
 body .ui-dialog .tab-content .charsheet .label-input.w50pc {
   box-sizing: border-box;
@@ -1622,6 +1659,38 @@ body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row:hover
 body .ui-dialog .tab-content .charsheet .section-attributes .attribute-row:hover button[type=action].attribute-roll {
   display: flex;
 }
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row.column-initiative.input-count-3 {
+  grid-template-columns: 1fr 1.5rem 4rem 4rem;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row.column-initiative.input-count-3 button.roller {
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row.column-initiative.input-count-3 .input-0 {
+  width: 1.45rem;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row.column-initiative.input-count-3 .input-2 {
+  border-right: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row button span {
+  width: 100%;
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row button[type=action].initiative-reset {
+  justify-self: center;
+  place-self: center;
+  justify-content: center;
+  border: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row button[type=action].initiative-reset + button[type=action] {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-attributes .secondary-row button[type=action].initiative-reset:before {
+  font-family: "Material Symbols Outlined";
+  content: "x_circle";
+  font-size: 1.25rem;
+  line-height: 0.5rem;
+  justify-self: center;
+}
 body .ui-dialog .tab-content .charsheet .section-skill .label-input.input-count-2 {
   grid-template-columns: 1fr 0 4rem 4rem;
 }
@@ -1669,6 +1738,51 @@ body .ui-dialog .tab-content .charsheet .section-skill .repitem:hover input.exp-
   position: absolute;
   left: -1rem;
   width: 1rem;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll {
+  justify-content: flex-end;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll label {
+  min-width: 9rem;
+  max-width: 11rem;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll input[type=text] {
+  text-align: center;
+  width: 40%;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll input[type=number], body .ui-dialog .tab-content .charsheet .section-skill .customroll select {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll input[type=number].right-aligned, body .ui-dialog .tab-content .charsheet .section-skill .customroll select.right-aligned {
+  align-items: right;
+  text-align: right;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll input[type=number].left-aligned, body .ui-dialog .tab-content .charsheet .section-skill .customroll select.left-aligned {
+  align-items: left;
+  text-align: left;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll select {
+  display: flex;
+  align-items: center;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll select:first-of-type {
+  width: fit-content;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll input[type=number] {
+  width: 2.5rem;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll button[type=action] {
+  display: none;
+}
+body .ui-dialog .tab-content .charsheet .section-skill .customroll button.roller {
+  border: 0;
+  margin-left: 0.5rem;
 }
 body .ui-dialog .tab-content .charsheet .section-trainedskills {
   border-bottom: 1px solid var(--border-color);
@@ -1745,7 +1859,7 @@ body .ui-dialog .tab-content .charsheet .section-weapons {
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div {
   display: grid;
-  grid-template-columns: 19% 5% 12% 4% 6% 10% 5% 10% 8% 8% 5% 8%;
+  grid-template-columns: 20% 5% 12% 4% 5% 6% 10% 5% 10% 6% 6% 5% 6%;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div * {
   border: 0;
@@ -1767,6 +1881,12 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem button {
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem button.init-button span {
   width: 1.25rem;
 }
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox] {
+  height: 100%;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed input[type=checkbox] {
+  pointer-events: none;
+}
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-skillname-toggle + span + input,
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-skillname-toggle:checked + span {
   display: none;
@@ -1775,6 +1895,7 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-s
   display: flex;
   box-sizing: border-box;
   font-size: 100%;
+  width: calc(100% + 1px);
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_skill_name],
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem span[name=attr_range],

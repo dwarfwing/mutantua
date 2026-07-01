@@ -44,6 +44,8 @@
   "crew": "besättning",
   "crowncredits": "kronkredit",
   "current-value": "Nuvarande värdet",
+  "custom-roll": "Tärningsslag",
+  "custom-roll-placeholder": "Namn på slag?",
   "custom-skill": "Lägg till manuellt",
   "d10": "T10",
   "d12": "T12",
@@ -52,6 +54,7 @@
   "d6": "T6",
   "d8": "T8",
   "damage": "Skada",
+  "damage-bous-abbr": "SB",
   "damagebonus": "skadebonus",
   "destillation": "Destillation",
   "dexterity": "fingerfärdighet",
@@ -91,6 +94,7 @@
   "improvement": "Förbättring",
   "influencelevel": "reaktionsvärde",
   "init": "Init",
+  "initiative": "initiativvärde",
   "initiativebonus": "initiativbonus",
   "intelligence": "intelligens",
   "knifefighting": "knivfajt",
@@ -222,5 +226,9 @@
   "shotgun-rifles": "Hagelgevär",
   "shotgun-pistols": "Hagelpistol",
   "skill-improvment-desc": "Slår förbättringsslag för all färdigheter markerade för detta. ",
-  "abilitydamage": "Skada"
+  "abilitydamage": "Skada",
+  "init-abbr": "Init",
+  "initiative-set": "Initiativvärde",
+  "initiative-value": "Initiativ",
+  "overloaded": "Överbelastad"
 }
