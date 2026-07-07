@@ -1859,7 +1859,7 @@ body .ui-dialog .tab-content .charsheet .section-weapons {
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div {
   display: grid;
-  grid-template-columns: 20% 5% 12% 4% 5% 6% 10% 5% 10% 6% 6% 5% 6%;
+  grid-template-columns: 1.5rem calc(20% - 1.5rem) 5% 12% 4% 5% 6% 10% 5% 10% 6% 6% 5% 6%;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div * {
   border: 0;
@@ -1867,6 +1867,9 @@ body .ui-dialog .tab-content .charsheet .section-weapons .box-header *, body .ui
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header > *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div > *, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div > * {
   border-right: 1px solid var(--border-color);
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .box-header > h1, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div > h1, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div > h1 {
+  border-right: 0;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .box-header > h2:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .box-header.input-label.large:not(.stacked) > [name]:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .box-header > span:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div > h2:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div.input-label.large:not(.stacked) > [name]:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed div > span:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div > h2:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div.input-label.large:not(.stacked) > [name]:last-of-type, body .ui-dialog .tab-content .charsheet .section-weapons .repitem .expanded div > span:last-of-type {
   border: 0;
@@ -1884,7 +1887,19 @@ body .ui-dialog .tab-content .charsheet .section-weapons .repitem button.init-bu
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox] {
   height: 100%;
 }
-body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed input[type=checkbox] {
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox]:first-of-type {
+  border-right: 0;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox].weapon-equipped:not(:checked) ~ button,
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox].weapon-equipped:not(:checked) ~ span button {
+  pointer-events: none;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox].weapon-equipped:not(:checked) ~ button:before,
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem input[type=checkbox].weapon-equipped:not(:checked) ~ span button:before {
+  content: "";
+  width: 1.675rem;
+}
+body .ui-dialog .tab-content .charsheet .section-weapons .repitem .collapsed input[type=checkbox]:not(:first-of-type) {
   pointer-events: none;
 }
 body .ui-dialog .tab-content .charsheet .section-weapons .repitem input.manual-skillname-toggle + span + input,

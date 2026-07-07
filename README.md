@@ -82,6 +82,8 @@ Under Naturliga färdigheterna så finns en sektion med Tärningsslag. Här kan 
 
 Vapen är också en repeterande lista. Det viktiga är att välja rätt Typ, så att slagen med vapnet sker på rätt sätt och med rätt färdighet. Om det inte finns en passande färdighet, så välj det sista valet, "Manuellt". I det sistnämnda fallet så visas istället ett fält där man manuellt kan lägga in ett färdighetsvärde. 
 
+Varje rad i vapenlistan har en checkbox som markerar om det vapnet är buret för tillfället eller inte. Ett vapen som inte är buret kanske är i förvar i basen eller tillfälligt tappat. Ett vapen som inte är buret räknas inte mot belastningen men samtidigt är också de olika knapparna för attacker, initiativ och skada inaktiverade. 
+
 Speciellt för vapen är att det går att slå för vapnets träff genom att klicka på vapnets namn. Från resultet i chatten kan man sen slå för skadan, vilket räknar med kritiska träffar baserat på färdigheten man använder. När man slagit skada i chatten får man även möjlighet att slå träffområde. 
 
 Det finns många orsaker till att chansen att lyckas modifieras när man strider, och det finns därför ett specifikt Modifikations+fält för vapnet som kan användas temporaärt när vapnet ska användas. 
