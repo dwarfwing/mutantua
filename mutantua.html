@@ -3699,8 +3699,8 @@ k.registerFuncs({'1.2':updatev1dot2},{type:['updater']});
          rollObj.rollStr += ` {{roll1=[[${rollObj.abilityDice}]]}}`;
       } else if (rollObj.target) {
          const rollCrit = Math.floor(rollObj.target / 10)||0;
-         const climit = rollObj.carryLimit ? rollObj.carryLimit : '';
-         rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${rollObj.target}${climit}]]}}`;
+         rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${rollObj.target}${rollObj.carryLimitStr}]]}}`;
+         rollObj.target = rollObj.target - rollObj.carrylimit; 
       } else if (rollObj.hitAreaDie) {
          rollObj.rollStr += ` {{hitarearoll=[[1D${rollObj.hitAreaDie}]]}} {{hitarea=[[0]]}} {{hitareadetails=[[0]]}}`;
          if ( rollObj.damage ) {
@@ -3740,20 +3740,20 @@ k.registerFuncs({'1.2':updatev1dot2},{type:['updater']});
       //k.log(`Perfect roll!`)
       success = roll.results.roll1.result <= parseInt(rollObj.target);
       perfect = roll.results.roll1.result < (rollObj.target / 10)||0; 
-      k.log(`Roll success ${success} and roll perfect ${perfect}`);
+      k.log(`Roll success ${success} and roll perfect ${!!perfect}`);
       perfectStr = perfect && !rollObj.abilitySkillRoll ? `+1D6[${getTranslationByKey('perfect-roll')}]` : '';
       computeObj.perfectRoll = perfect ? 1 : 0; 
       const trainedWeaponSkills = ['bodybombing','energy_weapons','knifefighting','sabrefencing','explosives','martial_arts','heavy_weapons','rapierfencing']; 
-      k.log(`Is ${rollObj.skillAttr} weapon skillimprovement? ${ trainedWeaponSkills.includes(rollObj.skillAttr) }`);
+      //k.log(`Is ${rollObj.skillAttr} weapon, skillimprovement ${ trainedWeaponSkills.includes(rollObj.skillAttr) }`);
       if ( success && !perfect ) {
-         k.log(`${rollObj.skillAttr}_improve`);
+         //k.log(`${rollObj.skillAttr}_improve`);
          if ( trainedWeaponSkills.includes(rollObj.skillAttr) ){
             weaponTrainedSkillImprove({rollObj,attributes,sections,perfect:false});
          } else {
             attributes[`${rollObj.skillAttr}_improve`] = 1; 
          }
       } else if ( perfect ) {
-         k.log(`${rollObj.skillAttr}_improve_perfect`);
+         //k.log(`${rollObj.skillAttr}_improve_perfect`);
          if ( trainedWeaponSkills.includes(rollObj.skillAttr) ){
             weaponTrainedSkillImprove({rollObj,attributes,sections,perfect:true});
          } else {
@@ -3962,8 +3962,11 @@ k.version = 1.21;const rollWeaponAttack = function ({trigger,attributes,sections
    }
 
    const carry = parseInt(attributes.encumbrance_max) - parseInt(attributes.encumbrance);
-   const carrylimit = carry < 0 ? ` ${carry} [${getTranslationByKey('overloaded')}]` : ``;     
+   rollObj.carrylimit = carry < 0 ? Math.abs(carry) : 0;  
+   const carrylimitStr = rollObj.carrylimit > 0 ? ` -${rollObj.carrylimit} [${getTranslationByKey('overloaded')}]` : ``; 
+   k.log(` Target is ${rollObj.target}, carrylimit is ${rollObj.carrylimit} and string ${carrylimitStr}`);   
 
+   // Handle modifications on the skill level!
    switch ( rollObj.skillAttr ) {
       case 'bows' :
       case 'rifles' :
@@ -3974,10 +3977,13 @@ k.version = 1.21;const rollWeaponAttack = function ({trigger,attributes,sections
       case 'rapierfencing' :
       case 'sabrefencing' :
       case 'knifefighting' : {
-         rollObj.carryLimit = carrylimit;
+         rollObj.carryLimitStr = carrylimitStr;
+         //rollObj.target = rollObj.target - rollObj.carrylimit; // Covered in executeRoll
+         k.log(`Agility based weapons: Target is ${rollObj.target}, carrylimit is ${rollObj.carrylimit} and string ${carrylimitStr}`);   
          break;
       }
       default : {
+         rollObj.carryLimitStr = '';
          break; 
       }
    }
@@ -3994,7 +4000,7 @@ const rollTrainedSkill = function ({trigger,attributes,sections,casc}) {
    const [section,rowID] = k.parseTriggerName(trigger.name);
    const row = `${section}_${rowID}_`;
    rollObj.skillAttr = `${section}_${rowID}`;
-   //k.log('Name is '+ attributes[`${row}skill_name`]);
+   k.log('Name is '+ attributes[`${row}skill_name`] + ', attr is ' + attributes[`${row}name`]);
    const attrName = attributes[`${row}name`];
    rollObj.name = getTranslationByKey(attributes[`${row}name`].replace(/_/,'-')) ?
                   getTranslationByKey(attributes[`${row}name`].replace(/_/,'-')) :
@@ -4009,13 +4015,42 @@ const rollTrainedSkill = function ({trigger,attributes,sections,casc}) {
 
    rollObj.rollStr = attributes['templatestart'] + ` {{roll-name=${rollObj.name}}} `;
    const rollCrit = Math.floor(rollObj.target / 10)||0;
-   var limit = 0;
-   limit += parseInt(attributes[`armor_limit`])+parseInt(attributes['shield_limit']);
-   const limitStr = limit > 0 ? ` -${limit} [${getTranslationByKey('armor')}]` : '';
 
-   rollObj.rollStr += attrName == 'evade' ? 
-                     ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${limitStr}]]}}` :
-                     ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}]]}}`;
+   const alimit = parseInt(attributes[`armor_limit`])+parseInt(attributes['shield_limit']);
+   const alimitStr = alimit > 0 ? ` -${alimit} [${getTranslationByKey('armor')}]` : '';
+   const carrylimit = parseInt(attributes.encumbrance) - parseInt(attributes.encumbrance_max);
+   const carrylimitStr = carrylimit > 0 ? ` -${carrylimit} [${getTranslationByKey('overloaded')}]` : ``; 
+
+   switch(attrName) {
+      case 'evade' : {
+            rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${alimitStr}${carrylimitStr}]]}}`;
+            rollObj.target = parseInt(rollObj.target) - alimit - carrylimit; 
+            break;
+         }
+      case 'dexterity' :
+      case 'lockpicking' :
+      case 'knifefighting' :
+      case 'riding' :
+      case 'sabrefencing' : 
+      case 'martial_arts' :
+      case 'heavy_weapons' :
+      case 'carts' :
+      case 'rapierfencing' : {{
+            rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${carrylimitStr}]]}}`;
+            rollObj.target = parseInt(rollObj.target) - carrylimit; 
+            break;
+         }
+
+      }
+      default : {
+            rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}]]}}`;
+            break;
+      }
+   }
+
+/*    rollObj.rollStr += attrName == 'evade' ? 
+                     ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${alimitStr}]]}}` :
+                     ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}]]}}`; */
 
    //k.log(`Roll object before execute: ${JSON.stringify(rollObj)}`);
    //const rollCrit = Math.ceil(rollSkill / 10) != 0 ? Math.ceil(rollSkill / 10) : 1;
@@ -4156,25 +4191,27 @@ const rollSkill = function ({trigger,attributes,sections,casc}) {
    rollObj.target = rollObj.rollSkill + rollObj.rollSkillMod;
    const rollCrit = Math.floor(rollObj.target / 10)||0;
 
-   var alimit = 0, hlimit = 0;
-   alimit += parseInt(attributes[`armor_limit`])+parseInt(attributes['shield_limit']);
-   hlimit += parseInt(attributes['helmet_limit']);
+   const alimit = parseInt(attributes[`armor_limit`])+parseInt(attributes['shield_limit']);
+   const hlimit = parseInt(attributes['helmet_limit']);
 
    const alimitStr = alimit > 0 ? ` -${alimit} [${getTranslationByKey('armor')}]` : '';
    const hlimitStr = hlimit > 0 ? ` -${hlimit} [${getTranslationByKey('helmet')}]` : '';
    const carry = parseInt(attributes.encumbrance_max) - parseInt(attributes.encumbrance);
-   const carrylimit = carry < 0 ? ` ${carry} [${getTranslationByKey('overloaded')}]` : ``;     
+   const carrylimit = carry < 0 ? -carry : 0; 
+   const carrylimitStr = carry < 0 ? ` ${carry} [${getTranslationByKey('overloaded')}]` : ``;     
 
    rollObj.rollStr = attributes.templatestart + ` {{roll-name=${rollObj.name}}} `;
    switch ( attr ) {
       case 'acrobatics' :
       case 'sneak_hide' :
       case 'evade' : {
-         rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${alimitStr}${carrylimit}]]}}`;
+         rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${alimitStr}${carrylimitStr}]]}}`;
+         rollObj.target = parseInt(rollObj.target) - alimit - carrylimit; 
          break;
       }
       case 'perception' : {
          rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${hlimitStr}]]}}`;
+         rollObj.target = parseInt(rollObj.target) - hlimit; 
          break;
       }
       case 'bows' :
@@ -4191,7 +4228,8 @@ const rollSkill = function ({trigger,attributes,sections,casc}) {
       case 'rapierfencing' :
       case 'sabrefencing' :
       case 'knifefighting' :  {
-         rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${carrylimit}]]}}`;
+         rollObj.rollStr += ` {{roll1=[[1d100cs<${rollCrit}cf100]]}} {{target=[[${parseInt(rollObj.target)}${carrylimitStr}]]}}`;
+         rollObj.target = parseInt(rollObj.target) - carrylimit; 
          break;
       }
       default : {
